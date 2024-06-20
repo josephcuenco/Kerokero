@@ -42,4 +42,13 @@ public partial class LoginPage : ContentPage
 	}
 
 
+	private void testfunction()
+	{
+		
+	}
+
 }
+
+
+
+//git test oooooooooooogaaaaaaaa boogaaaaaaaa
