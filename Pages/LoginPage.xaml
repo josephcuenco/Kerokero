@@ -2,16 +2,84 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KeroKero.Pages.LoginPage"
-             Title="LoginPage">
-    
-    <VerticalStackLayout Padding="30" Spacing="10">
+             Title="">
 
-        <Entry x:Name="UsernameEntry" Placeholder="Username" />
-        <Entry x:Name="PasswordEntry" Placeholder="Password" IsPassword="True"/>
-        <Button Text="Login" Clicked="OnLoginButtonClicked" />
-        <Label x:Name="LoginStatusLabel" TextColor="Red" />
-        <Button Text="Don't have an account? Sign up here" Clicked="OnSignUpButtonClicked" />
 
-    </VerticalStackLayout>
-    
+    <ScrollView>
+    <Grid Padding="50">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <!-- Title log in -->
+            <RowDefinition Height="35" />
+            <!-- Email -->
+            <RowDefinition Height="40" />
+            <!-- Email textbox -->
+            <RowDefinition Height="30" />
+            <!-- spacing-->
+            <RowDefinition Height="35" />
+            <!-- Password -->
+            <RowDefinition Height="40" />
+            <!-- Password textbox -->
+            <RowDefinition Height="30" />
+            <!--spacing -->
+            <RowDefinition Height="50" />
+            <!-- log in button -->
+            <RowDefinition Height="35" />
+            <!-- log in status -->
+            <RowDefinition Height="50" />
+            <!-- sign up button -->
+
+        </Grid.RowDefinitions>
+
+        <!-- Title log in -->
+        <Label Grid.Row="0"
+            Text="Login"
+            Style="{StaticResource Headline}"
+            SemanticProperties.HeadingLevel="Level1"
+            FontAttributes="Bold"/>
+
+        <!-- Email -->
+        <Label Grid.Row="1"
+                Text="Email"
+                FontSize="24"/>
+
+        <!-- Email textbox -->
+        <Entry Grid.Row="2"
+                x:Name="UsernameEntry"
+                BackgroundColor="LightGray"/>
+
+        <!-- Password-->
+        <Label Grid.Row="4"
+                Text="Password"
+                FontSize="24"/>
+
+        <!--password textbox -->
+        <Entry Grid.Row="5"
+                x:Name="PasswordEntry" IsPassword="True"
+               BackgroundColor="LightGray"/>
+
+        <!--log in button-->
+        <Button Grid.Row="7" 
+                Text="Login" 
+                Clicked="OnLoginButtonClicked" 
+                FontSize="20"/>
+
+        <!-- login status-->
+        <Label Grid.Row="8"
+               FontSize="15"
+                x:Name="LoginStatusLabel" 
+               TextColor="Red" />
+
+        <!-- sign up button-->
+        <Label Grid.Row="9" 
+                Text="Don't have an account? Sign up here"
+                TextDecorations="Underline">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnSignUpLinkClicked"/>
+            </Label.GestureRecognizers>
+        </Label>
+
+    </Grid>
+    </ScrollView>
+
 </ContentPage>
