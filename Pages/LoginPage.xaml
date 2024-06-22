@@ -6,74 +6,66 @@
 
 
     <ScrollView>
-    <Grid Padding="50">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="100" />
+    <Grid Padding="20, 150, 20, 0"
+          HorizontalOptions="FillAndExpand"
+          VerticalOptions="FillAndExpand"
+          RowSpacing="20">
+        
+            <Grid.RowDefinitions>
             <!-- Title log in -->
-            <RowDefinition Height="35" />
-            <!-- Email -->
-            <RowDefinition Height="40" />
+            <RowDefinition Height="Auto" />
             <!-- Email textbox -->
-            <RowDefinition Height="30" />
-            <!-- spacing-->
-            <RowDefinition Height="35" />
-            <!-- Password -->
-            <RowDefinition Height="40" />
+            <RowDefinition Height="Auto" />
             <!-- Password textbox -->
-            <RowDefinition Height="30" />
-            <!--spacing -->
-            <RowDefinition Height="50" />
+            <RowDefinition Height="Auto" />
             <!-- log in button -->
-            <RowDefinition Height="35" />
-            <!-- log in status -->
-            <RowDefinition Height="50" />
+            <RowDefinition Height="Auto" />
+            <!-- username/password validity -->
+            <RowDefinition Height="Auto" />
             <!-- sign up button -->
+            <RowDefinition Height="Auto" />
 
-        </Grid.RowDefinitions>
+            </Grid.RowDefinitions>
 
         <!-- Title log in -->
-        <Label Grid.Row="0"
+            <Label Grid.Row="0"
             Text="Login"
             Style="{StaticResource Headline}"
             SemanticProperties.HeadingLevel="Level1"
             FontAttributes="Bold"/>
 
-        <!-- Email -->
-        <Label Grid.Row="1"
-                Text="Email"
-                FontSize="24"/>
-
-        <!-- Email textbox -->
-        <Entry Grid.Row="2"
+            <!-- Email textbox -->
+            <Entry Grid.Row="1"
                 x:Name="UsernameEntry"
-                BackgroundColor="LightGray"/>
+               Placeholder="Email"
+               FontSize="20"
+               />
 
-        <!-- Password-->
-        <Label Grid.Row="4"
-                Text="Password"
-                FontSize="24"/>
-
-        <!--password textbox -->
-        <Entry Grid.Row="5"
+            <!--password textbox -->
+        <Entry Grid.Row="2"
                 x:Name="PasswordEntry" IsPassword="True"
-               BackgroundColor="LightGray"/>
+               Placeholder="Password"
+               FontSize="20"/>
 
         <!--log in button-->
-        <Button Grid.Row="7" 
+        <Button Grid.Row="3" 
                 Text="Login" 
                 Clicked="OnLoginButtonClicked" 
-                FontSize="20"/>
+                FontSize="20"
+                CornerRadius="20"/>
 
         <!-- login status-->
-        <Label Grid.Row="8"
+        <Label Grid.Row="4"
                FontSize="15"
                 x:Name="LoginStatusLabel" 
-               TextColor="Red" />
+               TextColor="Red" 
+               HorizontalOptions="CenterAndExpand"/>
 
         <!-- sign up button-->
-        <Label Grid.Row="9" 
+        <Label Grid.Row="5" 
                 Text="Don't have an account? Sign up here"
-                TextDecorations="Underline">
+               TextColor="blue"
+               HorizontalOptions="CenterAndExpand">
             <Label.GestureRecognizers>
                 <TapGestureRecognizer Tapped="OnSignUpLinkClicked"/>
             </Label.GestureRecognizers>
