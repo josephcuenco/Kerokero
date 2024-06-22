@@ -1,3 +1,4 @@
+using KeroKero.ViewModels;
 using System.Formats.Asn1;
 
 namespace KeroKero.Pages;
@@ -7,9 +8,10 @@ public partial class SignUpPage : ContentPage
 	public SignUpPage()
 	{
 		InitializeComponent();
+		BindingContext = new SignUpViewModel(Navigation);
 	}
 
-	private async void OnSignUpButtonClicked(object sender, EventArgs e)
+	/*private async void OnSignUpButtonClicked(object sender, EventArgs e)
 	{
 		string username = UsernameEntry.Text;
 		string password = PasswordEntry.Text;
@@ -40,5 +42,5 @@ public partial class SignUpPage : ContentPage
 		//TODO: Replace with actual sign-up logic
 		return true;
 	}
-
+	*/
 }

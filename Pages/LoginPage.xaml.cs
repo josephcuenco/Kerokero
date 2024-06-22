@@ -1,3 +1,4 @@
+using KeroKero.ViewModels;
 using Microsoft.Maui.Controls;
 using System;
 
@@ -8,9 +9,18 @@ public partial class LoginPage : ContentPage
 	public LoginPage()
 	{
 		InitializeComponent();
+		BindingContext = new LoginViewModel(Navigation);
 	}
 
-	private async void OnLoginButtonClicked(object sender, EventArgs e)
+
+
+    /* 
+     private async void OnSignUpLinkClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new SignUpPage());
+    }
+      
+     private async void OnLoginButtonClicked(object sender, EventArgs e)
 	{
 		string username = UsernameEntry.Text;
 		string password = PasswordEntry.Text;
@@ -29,26 +39,10 @@ public partial class LoginPage : ContentPage
 		}
 	}
 
-	private async void OnSignUpLinkClicked(object sender, EventArgs e)
-	{
-		await Navigation.PushAsync(new SignUpPage());
-	}
-
-
 	private bool ValidateLogin(string username, string password)
 	{
 		return username == "user" && password == "password";
 
 	}
-
-
-	private void testfunction()
-	{
-		
-	}
-
+	*/
 }
-
-
-
-//git test oooooooooooogaaaaaaaa boogaaaaaaaa

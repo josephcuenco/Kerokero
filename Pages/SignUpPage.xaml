@@ -2,14 +2,23 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KeroKero.Pages.SignUpPage"
-             Title="SignUpPage">
+             Title="SignUpPage"
+             NavigationPage.HasNavigationBar="False">
     
     <VerticalStackLayout Padding="30" Spacing="10">
 
-        <Entry x:Name="UsernameEntry" Placeholder="Username" />
-        <Entry x:Name="PasswordEntry" Placeholder="Password" IsPassword="True" />
-        <Entry x:Name="ConfirmPasswordEntry" Placeholder="Confirm Password" IsPassword="True"/>
-        <Button Text="Sign up" Clicked="OnSignUpButtonClicked" />
+        <Entry Text="{Binding Email}" 
+               Placeholder="Username" />
+        
+        <Entry Text="{Binding Password}" 
+               Placeholder="Password" IsPassword="True" />
+        
+        <!--<Entry Text="{Binding ConfirmPassword}" 
+               Placeholder="Confirm Password" IsPassword="True"/> -->
+        
+        <Button Text="Sign up" 
+                Command="{Binding SignUpUser}" />
+        
         <Label x:Name="SignUpStatusLabel" TextColor="Red" />
 
 

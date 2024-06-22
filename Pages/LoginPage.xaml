@@ -6,7 +6,7 @@
 
 
     <ScrollView>
-    <Grid Padding="20, 150, 20, 0"
+    <Grid Padding="40, 150, 40, 0"
           HorizontalOptions="FillAndExpand"
           VerticalOptions="FillAndExpand"
           RowSpacing="20">
@@ -36,25 +36,25 @@
 
             <!-- Email textbox -->
             <Entry Grid.Row="1"
-                x:Name="UsernameEntry"
+               Text="{Binding UserEmail}"
                Placeholder="Email"
                FontSize="20"
                />
 
             <!--password textbox -->
         <Entry Grid.Row="2"
-                x:Name="PasswordEntry" IsPassword="True"
+               Text="{Binding UserPassword}" IsPassword="True"
                Placeholder="Password"
                FontSize="20"/>
 
         <!--log in button-->
-        <Button Grid.Row="3" 
+            <Button Grid.Row="3" 
                 Text="Login" 
-                Clicked="OnLoginButtonClicked" 
+                Command="{Binding LoginBtn}" 
                 FontSize="20"
                 CornerRadius="20"/>
 
-        <!-- login status-->
+            <!-- login status-->
         <Label Grid.Row="4"
                FontSize="15"
                 x:Name="LoginStatusLabel" 
@@ -66,9 +66,10 @@
                 Text="Don't have an account? Sign up here"
                TextColor="blue"
                HorizontalOptions="CenterAndExpand">
+            
             <Label.GestureRecognizers>
-                <TapGestureRecognizer Tapped="OnSignUpLinkClicked"/>
-            </Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding SignUpBtn}"/>
+            </Label.GestureRecognizers> 
         </Label>
 
     </Grid>
