@@ -20,6 +20,11 @@
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Fill" />   -->
+            <Button Grid.Row="3" 
+    Text="Map" 
+    Command="{Binding MapBtn}" 
+    FontSize="20"
+    CornerRadius="20"/>
         </VerticalStackLayout>
     </ScrollView>
 
