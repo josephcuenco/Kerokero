@@ -49,19 +49,25 @@ namespace KeroKero.ViewModels
 
         private async void SignUpUserTappedAsync(object obj)
         {
-            try
+            var authProvider = new FirebaseAuthProvider(new FirebaseConfig(webApiKey));
+            bool signUpValid = false;
+
+            while (!signUpValid)
             {
-                var authProvider = new FirebaseAuthProvider(new FirebaseConfig(webApiKey));
-                var auth = await authProvider.CreateUserWithEmailAndPasswordAsync(Email, Password);
-                string token = auth.FirebaseToken;
-                if (token != null)
-                    await App.Current.MainPage.DisplayAlert("Alert", "User Registered successfully", "OK");
-                await this._navigation.PopAsync();
-            }
-            catch (Exception ex)
-            {
-                await App.Current.MainPage.DisplayAlert("Alert", ex.Message, "OK");
-                throw;
+                try
+                {
+                    var auth = await authProvider.CreateUserWithEmailAndPasswordAsync(Email, Password);
+                    string token = auth.FirebaseToken;
+                    if (token != null)
+                        await App.Current.MainPage.DisplayAlert("Alert", "User Registered successfully", "OK");
+                    await this._navigation.PopAsync();
+                    signUpValid = true;
+                }
+                catch (Exception ex)
+                {
+                    await App.Current.MainPage.DisplayAlert("Alert", ex.Message, "OK");
+                    break;
+                }
             }
         }
     }
