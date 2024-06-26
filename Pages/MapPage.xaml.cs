@@ -94,17 +94,32 @@ public partial class MapPage : ContentPage
                 var route = directions["routes"].FirstOrDefault();
                 if (route != null)
                 {
+                    
                     var legs = route["legs"].FirstOrDefault();
+                    
                     if (legs != null)
                     {
+                        var durationText = legs["duration"]?["text"]?.ToString();
+                        Debug.WriteLine($"Duration: {durationText}");
+
+                  
+
+                        Device.BeginInvokeOnMainThread(() =>
+                        {
+                            durationLabel.Text = $"Duration: {durationText}";
+                            durationLabel.IsVisible = true;
+                        });
                         var steps = legs["steps"];
 
                         var polylineCoordinates = new List<Location>();
+                        var d = new List<string>();
 
                         foreach (var step in steps)
                         {
                             var polyline = step["polyline"]["points"].ToString();
                             var locations = DecodePolyline(polyline);
+                            var direct = step["maneuver"].ToString();
+                            d.Append(direct);
                             polylineCoordinates.AddRange(locations);
                         }
 
@@ -118,6 +133,8 @@ public partial class MapPage : ContentPage
                         {
                             mapPolyline.Geopath.Add(position);
                         }
+
+                        
 
                         // Add the polyline to the map
                         map.MapElements.Add(mapPolyline);
