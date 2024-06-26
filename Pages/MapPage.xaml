@@ -5,8 +5,35 @@
              x:Class="KeroKero.Pages.MapPage"
              Title="">
 
+    <Grid>
+        <maps:Map x:Name="map" IsTrafficEnabled="false" IsShowingUser="true" MapType="Street"/>
+        <Label x:Name="durationLabel"
+           Text="Duration: "
+           FontSize="20"
+           TextColor="Black"
+           BackgroundColor="White"
+           Padding="10"
+           HorizontalOptions="Center"
+           VerticalOptions="Start"
+           IsVisible="False" />
+        <Label x:Name="directions"
+            Text="Direction: "
+            FontSize="20"
+            TextColor="Black"
+            BackgroundColor="White"
+            Padding="10"
+            HorizontalOptions="Center"
+            VerticalOptions="Start"
+            IsVisible="False" />
+        <Button
+            Text="Home" 
+            Command="{Binding HomeBtn}" 
+            FontSize="20"
+            CornerRadius="20"/>
+    </Grid>
 
-    <maps:Map x:Name="map" IsTrafficEnabled="false" IsShowingUser="true" MapType="Street"/>
+
+    
     
 
 </ContentPage>
