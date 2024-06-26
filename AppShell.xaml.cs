@@ -1,4 +1,5 @@
 ﻿using KeroKero.Pages;
+using KeroKero.ViewModels;
 /*using Realms;
 using Realms.Sync;*/
 
@@ -8,10 +9,9 @@ namespace KeroKero
     {
         
         public AppShell()
-        { 
-            
-            
+        {   
             InitializeComponent();
+            this.BindingContext = new ShellViewModel();
             Routing.RegisterRoute("MainPage", typeof(KeroKero.Pages.MainPage));
             Routing.RegisterRoute("LoginPage", typeof(KeroKero.Pages.LoginPage));
             Routing.RegisterRoute("SignUpPage", typeof(KeroKero.Pages.SignUpPage));

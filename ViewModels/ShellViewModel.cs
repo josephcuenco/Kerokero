@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace KeroKero.ViewModels
 {
-    internal class MainViewModel : INotifyPropertyChanged
+    internal class ShellViewModel : INotifyPropertyChanged
     {
         //progress bar
         public double CurrentProgress { get; set; } = 0.0;
@@ -27,8 +27,12 @@ namespace KeroKero.ViewModels
 
         public Command DocumentsBtnMapBtn { get; }
         public Command ContactBtn { get; }
-
         public Command ChecklistBtn { get; }
+
+        public Command SettingsBtn { get; }
+        public Command ProfileBtn { get; }
+
+
 
         private string _fullName;
         public string FullName
@@ -45,7 +49,9 @@ namespace KeroKero.ViewModels
         }
 
 
-        public string UserEmail { get => userEmail;
+        public string UserEmail
+        {
+            get => userEmail;
             set
             {
                 userEmail = value;
@@ -54,20 +60,22 @@ namespace KeroKero.ViewModels
         }
 
 
-        public string UserPassword { get => userPassword; set
-            { 
+        public string UserPassword
+        {
+            get => userPassword; set
+            {
                 userPassword = value;
                 RaisePropertyChanged("UserPassword");
             }
         }
 
-        
+
 
         public string webApiKey = "AIzaSyCPz-5MixGymeUJlMKwkyhpZ9ynIGTxIRM";
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public MainViewModel()
+        public ShellViewModel()
         {
             //this._navigation = navigation;
             MapBtn = new Command(MapBtnTappedAsync);
@@ -76,28 +84,11 @@ namespace KeroKero.ViewModels
             DocumentsBtnMapBtn = new Command(DocTappedAsync);
             ChecklistBtn = new Command(CheckTappedAsync);
             ContactBtn = new Command(ContactTappedAsync);
-
+            SettingsBtn = new Command(SettingsTappedAsync);
+            ProfileBtn = new Command(ProfileTappedAsync);
         }
 
-        
 
-        /*private async void LoginBtnTappedAsync(object obj)
-        {
-            var authProvider = new FirebaseAuthProvider(new FirebaseConfig(webApiKey));
-            try
-            {
-                var auth = await authProvider.SignInWithEmailAndPasswordAsync(UserEmail, UserPassword);
-                var content = await auth.GetFreshAuthAsync();
-                var serializedContent = JsonConvert.SerializeObject(content);
-                Preferences.Set("FreshFirebaseToken", serializedContent);
-                await this._navigation.PushAsync(new MainPage());
-            }
-            catch (Exception ex)
-            {
-                await App.Current.MainPage.DisplayAlert("Alert", ex.Message, "OK");
-                throw;
-            }
-        }*/
 
         private async void MapBtnTappedAsync(object obj)
         {
@@ -125,6 +116,16 @@ namespace KeroKero.ViewModels
         }
 
         private async void ContactTappedAsync(object obj)
+        {
+            await Shell.Current.GoToAsync("//MainPage");
+        }
+
+        private async void SettingsTappedAsync(object obj)
+        {
+            await Shell.Current.GoToAsync("//MainPage");
+        }
+
+        private async void ProfileTappedAsync(object obj)
         {
             await Shell.Current.GoToAsync("//MainPage");
         }
