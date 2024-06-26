@@ -7,8 +7,21 @@
     
     <VerticalStackLayout Padding="30" Spacing="10">
 
+        <Label 
+            SemanticProperties.HeadingLevel="Level1"
+            HorizontalOptions="Center"
+            FontSize="24"
+            Text="Account Information" />
+
+        <Entry Text="{Binding FirstName}"
+               Placeholder="First Name" />
+
+        <Entry Text="{Binding LastName}"
+               Placeholder="Last Name" />
+
+
         <Entry Text="{Binding Email}" 
-               Placeholder="Username" />
+               Placeholder="Email" />
         
         <Entry Text="{Binding Password}" 
                Placeholder="Password" IsPassword="True" />

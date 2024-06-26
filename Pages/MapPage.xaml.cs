@@ -19,7 +19,7 @@ public partial class MapPage : ContentPage
 	{
 		InitializeComponent();
         _httpClient = new HttpClient();
-        BindingContext = new MapViewModel(Navigation);
+        BindingContext = new MapViewModel();
 	}
 
 
