@@ -16,10 +16,28 @@ namespace KeroKero.ViewModels
         private string userEmail;
         private string userPassword;
 
+        private static MainViewModel _instance;
+        public static MainViewModel Instance => _instance ?? (_instance = new MainViewModel());
+
         public Command MapBtn { get; }
         public Command InfoBtn { get; }
 
-       
+
+        private string _fullName;
+        public string FullName
+        {
+            get => _fullName;
+            set
+            {
+                if (_fullName != value)
+                {
+                    _fullName = value;
+                    RaisePropertyChanged(nameof(FullName));
+                }
+            }
+        }
+
+
         public string UserEmail { get => userEmail;
             set
             {
