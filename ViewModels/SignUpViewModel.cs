@@ -103,11 +103,13 @@ namespace KeroKero.ViewModels
             bool signUpValid = false;
 
             while (!signUpValid)
+
             {
                 try
                 {
                     var auth = await authProvider.CreateUserWithEmailAndPasswordAsync(Email, Password, $"{FirstName} {LastName}");
                     string token = auth.FirebaseToken;
+                    await App.RealmApp.EmailPasswordAuth.RegisterUserAsync(Email, Password);
                     if (token != null)
                     {
                         await App.Current.MainPage.DisplayAlert("Alert", "User Registered successfully", "OK");
