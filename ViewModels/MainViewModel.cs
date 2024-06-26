@@ -29,6 +29,8 @@ namespace KeroKero.ViewModels
         public Command ContactBtn { get; }
 
         public Command ChecklistBtn { get; }
+        public Command SettingsBtn { get; }
+        public Command ProfileBtn { get; }
 
         private string _fullName;
         public string FullName
@@ -76,7 +78,8 @@ namespace KeroKero.ViewModels
             DocumentsBtnMapBtn = new Command(DocTappedAsync);
             ChecklistBtn = new Command(CheckTappedAsync);
             ContactBtn = new Command(ContactTappedAsync);
-
+            SettingsBtn = new Command(SettingsTappedAsync);
+            ProfileBtn = new Command(ProfileTappedAsync);
         }
 
         
@@ -116,17 +119,27 @@ namespace KeroKero.ViewModels
 
         private async void DocTappedAsync(object obj)
         {
-            await Shell.Current.GoToAsync("//MainPage");
+            await Shell.Current.GoToAsync("//InfoPage");
         }
 
         private async void CheckTappedAsync(object obj)
         {
-            await Shell.Current.GoToAsync("//MainPage");
+            await Shell.Current.GoToAsync("//InfoPage");
         }
 
         private async void ContactTappedAsync(object obj)
         {
+            await Shell.Current.GoToAsync("//PhonebookPage");
+        }
+
+        private async void SettingsTappedAsync(object obj)
+        {
             await Shell.Current.GoToAsync("//MainPage");
+        }
+
+        private async void ProfileTappedAsync(object obj)
+        {
+            await Shell.Current.GoToAsync("//PhonebookPage");
         }
     }
 }

@@ -6,8 +6,7 @@
     xmlns:local="clr-namespace:KeroKero.Pages"
     xmlns:view="clr-namespace:KeroKero.ViewModels"
     Shell.FlyoutBehavior="Disabled"
-    Title="KeroKero"
-    BindingContext="ShellViewModel">
+    Title="KeroKero">
 
     <!-- Header -->
     <Shell.TitleView>
@@ -30,13 +29,21 @@
                 Source="person.png"
                 HeightRequest="30"
                 WidthRequest="30"
-                Command="{Binding ChecklistBtn}"/>
+                Command="{Binding ProfileBtn}"/>
+            <Label
+                Grid.Row="0" Grid.Column="1"
+                Text="Kero&lt;span&gt;&lt;strong&gt;Kero&lt;/strong&gt;&lt;/span&gt;"
+                TextType="Html"
+                FontSize="Subtitle"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"/>
+
             <ImageButton
                 Grid.Row="0" Grid.Column="2"
                 Source="settings.png"
                 HeightRequest="30"
                 WidthRequest="30"
-                Command="{Binding ChecklistBtn}"/>
+                Command="{Binding SettingsBtn}"/>
 
         </Grid>
     </Shell.TitleView>
@@ -56,28 +63,42 @@
         Title="SignUp"
         ContentTemplate="{DataTemplate local:SignUpPage}"
         Route="SignUpPage" />
+    <ShellContent
+        Title="Phonebook"
+        ContentTemplate="{DataTemplate local:PhonebookPage}"
+        Route="PhonebookPage" />
+    <ShellContent
+        Title="Profile"
+        ContentTemplate="{DataTemplate local:ProfilePage}"
+        Route="ProfilePage" />
+    <ShellContent
+        Title="Settings"
+        ContentTemplate="{DataTemplate local:SettingsPage}"
+        Route="SettingsPage" />
+
+
 
     <!-- TabBar for the bottom navigation bar -->
     <TabBar>
-        
+
         <ShellContent
             Title="Home"
             ContentTemplate="{DataTemplate local:MainPage}"
             Route="MainPage"
-            Icon="{OnPlatform 'home.png'}" />
+            Icon="{OnPlatform 'home.png'}"/>
         
         <ShellContent
             Title="Map"
             ContentTemplate="{DataTemplate local:MapPage}"
             Route="MapPage"
             Icon="{OnPlatform 'map.png'}" />
-        
+
         <ShellContent
             Title="Info"
             ContentTemplate="{DataTemplate local:InfoPage}"
             Route="InfoPage"
             Icon="{OnPlatform 'lightbulb.png'}" />
-        
+
     </TabBar>
 
 </Shell>
