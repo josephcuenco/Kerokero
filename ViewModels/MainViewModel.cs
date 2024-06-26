@@ -12,7 +12,10 @@ namespace KeroKero.ViewModels
 {
     internal class MainViewModel : INotifyPropertyChanged
     {
-       // private INavigation _navigation;
+        //progress bar
+        public double CurrentProgress { get; set; } = 0.0;
+
+        // private INavigation _navigation;
         private string userEmail;
         private string userPassword;
 
@@ -21,6 +24,13 @@ namespace KeroKero.ViewModels
 
         public Command MapBtn { get; }
         public Command InfoBtn { get; }
+
+        public Command DocumentsBtnMapBtn { get; }
+        public Command ContactBtn { get; }
+
+        public Command ChecklistBtn { get; }
+
+
 
 
         private string _fullName;
@@ -66,6 +76,9 @@ namespace KeroKero.ViewModels
             MapBtn = new Command(MapBtnTappedAsync);
             InfoBtn = new Command(InfoBtnTappedAsync);
             //LoginBtn = new Command(LoginBtnTappedAsync);
+            DocumentsBtnMapBtn = new Command(DocTappedAsync);
+            ChecklistBtn = new Command(CheckTappedAsync);
+            ContactBtn = new Command(ContactTappedAsync);
 
         }
 
@@ -102,6 +115,21 @@ namespace KeroKero.ViewModels
         private void RaisePropertyChanged(string v)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(v));
+        }
+
+        private async void DocTappedAsync(object obj)
+        {
+            await Shell.Current.GoToAsync("//MainPage");
+        }
+
+        private async void CheckTappedAsync(object obj)
+        {
+            await Shell.Current.GoToAsync("//MainPage");
+        }
+
+        private async void ContactTappedAsync(object obj)
+        {
+            await Shell.Current.GoToAsync("//MainPage");
         }
     }
 }
