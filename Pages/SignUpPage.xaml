@@ -40,6 +40,10 @@
             <RowDefinition Height="20" />
             <!-- 15 Sign Up  -->
             <RowDefinition Height="Auto" />
+            <!-- 16 Spacing-->
+            <RowDefinition Height="20" />
+            <!-- 17 Return -->
+            <RowDefinition Height="Auto" />
 
         </Grid.RowDefinitions>
         <Label Grid.Row="1"
@@ -129,6 +133,20 @@
             CornerRadius="20"
             Command="{Binding SignUpUser}"
         />
+
+        
+            <Label Grid.Row="17"
+             Text="Return to Login"
+             TextColor="#2D2727"
+             FontSize="17"
+             FontFamily="Inter"
+             HorizontalTextAlignment="Center"
+             VerticalTextAlignment="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ReturnToLoginPage}" />
+                </Label.GestureRecognizers>
+            </Label>
+       
 
     </Grid>
 
