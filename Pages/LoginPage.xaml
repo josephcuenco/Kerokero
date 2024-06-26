@@ -3,76 +3,123 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KeroKero.Pages.LoginPage"
              Title="">
-
-
-    <ScrollView>
-    <Grid Padding="40, 150, 40, 0"
-          HorizontalOptions="FillAndExpand"
-          VerticalOptions="FillAndExpand"
-          RowSpacing="20">
-        
-            <Grid.RowDefinitions>
-            <!-- Title log in -->
+    <Grid BackgroundColor="#FFFFFF" Padding="50">
+        <Grid.RowDefinitions>
+            <!-- 0 Top Spacing -->
+            <RowDefinition Height="120" />
+            <!-- 1 Title log in -->
             <RowDefinition Height="Auto" />
-            <!-- Email textbox -->
+            <!-- 2 Spacing -->
+            <RowDefinition Height="25" />
+            <!-- 3 Title Email -->
             <RowDefinition Height="Auto" />
-            <!-- Password textbox -->
+            <!-- 4 Spacing for email -->
+            <RowDefinition Height="5" />
+            <!-- 5 Email textbox-->
+            <RowDefinition Height="50" />
+            <!-- 6 Spacing-->
+            <RowDefinition Height="15" />
+            <!-- 7 Title password -->
             <RowDefinition Height="Auto" />
-            <!-- log in button -->
+            <!-- 8 Spacing for password-->
+            <RowDefinition Height="5" />
+            <!-- 9 Password Textbox-->
+            <RowDefinition Height="50" />
+            <!-- 10 Spacing -->
+            <RowDefinition Height="35" />
+            <!-- 11 Login Up button -->
             <RowDefinition Height="Auto" />
-            <!-- username/password validity -->
+            <!-- 12 Login Up button -->
             <RowDefinition Height="Auto" />
-            <!-- sign up button -->
+            <!-- 13 Spacing -->
+            <RowDefinition Height="20" />
+            <!-- 14 OR Text -->
             <RowDefinition Height="Auto" />
-
-            </Grid.RowDefinitions>
-
-        <!-- Title log in -->
-            <Label Grid.Row="0"
-            Text="Login"
-            Style="{StaticResource Headline}"
-            SemanticProperties.HeadingLevel="Level1"
-            FontAttributes="Bold"/>
-
-            <!-- Email textbox -->
-            <Entry Grid.Row="1"
-               Text="{Binding UserEmail}"
-               Placeholder="Email"
-               FontSize="20"
-               />
-
-            <!--password textbox -->
-        <Entry Grid.Row="2"
+            <!-- 15 Spacing -->
+            <RowDefinition Height="20" />
+            <!-- 17 Spacing Sign up here  -->
+            <RowDefinition Height="0" />
+            <!-- 18 Sign up here  -->
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="1"
+           Text="Login"
+           SemanticProperties.HeadingLevel="Level1"
+           TextColor="Black"
+           HorizontalTextAlignment="Center"
+           VerticalTextAlignment="Center"
+           FontSize="25"
+           FontFamily="Inter-Bold" 
+       />
+        <Label Grid.Row="3"
+           Text="Email"
+           TextColor="Black"
+           HorizontalTextAlignment="Start"
+           VerticalTextAlignment="Start"
+           FontSize="13"
+           FontFamily="Inter" />
+        <Frame Grid.Row="5"
+            CornerRadius="12" 
+            BackgroundColor="#F2F2F2"
+        />
+        <Entry Grid.Row="5"
+           Text="{Binding UserEmail}"
+           Placeholder="Email"
+           BackgroundColor="Transparent" />
+        <Label Grid.Row="7"
+           Text="Password"
+           TextColor="Black"
+           HorizontalTextAlignment="Start"
+           VerticalTextAlignment="Start"
+           FontSize="13"
+           FontFamily="Inter" />
+        <Frame Grid.Row="9"
+            CornerRadius="12" 
+            BackgroundColor="#F2F2F2"
+        />
+        <Entry Grid.Row="9"
                Text="{Binding UserPassword}" IsPassword="True"
                Placeholder="Password"
-               FontSize="20"/>
+               BackgroundColor="Transparent"
+         />
+        <Button Grid.Row="11"
+            Text="Login"
+            BackgroundColor="#8B8A8A"
+            TextColor="White"
+            FontSize="15"
+            CornerRadius="20"
+            Command="{Binding LoginBtn}" 
 
-        <!--log in button-->
-            <Button Grid.Row="3" 
-                Text="Login" 
-                Command="{Binding LoginBtn}" 
-                FontSize="20"
-                CornerRadius="20"/>
-
-            <!-- login status-->
-        <Label Grid.Row="4"
-               FontSize="15"
-                x:Name="LoginStatusLabel" 
-               TextColor="Red" 
-               HorizontalOptions="CenterAndExpand"/>
-
-        <!-- sign up button-->
-        <Label Grid.Row="5" 
-                Text="Don't have an account? Sign up here"
-               TextColor="blue"
-               HorizontalOptions="CenterAndExpand">
-            
-            <Label.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding SignUpBtn}"/>
-            </Label.GestureRecognizers> 
-        </Label>
+        />
+        <Label Grid.Row="14"
+           Text="OR"
+           TextColor="#797777"
+           HorizontalTextAlignment="Center"
+           VerticalTextAlignment="Center"
+           FontSize="17"
+           FontFamily="Inter" />
+        <BoxView Grid.Row="14"
+          HeightRequest="2"
+          WidthRequest="120"
+          HorizontalOptions="Start"
+          BackgroundColor="#C0C0C0"
+           />
+        <BoxView Grid.Row="14"
+          HeightRequest="2"
+          WidthRequest="120"
+          HorizontalOptions="End"
+          BackgroundColor="#C0C0C0"
+   />
+        <Button Grid.Row="17"
+           Text="Sign Up"
+           BackgroundColor="#8B8A8A"
+           TextColor="white"
+           FontSize="17"
+           FontFamily="Inter"
+           CornerRadius="20"
+           Command="{Binding SignUpBtn}"
+        />
 
     </Grid>
-    </ScrollView>
 
 </ContentPage>
