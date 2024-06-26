@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+//using Windows.Networking;
 
 namespace KeroKero.ViewModels
 {
@@ -67,6 +68,10 @@ namespace KeroKero.ViewModels
                     var serializedContent = JsonConvert.SerializeObject(content);
                     Preferences.Set("FreshFirebaseToken", serializedContent);
                     await Shell.Current.GoToAsync("//MainPage");
+
+                    var mainViewModel = MainViewModel.Instance;
+                    mainViewModel.FullName = $"{auth.User.DisplayName}";
+
                     loginCorrect = true;
                 }
                 catch (Exception ex)
