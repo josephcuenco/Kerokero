@@ -13,10 +13,6 @@
             <RowDefinition Height="100"/>
             <RowDefinition Height="Auto"/>
 
-
-
-
-
         </Grid.RowDefinitions>
         <maps:Map x:Name="map" IsTrafficEnabled="false" IsShowingUser="true" MapType="Street" Grid.Row="0"/>
         <Label x:Name="durationLabel" Grid.Row="1"
