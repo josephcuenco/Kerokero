@@ -18,6 +18,8 @@ namespace KeroKero.ViewModels
         private string password;
         private string firstName;
         private string lastName;
+        private string phone;
+        private string city;
 
         public Command SignUpUser { get; }
         public string Email { get => email; set { 
@@ -49,6 +51,26 @@ namespace KeroKero.ViewModels
             {
                 lastName = value;
                 RaisePropertyChanged("LastName");
+            }
+        }
+
+        //Get the number
+        public string PhoneNumber
+        {
+            get => phone; set
+            {
+                phone = value;
+                RaisePropertyChanged("PhoneNumber");
+            }
+        }
+
+        //Get City
+        public string PResideCity
+        {
+            get => city; set
+            {
+                city = value;
+                RaisePropertyChanged("ResideCity");
             }
         }
 
