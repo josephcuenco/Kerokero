@@ -54,6 +54,7 @@ namespace KeroKero.ViewModels
                 var authProvider = new FirebaseAuthProvider(new FirebaseConfig(webApiKey));
                 var auth = await authProvider.CreateUserWithEmailAndPasswordAsync(Email, Password);
                 string token = auth.FirebaseToken;
+                await App.RealmApp.EmailPasswordAuth.RegisterUserAsync(Email, Password);
                 if (token != null)
                     await App.Current.MainPage.DisplayAlert("Alert", "User Registered successfully", "OK");
                 await this._navigation.PopAsync();

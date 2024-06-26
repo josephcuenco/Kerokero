@@ -2,6 +2,7 @@
 using KeroKero.Pages;
 using Newtonsoft.Json;
 using System;
+using Realms.Sync;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -56,7 +57,9 @@ namespace KeroKero.ViewModels
             var authProvider = new FirebaseAuthProvider(new FirebaseConfig(webApiKey));
             try
             {
+                
                 var auth = await authProvider.SignInWithEmailAndPasswordAsync(UserEmail, UserPassword);
+                var user = await App.RealmApp.LogInAsync(Credentials.EmailPassword(UserEmail, UserPassword));
                 var content = await auth.GetFreshAuthAsync();
                 var serializedContent = JsonConvert.SerializeObject(content);
                 Preferences.Set("FreshFirebaseToken", serializedContent);

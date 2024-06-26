@@ -1,15 +1,24 @@
 using KeroKero.ViewModels;
 using Microsoft.Maui.Controls;
+using Realms;
+using MongoDB;
 using System;
 
 namespace KeroKero.Pages;
 
 public partial class LoginPage : ContentPage
 {
+	
 	public LoginPage()
 	{
+
+        
 		InitializeComponent();
-		BindingContext = new LoginViewModel(Navigation);
+
+		
+
+
+        BindingContext = new LoginViewModel(Navigation);
 	}
 
 
