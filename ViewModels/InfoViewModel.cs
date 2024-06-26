@@ -10,14 +10,14 @@ using System.Threading.Tasks;
 
 namespace KeroKero.ViewModels
 {
-    internal class MainViewModel : INotifyPropertyChanged
+    internal class InfoViewModel : INotifyPropertyChanged
     {
         private INavigation _navigation;
         private string userEmail;
         private string userPassword;
 
         public Command MapBtn { get; }
-        public Command InfoBtn { get; }
+        public Command LoginBtn { get; }
        
         public string UserEmail { get => userEmail;
             set
@@ -41,11 +41,10 @@ namespace KeroKero.ViewModels
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public MainViewModel(INavigation navigation)
+        public InfoViewModel(INavigation navigation)
         {
             this._navigation = navigation;
             MapBtn = new Command(MapBtnTappedAsync);
-            InfoBtn = new Command(InfoBtnTappedAsync);
             //LoginBtn = new Command(LoginBtnTappedAsync);
 
         }
@@ -73,11 +72,6 @@ namespace KeroKero.ViewModels
         private async void MapBtnTappedAsync(object obj)
         {
             await this._navigation.PushAsync(new MapPage());
-        }
-
-        private async void InfoBtnTappedAsync(object obj)
-        {
-            await this._navigation.PushAsync(new InfoPage());
         }
 
         private void RaisePropertyChanged(string v)

@@ -70,12 +70,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Pages\InfoPage.xaml.cs">
+	    <DependentUpon>InfoPage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Pages\MapPage.xaml.cs">
 	    <DependentUpon>MapPage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Pages\InfoPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\MapPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
