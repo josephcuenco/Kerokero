@@ -14,8 +14,11 @@ namespace KeroKero.ViewModels
     {
         private INavigation _navigation;
         public string webApiKey = "AIzaSyCPz-5MixGymeUJlMKwkyhpZ9ynIGTxIRM";
+
         private string email;
         private string password;
+        private string name;
+
         public Command SignUpUser { get; }
         public string Email { get => email; set { 
                 email = value; 
@@ -31,7 +34,19 @@ namespace KeroKero.ViewModels
             }
         }
 
-        
+
+
+        public string Name { get => name;
+            set
+            {
+                name = value;
+                RaisePropertyChanged("Name");
+            }
+        }
+
+
+
+
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -49,19 +64,25 @@ namespace KeroKero.ViewModels
 
         private async void SignUpUserTappedAsync(object obj)
         {
-            try
+            var authProvider = new FirebaseAuthProvider(new FirebaseConfig(webApiKey));
+            bool signUpValid = false;
+
+            while (!signUpValid)
             {
-                var authProvider = new FirebaseAuthProvider(new FirebaseConfig(webApiKey));
-                var auth = await authProvider.CreateUserWithEmailAndPasswordAsync(Email, Password);
-                string token = auth.FirebaseToken;
-                if (token != null)
-                    await App.Current.MainPage.DisplayAlert("Alert", "User Registered successfully", "OK");
-                await this._navigation.PopAsync();
-            }
-            catch (Exception ex)
-            {
-                await App.Current.MainPage.DisplayAlert("Alert", ex.Message, "OK");
-                throw;
+                try
+                {
+                    var auth = await authProvider.CreateUserWithEmailAndPasswordAsync(Email, Password, Name);
+                    string token = auth.FirebaseToken;
+                    if (token != null)
+                        await App.Current.MainPage.DisplayAlert("Alert", "User Registered successfully", "OK");
+                    await this._navigation.PopAsync();
+                    signUpValid = true;
+                }
+                catch (Exception ex)
+                {
+                    await App.Current.MainPage.DisplayAlert("Alert", ex.Message, "OK");
+                    break;
+                }
             }
         }
     }
