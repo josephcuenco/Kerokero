@@ -18,10 +18,13 @@ namespace KeroKero.ViewModels
         //private INavigation _navigation;
         private string userEmail;
         private string userPassword;
+        
 
         public Command SignUpBtn { get; }
         public Command LoginBtn { get; }
-       
+
+        public Command MainBtn { get; }
+
         public string UserEmail { get => userEmail;
             set
             {
@@ -49,6 +52,7 @@ namespace KeroKero.ViewModels
             //this._navigation = navigation;
             SignUpBtn = new Command(SignUpBtnTappedAsync);
             LoginBtn = new Command(LoginBtnTappedAsync);
+            MainBtn = new Command(HomeBtnTappedAsync);
 
         }
 
@@ -92,6 +96,11 @@ namespace KeroKero.ViewModels
         private async void SignUpBtnTappedAsync(object obj)
         {
             await Shell.Current.GoToAsync("//SignUpPage");
+        }
+
+        private async void HomeBtnTappedAsync(object obj)
+        {
+            await Shell.Current.GoToAsync("//MainPage");
         }
 
         private void RaisePropertyChanged(string v)

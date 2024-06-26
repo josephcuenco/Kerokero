@@ -1,12 +1,25 @@
 ﻿using Firebase.Auth;
 using KeroKero.Pages;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Maui.Controls;
+using System;
+using Microsoft.Maui.Controls.Maps;
+using Microsoft.Maui.Maps;
+using Newtonsoft.Json.Linq;
+using System.Diagnostics;
+using System.Net.Http;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using Map = Microsoft.Maui.Controls.Maps.Map;
+using Microsoft.Maui.ApplicationModel;
 
 namespace KeroKero.ViewModels
 {
@@ -15,25 +28,14 @@ namespace KeroKero.ViewModels
         //private INavigation _navigation;
         private string userEmail;
         private string userPassword;
+        private HttpClient _httpClient;
 
         public Command HomeBtn { get; }
         public Command LoginBtn { get; }
        
-        public string UserEmail { get => userEmail;
-            set
-            {
-                userEmail = value;
-                RaisePropertyChanged("UserEmail");
-            }
-        }
 
 
-        public string UserPassword { get => userPassword; set
-            { 
-                userPassword = value;
-                RaisePropertyChanged("UserPassword");
-            }
-        }
+       
 
         
 
@@ -44,39 +46,20 @@ namespace KeroKero.ViewModels
         public MapViewModel()
         {
             //this._navigation = navigation;
-            HomeBtn = new Command(HomeBtnTappedAsync);
-            LoginBtn = new Command(LoginBtnTappedAsync);
+            _httpClient = new HttpClient();
+            var geoR = new GeolocationRequest(GeolocationAccuracy.High, TimeSpan.FromSeconds(10));
+            // var location = await Geolocation.GetLocationAsync(geoR);
+
+            
+
+
 
         }
 
-        
 
-        private async void LoginBtnTappedAsync(object obj)
-        {
-            var authProvider = new FirebaseAuthProvider(new FirebaseConfig(webApiKey));
-            try
-            {
-                var auth = await authProvider.SignInWithEmailAndPasswordAsync(UserEmail, UserPassword);
-                var content = await auth.GetFreshAuthAsync();
-                var serializedContent = JsonConvert.SerializeObject(content);
-                Preferences.Set("FreshFirebaseToken", serializedContent);
-                await Shell.Current.GoToAsync("//MainPage");
-            }
-            catch (Exception ex)
-            {
-                await App.Current.MainPage.DisplayAlert("Alert", ex.Message, "OK");
-                throw;
-            }
-        }
 
-        private async void HomeBtnTappedAsync(object obj)
-        {
-            await Shell.Current.GoToAsync("//MainPage");
-        }
 
-        private void RaisePropertyChanged(string v)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(v));
-        }
+
+
     }
 }
