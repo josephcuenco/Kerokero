@@ -77,7 +77,7 @@ namespace KeroKero.ViewModels
 
         private async void HomeBtnTappedAsync(object obj)
         {
-            await this._navigation.PushAsync(new MainPage());
+            await Shell.Current.GoToAsync("//MainPage");
         }
 
         private void RaisePropertyChanged(string v)

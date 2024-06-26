@@ -58,17 +58,6 @@ namespace KeroKero.ViewModels
         {
             var authProvider = new FirebaseAuthProvider(new FirebaseConfig(webApiKey));
 
-            try
-            {
-                
-                var auth = await authProvider.SignInWithEmailAndPasswordAsync(UserEmail, UserPassword);
-                var user = await App.RealmApp.LogInAsync(Credentials.EmailPassword(UserEmail, UserPassword));
-                var content = await auth.GetFreshAuthAsync();
-                var serializedContent = JsonConvert.SerializeObject(content);
-                Preferences.Set("FreshFirebaseToken", serializedContent);
-                await this._navigation.PushAsync(new MainPage());
-            }
-            catch (Exception ex)
             bool loginCorrect = false;
 
             while (!loginCorrect)
@@ -78,6 +67,8 @@ namespace KeroKero.ViewModels
                 try
                 {
                     var auth = await authProvider.SignInWithEmailAndPasswordAsync(UserEmail, UserPassword);
+                    var user = await App.RealmApp.LogInAsync(Credentials.EmailPassword(UserEmail, UserPassword));
+
                     var content = await auth.GetFreshAuthAsync();
                     var serializedContent = JsonConvert.SerializeObject(content);
                     Preferences.Set("FreshFirebaseToken", serializedContent);

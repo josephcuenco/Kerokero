@@ -91,18 +91,6 @@ namespace KeroKero.ViewModels
 
         private async void SignUpUserTappedAsync(object obj)
         {
-
-            try
-            {
-                var authProvider = new FirebaseAuthProvider(new FirebaseConfig(webApiKey));
-                var auth = await authProvider.CreateUserWithEmailAndPasswordAsync(Email, Password);
-                string token = auth.FirebaseToken;
-                await App.RealmApp.EmailPasswordAuth.RegisterUserAsync(Email, Password);
-                if (token != null)
-                    await App.Current.MainPage.DisplayAlert("Alert", "User Registered successfully", "OK");
-                await this._navigation.PopAsync();
-            }
-            catch (Exception ex)
             var authProvider = new FirebaseAuthProvider(new FirebaseConfig(webApiKey));
             bool signUpValid = false;
 
@@ -113,6 +101,7 @@ namespace KeroKero.ViewModels
                 {
                     var auth = await authProvider.CreateUserWithEmailAndPasswordAsync(Email, Password, $"{FirstName} {LastName}");
                     string token = auth.FirebaseToken;
+                    await App.RealmApp.EmailPasswordAuth.RegisterUserAsync(Email, Password);
                     if (token != null)
                     {
                         await App.Current.MainPage.DisplayAlert("Alert", "User Registered successfully", "OK");
