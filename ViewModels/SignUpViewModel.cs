@@ -76,14 +76,14 @@ namespace KeroKero.ViewModels
             {
                 try
                 {
-                    var auth = await authProvider.CreateUserWithEmailAndPasswordAsync(Email, Password);
+                    var auth = await authProvider.CreateUserWithEmailAndPasswordAsync(Email, Password, $"{FirstName} {LastName}");
                     string token = auth.FirebaseToken;
                     if (token != null)
                     {
                         await App.Current.MainPage.DisplayAlert("Alert", "User Registered successfully", "OK");
 
                         var mainViewModel = MainViewModel.Instance;
-                        mainViewModel.FullName = $"{FirstName} {LastName}";
+                        mainViewModel.FullName = $"{auth.User.DisplayName}";
 
 
                         await Shell.Current.GoToAsync("//LoginPage");
