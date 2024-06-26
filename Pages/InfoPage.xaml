@@ -15,6 +15,12 @@
             Style="{StaticResource Headline}"
             SemanticProperties.HeadingLevel="Level1" />
 
+            <Image Source="construction.png" />
+            <Label
+            Text="Page is currently under construction"
+            Style="{StaticResource SubHeadline}"
+            SemanticProperties.HeadingLevel="Level1" />
+            
             <Button
                 Text="Home" 
                 Command="{Binding HomeBtn}" 
