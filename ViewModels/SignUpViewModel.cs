@@ -85,10 +85,18 @@ namespace KeroKero.ViewModels
         public SignUpViewModel()
         {
             //this._navigation = navigation;
-
             SignUpUser = new Command(SignUpUserTappedAsync);
+            //Direct to the login Page
+            ReturnToLoginPage = new Command(ReturnToLogin);
+
         }
 
+        public Command ReturnToLoginPage { get; set; }
+
+        private async void ReturnToLogin(object obj)
+        {
+            await Shell.Current.GoToAsync("//LoginPage");
+        }
         private async void SignUpUserTappedAsync(object obj)
         {
             var authProvider = new FirebaseAuthProvider(new FirebaseConfig(webApiKey));
