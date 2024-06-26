@@ -25,7 +25,7 @@ public partial class MapPage : ContentPage
 
     protected override async void OnAppearing()
     {
-        base.OnAppearing();
+        //base.OnAppearing();
         var geoR = new GeolocationRequest(GeolocationAccuracy.High, TimeSpan.FromSeconds(10));
         // var location = await Geolocation.GetLocationAsync(geoR);
 
@@ -62,24 +62,33 @@ public partial class MapPage : ContentPage
         map.Pins.Add(origin);
         map.Pins.Add(Kamigamo);
 
+        bool kam = false;
+        bool kin = false;
+
         Kamigamo.MarkerClicked += async (s, e) =>
         {
+            /*kam = true;
+            kin = false;*/
             await DisplayRoute(origin.Location, Kamigamo.Location);
+
         };
         KinugasaJunior.MarkerClicked += async (s, e) =>
         {
+            /*kin = true;
+            kam = false;*/
             await DisplayRoute(origin.Location, KinugasaJunior.Location);
+
         };
+
+        
 
 
     }
-
     private async Task DisplayRoute(Location originLocation, Location destinationLocation)
     {
-        // Construct the Google Directions API URL
         string originCoords = $"{originLocation.Latitude},{originLocation.Longitude}";
         string destinationCoords = $"{destinationLocation.Latitude},{destinationLocation.Longitude}";
-        string apiKey = "AIzaSyBY8pIiPG1tZkFeBU7EVjHTCGjZcaJRyLs";  // Replace with your actual API key
+        string apiKey = "AIzaSyBY8pIiPG1tZkFeBU7EVjHTCGjZcaJRyLs";
         string url = $"https://maps.googleapis.com/maps/api/directions/json?origin={originCoords}&destination={destinationCoords}&key={apiKey}";
 
         try
@@ -94,32 +103,25 @@ public partial class MapPage : ContentPage
                 var route = directions["routes"].FirstOrDefault();
                 if (route != null)
                 {
-                    
                     var legs = route["legs"].FirstOrDefault();
-                    
                     if (legs != null)
                     {
                         var durationText = legs["duration"]?["text"]?.ToString();
                         Debug.WriteLine($"Duration: {durationText}");
-
-                  
 
                         Device.BeginInvokeOnMainThread(() =>
                         {
                             durationLabel.Text = $"Duration: {durationText}";
                             durationLabel.IsVisible = true;
                         });
-                        var steps = legs["steps"];
 
+                        var steps = legs["steps"];
                         var polylineCoordinates = new List<Location>();
-                        var d = new List<string>();
 
                         foreach (var step in steps)
                         {
                             var polyline = step["polyline"]["points"].ToString();
                             var locations = DecodePolyline(polyline);
-                            var direct = step["maneuver"].ToString();
-                            d.Append(direct);
                             polylineCoordinates.AddRange(locations);
                         }
 
@@ -134,10 +136,13 @@ public partial class MapPage : ContentPage
                             mapPolyline.Geopath.Add(position);
                         }
 
-                        
+                        Device.BeginInvokeOnMainThread(() =>
+                        {
+                            map.MapElements.Clear();
+                            map.MapElements.Add(mapPolyline);
+                        });
 
-                        // Add the polyline to the map
-                        map.MapElements.Add(mapPolyline);
+                        Debug.WriteLine($"Polyline added with {mapPolyline.Geopath.Count} points.");
                     }
                 }
             }
@@ -151,6 +156,7 @@ public partial class MapPage : ContentPage
             Debug.WriteLine($"Exception: {ex.Message}");
         }
     }
+
 
 
     public List<Location> DecodePolyline(string encodedPoints)

@@ -41,11 +41,11 @@
             <RowDefinition Height="0" />
             <!-- 18 Sign up here  -->
             <RowDefinition Height="Auto" />
-            <!-- 19 Space  -->
-            <RowDefinition Height="15" />
-            <!-- 20 By Pass -->
+
+            <!-- 19 Spacing -->
+            <RowDefinition Height="20" />
+            <!-- 20 Home here  -->
             <RowDefinition Height="Auto" />
-            
         </Grid.RowDefinitions>
         <Label Grid.Row="1"
            Text="Login"
@@ -124,7 +124,7 @@
            CornerRadius="20"
            Command="{Binding SignUpBtn}"
         />
-
+        
         <Button Grid.Row="19"
            Text="By Pass Login"
            BackgroundColor="White"
