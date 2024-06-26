@@ -6,17 +6,28 @@
              Title="">
 
     <Grid>
-        <maps:Map x:Name="map" IsTrafficEnabled="false" IsShowingUser="true" MapType="Street"/>
-        <Label x:Name="durationLabel"
+        <Grid.RowDefinitions>
+            <RowDefinition Height="600"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="Auto"/>
+
+
+
+
+
+        </Grid.RowDefinitions>
+        <maps:Map x:Name="map" IsTrafficEnabled="false" IsShowingUser="true" MapType="Street" Grid.Row="0"/>
+        <Label x:Name="durationLabel" Grid.Row="1"
            Text="Duration: "
            FontSize="20"
            TextColor="Black"
            BackgroundColor="White"
            Padding="10"
-           HorizontalOptions="Center"
            VerticalOptions="Start"
-           IsVisible="False" />
-        <Label x:Name="directions"
+           IsVisible="True" />
+        <!--<Label x:Name="directions" Grid.Row="2"
             Text="Direction: "
             FontSize="20"
             TextColor="Black"
@@ -25,8 +36,8 @@
             
             HorizontalOptions="Center"
             VerticalOptions="Start"
-            IsVisible="False" />
-        <Button
+            IsVisible="True" />-->
+        <Button Grid.Row="2"
             Text="Home" 
             Command="{Binding HomeBtn}" 
             FontSize="20"

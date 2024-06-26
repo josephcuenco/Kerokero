@@ -18,6 +18,6 @@ public partial class InfoPage : ContentPage
     public InfoPage()
     {
         InitializeComponent();
-        BindingContext = new InfoViewModel(Navigation);
+        BindingContext = new InfoViewModel();
     }
 }

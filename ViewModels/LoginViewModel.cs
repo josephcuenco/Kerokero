@@ -1,5 +1,6 @@
 ﻿using Firebase.Auth;
 using KeroKero.Pages;
+using Microsoft.Maui.Layouts;
 using Newtonsoft.Json;
 using System;
 using Realms.Sync;
@@ -8,12 +9,13 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+//using Windows.Networking;
 
 namespace KeroKero.ViewModels
 {
     internal class LoginViewModel : INotifyPropertyChanged
     {
-        private INavigation _navigation;
+        //private INavigation _navigation;
         private string userEmail;
         private string userPassword;
 
@@ -42,9 +44,9 @@ namespace KeroKero.ViewModels
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public LoginViewModel(INavigation navigation)
+        public LoginViewModel()
         {
-            this._navigation = navigation;
+            //this._navigation = navigation;
             SignUpBtn = new Command(SignUpBtnTappedAsync);
             LoginBtn = new Command(LoginBtnTappedAsync);
 
@@ -55,6 +57,7 @@ namespace KeroKero.ViewModels
         private async void LoginBtnTappedAsync(object obj)
         {
             var authProvider = new FirebaseAuthProvider(new FirebaseConfig(webApiKey));
+
             try
             {
                 
@@ -66,15 +69,38 @@ namespace KeroKero.ViewModels
                 await this._navigation.PushAsync(new MainPage());
             }
             catch (Exception ex)
+            bool loginCorrect = false;
+
+            while (!loginCorrect)
+
             {
-                await App.Current.MainPage.DisplayAlert("Alert", ex.Message, "OK");
-                throw;
+
+                try
+                {
+                    var auth = await authProvider.SignInWithEmailAndPasswordAsync(UserEmail, UserPassword);
+                    var content = await auth.GetFreshAuthAsync();
+                    var serializedContent = JsonConvert.SerializeObject(content);
+                    Preferences.Set("FreshFirebaseToken", serializedContent);
+                    await Shell.Current.GoToAsync("//MainPage");
+
+                    var mainViewModel = MainViewModel.Instance;
+                    mainViewModel.FullName = $"{auth.User.DisplayName}";
+
+                    loginCorrect = true;
+                }
+                catch (Exception ex)
+                {
+                    await App.Current.MainPage.DisplayAlert("Alert", ex.Message, "OK");
+                    UserEmail = string.Empty;
+                    UserPassword = string.Empty;
+                    break;
+                }
             }
         }
 
         private async void SignUpBtnTappedAsync(object obj)
         {
-            await this._navigation.PushAsync(new SignUpPage());
+            await Shell.Current.GoToAsync("//SignUpPage");
         }
 
         private void RaisePropertyChanged(string v)

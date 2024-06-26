@@ -2,26 +2,134 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KeroKero.Pages.SignUpPage"
-             Title="SignUpPage"
-             NavigationPage.HasNavigationBar="False">
-    
-    <VerticalStackLayout Padding="30" Spacing="10">
+             Title=""
+             >
 
-        <Entry Text="{Binding Email}" 
-               Placeholder="Username" />
-        
-        <Entry Text="{Binding Password}" 
-               Placeholder="Password" IsPassword="True" />
-        
-        <!--<Entry Text="{Binding ConfirmPassword}" 
-               Placeholder="Confirm Password" IsPassword="True"/> -->
-        
-        <Button Text="Sign up" 
-                Command="{Binding SignUpUser}" />
-        
-        <Label x:Name="SignUpStatusLabel" TextColor="Red" />
+    <Grid BackgroundColor="#FFFFFF" Padding="50">
+        <Grid.RowDefinitions>
+            <!-- 0 Top Spacing -->
+            <RowDefinition Height="50" />
+            <!-- 1 Create an account -->
+            <RowDefinition Height="Auto" />
+            <!-- 2 Spacing -->
+            <RowDefinition Height="20" />
+            <!-- 3 Question 1 -->
+            <RowDefinition Height="Auto" />
+            <!-- 4 Spacing -->
+            <RowDefinition Height="20" />
+            <!-- 5 Question 2 -->
+            <RowDefinition Height="Auto" />
+            <!-- 6 Spacing -->
+            <RowDefinition Height="20" />
+            <!-- 7 Question 3 -->
+            <RowDefinition Height="50" />
+            <!-- 8 Spacing-->
+            <RowDefinition Height="20" />
+            <!-- 9 Question 4-->
+            <RowDefinition Height="50" />
+            <!-- 10 Spacing -->
+            <RowDefinition Height="20" />
+            <!--Drop down menu-->
+            <!-- 11 Question 5-->
+            <RowDefinition Height="50" />
+            <!-- 12 Spacing -->
+            <RowDefinition Height="20" />
+            <!-- 13 Question 6 -->
+            <RowDefinition Height="Auto" />
+            <!-- 14 Spacing -->
+            <RowDefinition Height="20" />
+            <!-- 15 Sign Up  -->
+            <RowDefinition Height="Auto" />
+
+        </Grid.RowDefinitions>
+        <Label Grid.Row="1"
+            Text="Create an account"
+            SemanticProperties.HeadingLevel="Level1"
+            TextColor="Black"
+            HorizontalTextAlignment="Center"
+            VerticalTextAlignment="Center"
+            FontSize="25"
+            FontFamily="Inter-Bold" 
+        />
+
+        <Frame Grid.Row="3"
+            CornerRadius="10" 
+            BackgroundColor="#F2F2F2"
+        />
+
+        <Entry Grid.Row="3"
+           Text="{Binding FirstName}" 
+           Placeholder="What is your first name?"
+           BackgroundColor="Transparent"
+        />
+
+        <Frame Grid.Row="5"
+                CornerRadius="10" 
+                BackgroundColor="#F2F2F2"
+         />
+
+        <Entry Grid.Row="5"
+               Text="{Binding LastName}" 
+               Placeholder="What is your last name?"
+               BackgroundColor="Transparent"
+            />
+
+        <Frame Grid.Row="7"
+            CornerRadius="10" 
+            BackgroundColor="#F2F2F2"
+        />
+
+        <Entry Grid.Row="7"
+           Text="{Binding Email}"
+           Placeholder="Enter your email"
+           BackgroundColor="Transparent"
+        />
 
 
-    </VerticalStackLayout>
-    
-</ContentPage>
+        <Frame Grid.Row="9"
+            CornerRadius="10" 
+            BackgroundColor="#F2F2F2"
+        />
+
+        <Entry Grid.Row="9"
+           Text="{Binding PhoneNumber}"
+           Placeholder="Enter your phone number"
+           BackgroundColor="Transparent"
+        />
+
+        <Frame Grid.Row="11"
+            CornerRadius="10" 
+            BackgroundColor="#F2F2F2"
+        />
+
+        <Entry Grid.Row="11"
+           Text="{Binding ResideCity}"
+           Placeholder="What city do you reside in?"
+           BackgroundColor="Transparent"
+        />
+
+        <Frame Grid.Row="13"
+            CornerRadius="10" 
+            BackgroundColor="#F2F2F2"
+        />
+
+        <Entry Grid.Row="13"
+           Text="{Binding Password}"
+           Placeholder="Password"
+           BackgroundColor="Transparent"
+        />
+
+
+        <Button Grid.Row="15"
+            Text="Sign Up"
+            BackgroundColor="#8B8A8A"
+            TextColor="white"
+            FontSize="17"
+            FontFamily="Inter"
+            CornerRadius="20"
+            Command="{Binding SignUpUser}"
+        />
+
+    </Grid>
+
+</ContentPage> 

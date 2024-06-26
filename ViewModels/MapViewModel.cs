@@ -12,7 +12,7 @@ namespace KeroKero.ViewModels
 {
     internal class MapViewModel : INotifyPropertyChanged
     {
-        private INavigation _navigation;
+        //private INavigation _navigation;
         private string userEmail;
         private string userPassword;
 
@@ -41,9 +41,9 @@ namespace KeroKero.ViewModels
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public MapViewModel(INavigation navigation)
+        public MapViewModel()
         {
-            this._navigation = navigation;
+            //this._navigation = navigation;
             HomeBtn = new Command(HomeBtnTappedAsync);
             LoginBtn = new Command(LoginBtnTappedAsync);
 
@@ -60,7 +60,7 @@ namespace KeroKero.ViewModels
                 var content = await auth.GetFreshAuthAsync();
                 var serializedContent = JsonConvert.SerializeObject(content);
                 Preferences.Set("FreshFirebaseToken", serializedContent);
-                await this._navigation.PushAsync(new MainPage());
+                await Shell.Current.GoToAsync("//MainPage");
             }
             catch (Exception ex)
             {
@@ -71,7 +71,7 @@ namespace KeroKero.ViewModels
 
         private async void HomeBtnTappedAsync(object obj)
         {
-            await this._navigation.PushAsync(new MainPage());
+            await Shell.Current.GoToAsync("//MainPage");
         }
 
         private void RaisePropertyChanged(string v)

@@ -1,5 +1,4 @@
 ﻿using Firebase.Auth;
-//using Firebase.Auth.Providers;
 using KeroKero.Pages;
 using System;
 using System.Collections.Generic;
@@ -12,10 +11,16 @@ namespace KeroKero.ViewModels
 {
     internal class SignUpViewModel : INotifyPropertyChanged
     {
-        private INavigation _navigation;
+        //private INavigation _navigation;
         public string webApiKey = "AIzaSyCPz-5MixGymeUJlMKwkyhpZ9ynIGTxIRM";
+
         private string email;
         private string password;
+        private string firstName;
+        private string lastName;
+        private string phone;
+        private string city;
+
         public Command SignUpUser { get; }
         public string Email { get => email; set { 
                 email = value; 
@@ -31,7 +36,44 @@ namespace KeroKero.ViewModels
             }
         }
 
-        
+
+
+        public string FirstName { get => firstName;
+            set
+            {
+                firstName = value;
+                RaisePropertyChanged("FirstName");
+            }
+        }
+
+        public string LastName { get => lastName;
+            set
+            {
+                lastName = value;
+                RaisePropertyChanged("LastName");
+            }
+        }
+
+        //Get the number
+        public string PhoneNumber
+        {
+            get => phone; set
+            {
+                phone = value;
+                RaisePropertyChanged("PhoneNumber");
+            }
+        }
+
+        //Get City
+        public string PResideCity
+        {
+            get => city; set
+            {
+                city = value;
+                RaisePropertyChanged("ResideCity");
+            }
+        }
+
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -40,15 +82,16 @@ namespace KeroKero.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(v));
         }
 
-        public SignUpViewModel(INavigation navigation)
+        public SignUpViewModel()
         {
-            this._navigation = navigation;
+            //this._navigation = navigation;
 
             SignUpUser = new Command(SignUpUserTappedAsync);
         }
 
         private async void SignUpUserTappedAsync(object obj)
         {
+
             try
             {
                 var authProvider = new FirebaseAuthProvider(new FirebaseConfig(webApiKey));
@@ -60,9 +103,33 @@ namespace KeroKero.ViewModels
                 await this._navigation.PopAsync();
             }
             catch (Exception ex)
+            var authProvider = new FirebaseAuthProvider(new FirebaseConfig(webApiKey));
+            bool signUpValid = false;
+
+            while (!signUpValid)
+
             {
-                await App.Current.MainPage.DisplayAlert("Alert", ex.Message, "OK");
-                throw;
+                try
+                {
+                    var auth = await authProvider.CreateUserWithEmailAndPasswordAsync(Email, Password, $"{FirstName} {LastName}");
+                    string token = auth.FirebaseToken;
+                    if (token != null)
+                    {
+                        await App.Current.MainPage.DisplayAlert("Alert", "User Registered successfully", "OK");
+
+                        var mainViewModel = MainViewModel.Instance;
+                        mainViewModel.FullName = $"{auth.User.DisplayName}";
+
+
+                        await Shell.Current.GoToAsync("//LoginPage");
+                    }
+                    signUpValid = true;
+                }
+                catch (Exception ex)
+                {
+                    await App.Current.MainPage.DisplayAlert("Alert", ex.Message, "OK");
+                    break;
+                }
             }
         }
     }

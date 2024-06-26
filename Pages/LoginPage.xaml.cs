@@ -15,10 +15,8 @@ public partial class LoginPage : ContentPage
         
 		InitializeComponent();
 
-		
+		BindingContext = new LoginViewModel();
 
-
-        BindingContext = new LoginViewModel(Navigation);
 	}
 
 
