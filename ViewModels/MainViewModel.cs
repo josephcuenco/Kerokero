@@ -12,12 +12,13 @@ namespace KeroKero.ViewModels
 {
     internal class MainViewModel : INotifyPropertyChanged
     {
-        private INavigation _navigation;
+       // private INavigation _navigation;
         private string userEmail;
         private string userPassword;
 
         public Command MapBtn { get; }
         public Command InfoBtn { get; }
+
        
         public string UserEmail { get => userEmail;
             set
@@ -41,9 +42,9 @@ namespace KeroKero.ViewModels
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public MainViewModel(INavigation navigation)
+        public MainViewModel()
         {
-            this._navigation = navigation;
+            //this._navigation = navigation;
             MapBtn = new Command(MapBtnTappedAsync);
             InfoBtn = new Command(InfoBtnTappedAsync);
             //LoginBtn = new Command(LoginBtnTappedAsync);
@@ -72,12 +73,12 @@ namespace KeroKero.ViewModels
 
         private async void MapBtnTappedAsync(object obj)
         {
-            await this._navigation.PushAsync(new MapPage());
+            await Shell.Current.GoToAsync("//MapPage");
         }
 
         private async void InfoBtnTappedAsync(object obj)
         {
-            await this._navigation.PushAsync(new InfoPage());
+            await Shell.Current.GoToAsync("//InfoPage");
         }
 
         private void RaisePropertyChanged(string v)

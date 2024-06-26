@@ -1,5 +1,4 @@
 ﻿using Firebase.Auth;
-//using Firebase.Auth.Providers;
 using KeroKero.Pages;
 using System;
 using System.Collections.Generic;
@@ -12,12 +11,13 @@ namespace KeroKero.ViewModels
 {
     internal class SignUpViewModel : INotifyPropertyChanged
     {
-        private INavigation _navigation;
+        //private INavigation _navigation;
         public string webApiKey = "AIzaSyCPz-5MixGymeUJlMKwkyhpZ9ynIGTxIRM";
 
         private string email;
         private string password;
-        private string name;
+        private string firstName;
+        private string lastName;
 
         public Command SignUpUser { get; }
         public string Email { get => email; set { 
@@ -36,16 +36,21 @@ namespace KeroKero.ViewModels
 
 
 
-        public string Name { get => name;
+        public string FirstName { get => firstName;
             set
             {
-                name = value;
-                RaisePropertyChanged("Name");
+                firstName = value;
+                RaisePropertyChanged("FirstName");
             }
         }
 
-
-
+        public string LastName { get => lastName;
+            set
+            {
+                lastName = value;
+                RaisePropertyChanged("LastName");
+            }
+        }
 
 
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -55,9 +60,9 @@ namespace KeroKero.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(v));
         }
 
-        public SignUpViewModel(INavigation navigation)
+        public SignUpViewModel()
         {
-            this._navigation = navigation;
+            //this._navigation = navigation;
 
             SignUpUser = new Command(SignUpUserTappedAsync);
         }
@@ -71,11 +76,11 @@ namespace KeroKero.ViewModels
             {
                 try
                 {
-                    var auth = await authProvider.CreateUserWithEmailAndPasswordAsync(Email, Password, Name);
+                    var auth = await authProvider.CreateUserWithEmailAndPasswordAsync(Email, Password);
                     string token = auth.FirebaseToken;
                     if (token != null)
                         await App.Current.MainPage.DisplayAlert("Alert", "User Registered successfully", "OK");
-                    await this._navigation.PopAsync();
+                    await Shell.Current.GoToAsync("//LoginPage");
                     signUpValid = true;
                 }
                 catch (Exception ex)

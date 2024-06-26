@@ -13,7 +13,7 @@ namespace KeroKero.ViewModels
 {
     internal class LoginViewModel : INotifyPropertyChanged
     {
-        private INavigation _navigation;
+        //private INavigation _navigation;
         private string userEmail;
         private string userPassword;
 
@@ -42,9 +42,9 @@ namespace KeroKero.ViewModels
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public LoginViewModel(INavigation navigation)
+        public LoginViewModel()
         {
-            this._navigation = navigation;
+            //this._navigation = navigation;
             SignUpBtn = new Command(SignUpBtnTappedAsync);
             LoginBtn = new Command(LoginBtnTappedAsync);
 
@@ -66,7 +66,7 @@ namespace KeroKero.ViewModels
                     var content = await auth.GetFreshAuthAsync();
                     var serializedContent = JsonConvert.SerializeObject(content);
                     Preferences.Set("FreshFirebaseToken", serializedContent);
-                    await this._navigation.PushAsync(new MainPage());
+                    await Shell.Current.GoToAsync("//MainPage");
                     loginCorrect = true;
                 }
                 catch (Exception ex)
@@ -81,7 +81,7 @@ namespace KeroKero.ViewModels
 
         private async void SignUpBtnTappedAsync(object obj)
         {
-            await this._navigation.PushAsync(new SignUpPage());
+            await Shell.Current.GoToAsync("//SignUpPage");
         }
 
         private void RaisePropertyChanged(string v)
