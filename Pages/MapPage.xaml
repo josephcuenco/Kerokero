@@ -21,7 +21,8 @@
             FontSize="20"
             TextColor="Black"
             BackgroundColor="White"
-            Padding="10"
+            Padding="20"
+            
             HorizontalOptions="Center"
             VerticalOptions="Start"
             IsVisible="False" />
