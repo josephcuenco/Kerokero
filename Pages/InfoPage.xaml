@@ -14,6 +14,12 @@
             Text="Welcome to the Information Page"
             Style="{StaticResource Headline}"
             SemanticProperties.HeadingLevel="Level1" />
+
+            <Button
+                Text="Home" 
+                Command="{Binding HomeBtn}" 
+                FontSize="20"
+                CornerRadius="20"/>
         </VerticalStackLayout>
     </ScrollView>
 

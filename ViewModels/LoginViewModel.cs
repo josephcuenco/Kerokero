@@ -3,6 +3,7 @@ using KeroKero.Pages;
 using Microsoft.Maui.Layouts;
 using Newtonsoft.Json;
 using System;
+using Realms.Sync;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -56,9 +57,22 @@ namespace KeroKero.ViewModels
         private async void LoginBtnTappedAsync(object obj)
         {
             var authProvider = new FirebaseAuthProvider(new FirebaseConfig(webApiKey));
+
+            try
+            {
+                
+                var auth = await authProvider.SignInWithEmailAndPasswordAsync(UserEmail, UserPassword);
+                var user = await App.RealmApp.LogInAsync(Credentials.EmailPassword(UserEmail, UserPassword));
+                var content = await auth.GetFreshAuthAsync();
+                var serializedContent = JsonConvert.SerializeObject(content);
+                Preferences.Set("FreshFirebaseToken", serializedContent);
+                await this._navigation.PushAsync(new MainPage());
+            }
+            catch (Exception ex)
             bool loginCorrect = false;
 
             while (!loginCorrect)
+
             {
 
                 try
