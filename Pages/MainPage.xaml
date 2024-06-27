@@ -116,10 +116,6 @@
            HorizontalTextAlignment="Center"
            VerticalTextAlignment="Center"/>
 
-
-        <Button Text="Map" Grid.Row="9"  Command="{Binding MapBtn}" BackgroundColor="#D9D9D9" TextColor="Black"/>
-        <Button Text="Info" Grid.Row="11" Command="{Binding InfoBtn}" BackgroundColor="#D9D9D9" TextColor="Black"/>
-
     </Grid>
     
 

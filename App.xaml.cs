@@ -19,11 +19,12 @@ public partial class App : Application
         Routing.RegisterRoute("MapPage", typeof(KeroKero.Pages.MapPage));
         Routing.RegisterRoute("InfoPage", typeof(KeroKero.Pages.InfoPage));
     }
-        protected override void OnStart()
-        {
+
+    protected override void OnStart()
+    {
         // Set the initial route to login
         Shell.Current.GoToAsync("//LoginPage");
-        }
+    }
 
     protected override void OnSleep() { }
 

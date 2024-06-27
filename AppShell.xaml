@@ -8,26 +8,97 @@
     Shell.FlyoutBehavior="Disabled"
     Title="KeroKero">
 
+    <!-- Header -->
+    <Shell.TitleView>
+        <Grid
+        RowSpacing="8"
+        ColumnSpacing="8"
+        HorizontalOptions="Fill">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <ImageButton
+                Grid.Row="0" Grid.Column="0"
+                Source="person.png"
+                HeightRequest="30"
+                WidthRequest="30"
+                Command="{Binding ProfileBtn}"/>
+            <Label
+                Grid.Row="0" Grid.Column="1"
+                Text="Kero&lt;span&gt;&lt;strong&gt;Kero&lt;/strong&gt;&lt;/span&gt;"
+                TextType="Html"
+                FontSize="Subtitle"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"/>
+
+            <ImageButton
+                Grid.Row="0" Grid.Column="2"
+                Source="settings.png"
+                HeightRequest="30"
+                WidthRequest="30"
+                Command="{Binding SettingsBtn}"/>
+
+        </Grid>
+    </Shell.TitleView>
+
     <!-- Home, Login, and SignUp pages can be defined here if needed for navigation -->
+    <!--
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
-
+    -->
     <ShellContent
         Title="Login"
         ContentTemplate="{DataTemplate local:LoginPage}"
         Route="LoginPage" />
-
     <ShellContent
         Title="SignUp"
         ContentTemplate="{DataTemplate local:SignUpPage}"
         Route="SignUpPage" />
+    <ShellContent
+        Title="Phonebook"
+        ContentTemplate="{DataTemplate local:PhonebookPage}"
+        Route="PhonebookPage" />
+    <ShellContent
+        Title="Profile"
+        ContentTemplate="{DataTemplate local:ProfilePage}"
+        Route="ProfilePage" />
+    <ShellContent
+        Title="Settings"
+        ContentTemplate="{DataTemplate local:SettingsPage}"
+        Route="SettingsPage" />
+
+
 
     <!-- TabBar for the bottom navigation bar -->
     <TabBar>
-        <ShellContent Title="Map" ContentTemplate="{DataTemplate local:MapPage}" Route="MapPage"/>
-        <ShellContent Title="Info" ContentTemplate="{DataTemplate local:InfoPage}" Route="InfoPage"/>
+
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage"
+            Icon="{OnPlatform 'home.png'}"/>
+        
+        <ShellContent
+            Title="Map"
+            ContentTemplate="{DataTemplate local:MapPage}"
+            Route="MapPage"
+            Icon="{OnPlatform 'map.png'}" />
+
+        <ShellContent
+            Title="Info"
+            ContentTemplate="{DataTemplate local:InfoPage}"
+            Route="InfoPage"
+            Icon="{OnPlatform 'lightbulb.png'}" />
+
     </TabBar>
 
 </Shell>
