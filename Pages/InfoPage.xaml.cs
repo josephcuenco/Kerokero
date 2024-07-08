@@ -8,7 +8,6 @@ using System.Diagnostics;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Collections.Generic;
-using Map = Microsoft.Maui.Controls.Maps.Map;
 
 namespace KeroKero.Pages;
 

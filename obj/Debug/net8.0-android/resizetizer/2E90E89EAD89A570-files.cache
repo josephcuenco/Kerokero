@@ -1,4 +1,14 @@
-﻿obj\Debug\net8.0-android\resizetizer\r\mipmap-anydpi-v26\appicon.xml
+﻿obj\Debug\net8.0-android\resizetizer\r\drawable\circle.png
+obj\Debug\net8.0-android\resizetizer\r\drawable\construction.png
+obj\Debug\net8.0-android\resizetizer\r\drawable\folder.png
+obj\Debug\net8.0-android\resizetizer\r\drawable\home.png
+obj\Debug\net8.0-android\resizetizer\r\drawable\lightbulb.png
+obj\Debug\net8.0-android\resizetizer\r\drawable\list.png
+obj\Debug\net8.0-android\resizetizer\r\drawable\map.png
+obj\Debug\net8.0-android\resizetizer\r\drawable\person.png
+obj\Debug\net8.0-android\resizetizer\r\drawable\phone.png
+obj\Debug\net8.0-android\resizetizer\r\drawable\settings.png
+obj\Debug\net8.0-android\resizetizer\r\mipmap-anydpi-v26\appicon.xml
 obj\Debug\net8.0-android\resizetizer\r\mipmap-anydpi-v26\appicon_round.xml
 obj\Debug\net8.0-android\resizetizer\r\mipmap-hdpi\appicon.png
 obj\Debug\net8.0-android\resizetizer\r\mipmap-hdpi\appicon_background.png

@@ -67,8 +67,28 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <StackLayout Grid.Column="0" Spacing="0">
-                <Image Source="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAe1BMVEX///8AAADn5+eEhISgoKC2trb09PRYWFgGBgZKSkqjo6Pv7+85OTmampqnp6fs7OwqKiqTk5Otra2MjIze3t4YGBjV1dXKyspTU1PCwsIgICB6enplZWVfX1/c3Ny+vr5tbW1BQUFNTU1xcXE0NDQnJycRERGHh4cdHR2r0yQxAAAFvklEQVR4nO2d61rqOhBAKZe6RSi0RUC5i4jv/4SniFu3TqBhMpd8PbP+m2SZtE2mQ6fVQpG2J7OnTa9XFFnW/6LroP+T7CfFJ23cMLiYZKvHhJi7jbbVF5N8QG13ZlBoq30wm/PonR1n2nqt6Quj34lOqurXXjL7VQzWioLFG79gRU/LL12J+FWUOoJtphuoi63GxTh7lhNMkpcHccGppF/FWHqLMxEWTJI/srfUtugS/UT04X+vIJgkT3KCRxXBJBHbij8pCSaJ0E481bgIP8lEDPMrIxjvdvPVcrncLzrHivKD/IOhk1/H4azuoCKh2L7U+bw/JWi+V3OS7hL0UcPe3fOe6nmVvl5XHBL1cxH3FO4IH1Z1u4mcrisnpXMCSbu4dqELzKLAf3VUd+xkncWNRIe1B09OxS3sbkneifNKEFJMHQuIvpes1pDv2O9YpAxRFNelIKW4AD3dM/Qy8zBkUkxhbIYjEOZlyHMtwsf9gSNG5Bki4ZhFaLhl6MU7CMSgCA1Z9vreYS76hQoNWeJDa19D+g0cNGQJ1d4QyaOeRWhI3MGZW2KVxIpChhcP2S5oF2qMhrSzGKUh6SzGaUgZuxEyfLjRkPCpHKshnWK0hmSKQobp7YZUAf+IDYmOccDwjaTZ36AMad5MAcNHilYhf9QU4zakeEssZYjNRAp/NQQM3wl0HKAzOYMVgeGYwgeCNnycBPYsZYh/y3wITC2K3zAZhEUdpAzHeMNkFdSzlGHNa+DrdEJ6ljIMS3sM2YVLGQbmXAU8M6QMA5PHX/F3GynDuzDDZIHuWcowOEEefZQChgNKr28u5OzcAHadShnCF7G3gk0ukDLsBBtiT1JShvXJGLUgtzZShh7JGHW847bgUoYp8pD/L7jHvpQhRRoyLitczLDVDzbE7U7lDFtFqCHupZugYWsSuHU7onqVNKzuN+efTveybDgc5sdjZ7FYbCtWq9XdfD6/r9hVXDDEHROB4Y5YCsPavccjMuTIarudiSshtVGGzvtSwwwdik0zhIGPxhkOG28IlmnjDHuNNwR79cYZgszpxhmCrFszdBOxIchJNUM3ZqgIGJoZejZjhnKYIbaZ5hveEY8TjxlimzFDOcwQ24wZyjEyQz/MUBEz9MQMFTFDT8xQETP0xAwVab4h+HW0GboxQ0XM0BMzVMQMPTFDRczQEzNUxAw9MUNFzNCTiA3Bl5eaZ/j7J4tm6MYMFTFDT/6Hhi/E48TDZRhP5p4ZemKGipihJ2aoiBl6YoaKmKEnZqiIGXpihoqYoSdmqAiXYQzfiTrDZcj6ra+bMENPzFARM/TEDBUxQ0/MUBEz9ETqu/oIzNATM1Sk+YZceW1mKIcZemKGinAZPhOPEw+XIVMNSwTNN+T6pbMZysFlyFPTGYMZemKGinB9r80M5TBDbDPxGHJ9z9sM5eCqHICu90kOV32LJLRaOxlcdWaSgnigaEBxVirDPfFA0YBy7FSGAQWiSVmDkeEMU1i4HlcMkxxYXxdn6Ci2jKxKS0x6AAPr41oCdaPQpYVpATXJkmSNa2kEy9geaMeKAt4f8G+nHcVBkQuekjkcVYlty1XiVf2Z6CrjjSt43HJ8nOEEuho9DbljSAEpFM7C7uglQcHWNaIuvj1wSvlgqbY/ne6cAwppculsMSlHVGO+hYlzSQUuKnAQ+5rHjbBku+e4h54JG8mFf9uJw75TlmWe58PhsH+m+KSH5O/fn1vrnqo753lZHjvbKxXmA67CE6PHy03HwSD0OLDRNqgD/Sz84so6jQFc3fgfpK/aEteYhwteuZ9GwPiBwhBGtuKBau8RrSLyWOjAcRaOgOfw2+g3Mc7ioE0oWG2aBtpCv1mSB/5cJ09FMmq/itlO2+obrgNc8a5tdmbAF/JLCxglFmfOHJee7VUn8nlB+Yi4QDrr3KvYve0WT2JvTkbTTZH1u0L0s6I3W7dxe9D/AAGCZ9IfK3sPAAAAAElFTkSuQmCC" Height="100" Width="100" />
+
+            <Frame
+                BorderColor="DarkSlateGray"
+                BackgroundColor="White"
+                CornerRadius="10">
+                <Frame.Shadow>
+                    <Shadow Brush="Black"
+                            Offset="0,12"
+                            Radius="3"
+                            Opacity="0.8"/>
+                </Frame.Shadow>
+                    
+                <ImageButton Grid.Column="0" Grid.Row="18"
+                    Source="folder.png" Height="100" Width="100"
+                    Command="{Binding DocumentsBtn}" />
+
+                <!--<Label Text="Important Documents" TextColor="#2D2727" FontSize="14" HorizontalTextAlignment="Center" />-->
+            
+            </Frame>
+
+            <StackLayout Grid.Column="1" Spacing="0">
+                <Image Source="phone.png" Height="100" Width="100" />
                 <Button Grid.Row="19"
                    Text="Important Documents"
                    BackgroundColor="White"
@@ -76,26 +96,15 @@
                    FontSize="12"
                    FontFamily="Inter"
                    CornerRadius="20"
-                   Command="{Binding DocumentsBtn}"
-                />  
+                   Command="{Binding ContactBtn}"
+                />
                 <!--<Label Text="Important Documents" TextColor="#2D2727" FontSize="14" HorizontalTextAlignment="Center" />-->
             </StackLayout>
-            <StackLayout Grid.Column="1" Spacing="0">
-                <Image Source="data:image/png;base64,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" Height="100" Width="100" />
-                <Button Grid.Row="19"
-                   Text="Emergency Contacts"
-                   BackgroundColor="White"
-                   TextColor="Black"
-                   FontSize="12"
-                   FontFamily="Inter"
-                   CornerRadius="20"
-                   Command="{Binding ContactBtn}"
-                />  
-            </StackLayout>
+
             <StackLayout Grid.Column="2" Spacing="0">
-                <Image Source="data:image/png;base64,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" Height="100" Width="100" />
+                <Image Source="list.png" Height="100" Width="100" />
                 <Button Grid.Row="19"
-                   Text="Checklist"
+                   Text="Important Documents"
                    BackgroundColor="White"
                    TextColor="Black"
                    FontSize="12"
@@ -103,7 +112,9 @@
                    CornerRadius="20"
                    Command="{Binding ChecklistBtn}"
                 />
+                <!--<Label Text="Important Documents" TextColor="#2D2727" FontSize="14" HorizontalTextAlignment="Center" />-->
             </StackLayout>
+
         </Grid>
 
         <Frame Grid.Row="7"
