@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KeroKero.Pages.WelcomePage"
+             Shell.NavBarIsVisible="False"
+             Title="WelcomePage">
+    <Grid BackgroundColor="#203838" Padding="50">
+        <Grid.RowDefinitions>
+            <!-- 0 Title -->
+            <RowDefinition Height="100" />
+            <!-- 1 Spacing -->
+            <RowDefinition Height="150" />
+            <!-- 2 welcome -->
+            <RowDefinition Height="42" />
+            <!-- 3 signupbtn -->
+            <RowDefinition Height="Auto" />
+            <!-- 4 spacing -->
+            <RowDefinition Height="10" />
+            <!-- 5 loginbtn-->
+            <RowDefinition Height="Auto" />
+            <!-- 6 spacing-->
+            <RowDefinition Height="10" />
+            <!-- 7 or -->
+            <RowDefinition Height="25" />
+            <!-- 8 Spacing -->
+            <RowDefinition Height="10" />
+            <!-- 9 offlinebtn-->
+            <RowDefinition Height="40" />
+            <!-- 10 Spacing -->
+            <RowDefinition Height="200" />
+            <!-- 11 frog head-->
+            <RowDefinition Height="10" />
+
+        </Grid.RowDefinitions>
+        <Image Grid.Row="0"
+           WidthRequest="200"
+           HeightRequest="100"
+           Source="kerokerotitle.png"
+           
+       />
+        <Label Grid.Row="2"
+               Text="Welcome"
+               TextColor="White"
+               FontSize="25"
+               HorizontalTextAlignment="Center"
+               />
+
+        <Button Grid.Row="3"
+            Text="Sign up"
+            BackgroundColor="#88B924"
+            TextColor="#203838"
+            FontSize="15"
+            CornerRadius="20"
+            Command="{Binding SignUpBtn}" 
+
+        />
+
+        <ImageButton Grid.Row="5"
+           Source="loginbtn.png"
+           HeightRequest="40"
+           WidthRequest="292"
+           Command="{Binding LoginBtn}"
+        />
+
+        <Label Grid.Row="7"
+               Text="or"
+               TextColor="White"
+               FontSize="17"
+               HorizontalTextAlignment="Center"
+               />
+
+
+        <Button Grid.Row="9"
+           Text="Offline Mode"
+           BackgroundColor="#88B924"
+           TextColor="#203838"
+           FontSize="15"
+           FontFamily="Inter"
+           CornerRadius="20"
+           Command="{Binding OfflineBtn}"
+        />
+
+        <Image Grid.Row="11"
+               Source="frogface.png"
+               HeightRequest="55"
+               WidthRequest="90"
+               />
+
+    </Grid>
+
+</ContentPage>

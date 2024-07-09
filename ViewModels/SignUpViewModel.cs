@@ -11,7 +11,6 @@ namespace KeroKero.ViewModels
 {
     internal class SignUpViewModel : INotifyPropertyChanged
     {
-        //private INavigation _navigation;
         public string webApiKey = "AIzaSyCPz-5MixGymeUJlMKwkyhpZ9ynIGTxIRM";
 
         private string email;
@@ -84,18 +83,17 @@ namespace KeroKero.ViewModels
 
         public SignUpViewModel()
         {
-            //this._navigation = navigation;
             SignUpUser = new Command(SignUpUserTappedAsync);
             //Direct to the login Page
-            ReturnToLoginPage = new Command(ReturnToLogin);
+            BackBtn = new Command(BackBtnPressedAsync);
 
         }
 
-        public Command ReturnToLoginPage { get; set; }
+        public Command BackBtn { get; set; }
 
-        private async void ReturnToLogin(object obj)
+        private async void BackBtnPressedAsync(object obj)
         {
-            await Shell.Current.GoToAsync("//LoginPage");
+            await Shell.Current.GoToAsync("//WelcomePage");
         }
         private async void SignUpUserTappedAsync(object obj)
         {
