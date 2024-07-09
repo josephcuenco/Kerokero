@@ -64,9 +64,13 @@
         ContentTemplate="{DataTemplate local:SignUpPage}"
         Route="SignUpPage" />
     <ShellContent
+        Title="Welcome"
+        ContentTemplate="{DataTemplate local:WelcomePage}"
+        Route="WelcomePage" />
+    <!-- <ShellContent
         Title="Phonebook"
-        ContentTemplate="{DataTemplate local:PhonebookPage}"
-        Route="PhonebookPage" />
+        ContentTemplate="{DataTemplate local:PhonebookPage}" 
+        Route="PhonebookPage" /> 
     <ShellContent
         Title="Profile"
         ContentTemplate="{DataTemplate local:ProfilePage}"
@@ -74,7 +78,7 @@
     <ShellContent
         Title="Settings"
         ContentTemplate="{DataTemplate local:SettingsPage}"
-        Route="SettingsPage" />
+        Route="SettingsPage" /> -->
 
 
 
