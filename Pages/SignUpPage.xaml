@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KeroKero.Pages.SignUpPage"
+             Shell.NavBarIsVisible="False"
              Title=""
              >
 
@@ -126,7 +127,7 @@
 
         <Button Grid.Row="15"
             Text="Sign Up"
-            BackgroundColor="#8B8A8A"
+            BackgroundColor="#88B924"
             TextColor="white"
             FontSize="17"
             FontFamily="Inter"
@@ -134,19 +135,17 @@
             Command="{Binding SignUpUser}"
         />
 
-        
-            <Label Grid.Row="17"
-             Text="Return to Login"
-             TextColor="#2D2727"
-             FontSize="17"
-             FontFamily="Inter"
-             HorizontalTextAlignment="Center"
-             VerticalTextAlignment="Center">
-                <Label.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding ReturnToLoginPage}" />
-                </Label.GestureRecognizers>
-            </Label>
-       
+
+        <Button Grid.Row="17"
+        Text="back"
+        BackgroundColor="Transparent"
+        TextColor="Black"
+        FontSize="17"
+        CornerRadius="20"
+        Command="{Binding BackBtn}"
+        WidthRequest="80"
+        />
+
 
     </Grid>
 
