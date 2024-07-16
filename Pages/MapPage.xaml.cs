@@ -9,6 +9,10 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using Map = Microsoft.Maui.Controls.Maps.Map;
+using CsvHelper;
+using System.Globalization;
+using System.Reflection;
+//using static Android.Icu.Text.Transliterator;
 
 namespace KeroKero.Pages;
 
@@ -22,12 +26,23 @@ public partial class MapPage : ContentPage
         BindingContext = new MapViewModel();
 	}
 
+    public class Shelter
+    {
+        public string Label { get; set; }
+        public double Location1 { get; set; }
+        public double Location2 { get; set; }
+        public string Type { get; set; }
+
+    }
+
 
     protected override async void OnAppearing()
     {
         //base.OnAppearing();
         var geoR = new GeolocationRequest(GeolocationAccuracy.High, TimeSpan.FromSeconds(10));
         // var location = await Geolocation.GetLocationAsync(geoR);
+        
+
 
         Location mapCenter = new Location(35.01163630, 135.76802940);
         map.MoveToRegion(MapSpan.FromCenterAndRadius(mapCenter, Distance.FromMiles(10)));
@@ -61,9 +76,38 @@ public partial class MapPage : ContentPage
         map.Pins.Add(KinugasaJunior);
         map.Pins.Add(origin);
         map.Pins.Add(Kamigamo);
+        Debug.WriteLine("You're here!!");
+        //adding shelters from Database
+        var assembly = Assembly.GetExecutingAssembly();
+        using var pathCSV = await FileSystem.OpenAppPackageFileAsync("Pages/ES.csv");
+        using var reader = new StreamReader(pathCSV);
+        using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
+        var list = csv.GetRecords<Shelter>();
+        foreach (var item in list)
+        {
+            //goes through each and adds to the map
+            string name = item.Label;
+            Pin temp = new Pin
+            {
+                Label = item.Label,
+                Address = item.Type,
+                Location = new Location(item.Location1, item.Location2)
+            };
+            temp.MarkerClicked += async (s, e) =>
+            {
+                /*kam = true;
+                kin = false;*/
+                await DisplayRoute(origin.Location, temp.Location);
+
+            };
+            map.Pins.Add(temp);
+
+        }
 
         bool kam = false;
         bool kin = false;
+
+        
 
         Kamigamo.MarkerClicked += async (s, e) =>
         {
@@ -86,6 +130,7 @@ public partial class MapPage : ContentPage
     }
     private async Task DisplayRoute(Location originLocation, Location destinationLocation)
     {
+        
         string originCoords = $"{originLocation.Latitude},{originLocation.Longitude}";
         string destinationCoords = $"{destinationLocation.Latitude},{destinationLocation.Longitude}";
         string apiKey = "AIzaSyBY8pIiPG1tZkFeBU7EVjHTCGjZcaJRyLs";
