@@ -57,93 +57,105 @@
             FontFamily="Inter-Bold" 
         />
 
-        <Frame Grid.Row="3"
-            CornerRadius="10" 
-            BackgroundColor="#F2F2F2"
-        />
+        <Image Grid.Row="3"
+            Source="signupentrytextbox.png"
+            HeightRequest="45"
+            WidthRequest="292"
+        />  
 
         <Entry Grid.Row="3"
            Text="{Binding FirstName}" 
            Placeholder="What is your first name?"
            BackgroundColor="Transparent"
+           HeightRequest="45"
+           WidthRequest="292"
         />
 
-        <Frame Grid.Row="5"
-                CornerRadius="10" 
-                BackgroundColor="#F2F2F2"
-         />
-
+        <Image Grid.Row="5"
+            Source="signupentrytextbox.png"
+            HeightRequest="45"
+            WidthRequest="292"
+        />
+        
         <Entry Grid.Row="5"
                Text="{Binding LastName}" 
                Placeholder="What is your last name?"
                BackgroundColor="Transparent"
+               HeightRequest="45"
+               WidthRequest="292"
             />
 
-        <Frame Grid.Row="7"
-            CornerRadius="10" 
-            BackgroundColor="#F2F2F2"
+        <Image Grid.Row="7"
+            Source="signupentrytextbox.png"
+            HeightRequest="45"
+            WidthRequest="292"
         />
 
         <Entry Grid.Row="7"
            Text="{Binding Email}"
            Placeholder="Enter your email"
            BackgroundColor="Transparent"
+           HeightRequest="45"
+           WidthRequest="292"
         />
 
 
-        <Frame Grid.Row="9"
-            CornerRadius="10" 
-            BackgroundColor="#F2F2F2"
+        <Image Grid.Row="9"
+            Source="signupentrytextbox.png"
+            HeightRequest="45"
+            WidthRequest="292"
         />
 
         <Entry Grid.Row="9"
            Text="{Binding PhoneNumber}"
            Placeholder="Enter your phone number"
            BackgroundColor="Transparent"
+           HeightRequest="45"
+           WidthRequest="292"
         />
 
-        <Frame Grid.Row="11"
-            CornerRadius="10" 
-            BackgroundColor="#F2F2F2"
+        <Image Grid.Row="11"
+            Source="signupentrytextbox.png"
+            HeightRequest="45"
+            WidthRequest="292"
         />
 
         <Entry Grid.Row="11"
            Text="{Binding ResideCity}"
            Placeholder="What city do you reside in?"
            BackgroundColor="Transparent"
+           HeightRequest="45"
+           WidthRequest="292"
         />
 
-        <Frame Grid.Row="13"
-            CornerRadius="10" 
-            BackgroundColor="#F2F2F2"
+        <Image Grid.Row="13"
+            Source="signupentrytextbox.png"
+            HeightRequest="45"
+            WidthRequest="292"
         />
 
         <Entry Grid.Row="13"
            Text="{Binding Password}"
            Placeholder="Password"
            BackgroundColor="Transparent"
+           HeightRequest="45"
+           WidthRequest="292"
         />
 
 
-        <Button Grid.Row="15"
-            Text="Sign Up"
-            BackgroundColor="#88B924"
-            TextColor="white"
-            FontSize="17"
-            FontFamily="Inter"
-            CornerRadius="20"
+        <ImageButton Grid.Row="15"
+            Source="signup2btn.png"
+            HeightRequest="40"
+            WidthRequest="292"
             Command="{Binding SignUpUser}"
         />
 
 
-        <Button Grid.Row="17"
-        Text="back"
-        BackgroundColor="Transparent"
-        TextColor="Black"
-        FontSize="17"
-        CornerRadius="20"
-        Command="{Binding BackBtn}"
-        WidthRequest="80"
+        <ImageButton Grid.Row="17"
+            Source="backbtn.png"
+            HeightRequest="40"
+            WidthRequest="292"
+            Command="{Binding BackBtn}"
         />
 
 
