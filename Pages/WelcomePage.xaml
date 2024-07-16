@@ -12,57 +12,57 @@
             <RowDefinition Height="150" />
             <!-- 2 welcome -->
             <RowDefinition Height="42" />
-            <!-- 3 signupbtn -->
-            <RowDefinition Height="Auto" />
-            <!-- 4 spacing -->
+            <!-- 3 space -->
             <RowDefinition Height="10" />
-            <!-- 5 loginbtn-->
+            <!-- 4 signupbtn -->
             <RowDefinition Height="Auto" />
-            <!-- 6 spacing-->
+            <!-- 5 spacing -->
             <RowDefinition Height="10" />
-            <!-- 7 or -->
+            <!-- 6 loginbtn-->
+            <RowDefinition Height="Auto" />
+            <!-- 7 spacing-->
+            <RowDefinition Height="10" />
+            <!-- 8 or -->
             <RowDefinition Height="25" />
-            <!-- 8 Spacing -->
+            <!-- 9 Spacing -->
             <RowDefinition Height="10" />
-            <!-- 9 offlinebtn-->
+            <!-- 10 offlinebtn-->
             <RowDefinition Height="40" />
-            <!-- 10 Spacing -->
-            <RowDefinition Height="200" />
-            <!-- 11 frog head-->
+            <!-- 11 Spacing -->
+            <RowDefinition Height="175" />
+            <!-- 12 frog head-->
             <RowDefinition Height="10" />
 
         </Grid.RowDefinitions>
         <Image Grid.Row="0"
            WidthRequest="200"
            HeightRequest="100"
-           Source="kerokerotitle.png"
+           Source="welcome.png"
            
        />
         <Label Grid.Row="2"
                Text="Welcome"
                TextColor="White"
-               FontSize="25"
+               FontSize="20"
                HorizontalTextAlignment="Center"
                />
 
-        <Button Grid.Row="3"
-            Text="Sign up"
-            BackgroundColor="#88B924"
-            TextColor="#203838"
-            FontSize="15"
-            CornerRadius="20"
+        <ImageButton Grid.Row="4"
+            Source="signupbtn.png"
+            HeightRequest="40"
+            WidthRequest="292"       
             Command="{Binding SignUpBtn}" 
 
         />
 
-        <ImageButton Grid.Row="5"
+        <ImageButton Grid.Row="6"
            Source="loginbtn.png"
            HeightRequest="40"
            WidthRequest="292"
            Command="{Binding LoginBtn}"
         />
 
-        <Label Grid.Row="7"
+        <Label Grid.Row="8"
                Text="or"
                TextColor="White"
                FontSize="17"
@@ -70,17 +70,14 @@
                />
 
 
-        <Button Grid.Row="9"
-           Text="Offline Mode"
-           BackgroundColor="#88B924"
-           TextColor="#203838"
-           FontSize="15"
-           FontFamily="Inter"
-           CornerRadius="20"
-           Command="{Binding OfflineBtn}"
+        <ImageButton Grid.Row="10"
+          Source="offlinebtn.png"
+          HeightRequest="40"
+          WidthRequest="292"
+          Command="{Binding OfflineBtn}"
         />
 
-        <Image Grid.Row="11"
+        <Image Grid.Row="12"
                Source="frogface.png"
                HeightRequest="55"
                WidthRequest="90"
