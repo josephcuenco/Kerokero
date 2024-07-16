@@ -54,15 +54,19 @@
            VerticalTextAlignment="Start"
            FontSize="14"
            FontFamily="Inter" />
-        <Frame Grid.Row="5"
-            CornerRadius="20" 
-            BackgroundColor="#F2F2F2"
+        
+        <!---Email entry design-->
+        <Image Grid.Row="5"
+            Source="lightgreenentrytextbox.png"
+            HeightRequest="45"
+            WidthRequest="292"
         />
         <Entry Grid.Row="5"
            Text="{Binding UserEmail}"
            BackgroundColor="Transparent"
                />
-        
+
+      
         <Label Grid.Row="7"
            Text="Password"
            TextColor="Black"
@@ -70,33 +74,31 @@
            VerticalTextAlignment="Start"
            FontSize="14"
            FontFamily="Inter" />
-        <Frame Grid.Row="9"
-            CornerRadius="20" 
-            BackgroundColor="#F2F2F2"
+
+        <!---Password entry design-->
+        <Image Grid.Row="9"
+            Source="lightgreenentrytextbox.png"
+            HeightRequest="45"
+            WidthRequest="292"
         />
-        
+
         <Entry Grid.Row="9"
                Text="{Binding UserPassword}" IsPassword="True"
                BackgroundColor="Transparent"
          />
         
-        <Button Grid.Row="11"
-            Text="Login"
-            BackgroundColor="#88B924"
-            TextColor="White"
-            FontSize="15"
-            CornerRadius="20"
+        <ImageButton Grid.Row="11"
+            Source="login2btn.png"
+            HeightRequest="40"
+            WidthRequest="292"
             Command="{Binding LoginBtn}" 
         />
 
-        <Button Grid.Row="14"
-                Text="back"
-                BackgroundColor="Transparent"
-                TextColor="Black"
-                FontSize="14"
-                CornerRadius="20"
-                Command="{Binding BackBtn}"
-                WidthRequest="80"
+        <ImageButton Grid.Row="14"
+            Source="backbtn.png"
+            HeightRequest="40"
+            WidthRequest="292"
+            Command="{Binding BackBtn}"
                 />
 
     </Grid>
