@@ -7,8 +7,12 @@
       "RelativeMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|solutionrelative:pages\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|c:\\users\\jdavi\\source\\repos\\kerokero\\pages\\signuppage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|solutionrelative:pages\\signuppage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|c:\\users\\jdavi\\source\\repos\\kerokero\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|solutionrelative:viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|c:\\users\\jdavi\\source\\repos\\kerokero\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|solutionrelative:mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,28 +42,39 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MauiProgram.cs",
+              "DocumentMoniker": "C:\\Users\\jdavi\\source\\repos\\Kerokero\\MauiProgram.cs",
+              "RelativeDocumentMoniker": "MauiProgram.cs",
+              "ToolTip": "C:\\Users\\jdavi\\source\\repos\\Kerokero\\MauiProgram.cs",
+              "RelativeToolTip": "MauiProgram.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-09T07:42:10.414Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\jdavi\\source\\repos\\Kerokero\\ViewModels\\MainViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\MainViewModel.cs",
+              "ToolTip": "C:\\Users\\jdavi\\source\\repos\\Kerokero\\ViewModels\\MainViewModel.cs",
+              "RelativeToolTip": "ViewModels\\MainViewModel.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAYwFIAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-09T06:59:09.872Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MainPage.xaml",
               "DocumentMoniker": "C:\\Users\\jdavi\\source\\repos\\Kerokero\\Pages\\MainPage.xaml",
               "RelativeDocumentMoniker": "Pages\\MainPage.xaml",
               "ToolTip": "C:\\Users\\jdavi\\source\\repos\\Kerokero\\Pages\\MainPage.xaml",
               "RelativeToolTip": "Pages\\MainPage.xaml",
-              "ViewState": "AQIAAD8AAAAAAAAAAAAAAEMAAAAuAAAA",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAAAFAAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-07-08T06:41:34.354Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SignUpPage.xaml",
-              "DocumentMoniker": "C:\\Users\\jdavi\\source\\repos\\Kerokero\\Pages\\SignUpPage.xaml",
-              "RelativeDocumentMoniker": "Pages\\SignUpPage.xaml",
-              "ToolTip": "C:\\Users\\jdavi\\source\\repos\\Kerokero\\Pages\\SignUpPage.xaml",
-              "RelativeToolTip": "Pages\\SignUpPage.xaml",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAwAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-06-20T04:03:35.058Z",
               "EditorCaption": ""
             }
           ]

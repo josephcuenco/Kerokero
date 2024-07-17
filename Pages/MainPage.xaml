@@ -6,7 +6,7 @@
     <Grid BackgroundColor="#FFFFFF" Padding="50">
         <Grid.RowDefinitions>
             <!-- 0 Top Spacing -->
-            <RowDefinition Height="5" />
+            <RowDefinition Height="0" />
             <!-- 1 Welcome back -->
             <RowDefinition Height="Auto" />
             <!-- 2 Spacing -->
@@ -60,60 +60,107 @@
            FontSize="30"
            HorizontalTextAlignment="Center"
            VerticalTextAlignment="Center"/>
-        
-        <Grid Grid.Row="5">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
 
-            <Frame
-                BorderColor="DarkSlateGray"
-                BackgroundColor="White"
-                CornerRadius="10">
-                <Frame.Shadow>
+        <Grid Grid.Row="5"
+              RowDefinitions="*"
+              ColumnDefinitions="*,*,*">
+
+            <Border Grid.Column="0"
+                Stroke="Gray"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 10,10,10,10"
+                Background="White"
+                Margin="4,0">
+                <Border.Shadow>
                     <Shadow Brush="Black"
-                            Offset="0,12"
-                            Radius="3"
-                            Opacity="0.8"/>
-                </Frame.Shadow>
-                    
-                <ImageButton Grid.Column="0" Grid.Row="18"
-                    Source="folder.png" Height="100" Width="100"
-                    Command="{Binding DocumentsBtn}" />
+                        Offset="0,8"
+                        Radius="2"
+                        Opacity="0.7"/>
+                </Border.Shadow>
 
-                <!--<Label Text="Important Documents" TextColor="#2D2727" FontSize="14" HorizontalTextAlignment="Center" />-->
-            
-            </Frame>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer
+                        NumberOfTapsRequired="1"
+                        Command="{Binding DocumentsBtn}"/>
+                </Border.GestureRecognizers>
 
-            <StackLayout Grid.Column="1" Spacing="0">
-                <Image Source="phone.png" Height="100" Width="100" />
-                <Button Grid.Row="19"
-                   Text="Important Documents"
-                   BackgroundColor="White"
-                   TextColor="Black"
-                   FontSize="12"
-                   FontFamily="Inter"
-                   CornerRadius="20"
-                   Command="{Binding ContactBtn}"
-                />
-                <!--<Label Text="Important Documents" TextColor="#2D2727" FontSize="14" HorizontalTextAlignment="Center" />-->
-            </StackLayout>
+                <VerticalStackLayout
+                    Padding="0,20"
+                    Spacing="12">
+                    <Image
+                        Source="folder.png" HeightRequest="35" WidthRequest="35" />
+                    <Label Text="Important Documents"
+                        HorizontalTextAlignment="Center"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="FillAndExpand"
+                        FontSize="Caption"/>
+                </VerticalStackLayout>
 
-            <StackLayout Grid.Column="2" Spacing="0">
-                <Image Source="list.png" Height="100" Width="100" />
-                <Button Grid.Row="19"
-                   Text="Important Documents"
-                   BackgroundColor="White"
-                   TextColor="Black"
-                   FontSize="12"
-                   FontFamily="Inter"
-                   CornerRadius="20"
-                   Command="{Binding ChecklistBtn}"
-                />
-                <!--<Label Text="Important Documents" TextColor="#2D2727" FontSize="14" HorizontalTextAlignment="Center" />-->
-            </StackLayout>
+            </Border>
+
+            <Border Grid.Column="1"
+                Stroke="Gray"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 10,10,10,10"
+                Background="White"
+                Margin="4,0">
+                <Border.Shadow>
+                    <Shadow Brush="Black"
+                        Offset="0,8"
+                        Radius="2"
+                        Opacity="0.7"/>
+                </Border.Shadow>
+
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer
+                        NumberOfTapsRequired="1"
+                        Command="{Binding ContactBtn}"/>
+                </Border.GestureRecognizers>
+
+                <VerticalStackLayout
+                    Padding="0,20"
+                    Spacing="12">
+                    <Image
+                       Source="phone.png" HeightRequest="35" WidthRequest="35" />
+                    <Label Text="Emergency Contacts"
+                        HorizontalTextAlignment="Center"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="FillAndExpand"
+                        FontSize="Caption"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Grid.Column="2"
+                Stroke="Gray"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 10,10,10,10"
+                Background="White"
+                Margin="4,0">
+                <Border.Shadow>
+                    <Shadow Brush="Black"
+                        Offset="0,8"
+                        Radius="2"
+                        Opacity="0.7"/>
+                </Border.Shadow>
+
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer
+                        NumberOfTapsRequired="1"
+                        Command="{Binding ChecklistBtn}"/>
+                </Border.GestureRecognizers>
+
+                <VerticalStackLayout
+                    Padding="0,20"
+                    Spacing="12">
+                    <Image
+                       Source="list.png" HeightRequest="35" WidthRequest="35" />
+                    <Label Text="Emergency Checklist"
+                        HorizontalTextAlignment="Center"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="FillAndExpand"
+                        FontSize="Caption"/>
+                </VerticalStackLayout>
+            </Border>
 
         </Grid>
 
