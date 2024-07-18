@@ -67,6 +67,10 @@
         Title="Welcome"
         ContentTemplate="{DataTemplate local:WelcomePage}"
         Route="WelcomePage" />
+    <ShellContent
+        Title="Check"
+        ContentTemplate="{DataTemplate local:ChecklistPage}"
+        Route="ChecklistPage" />
     <!-- <ShellContent
         Title="Phonebook"
         ContentTemplate="{DataTemplate local:PhonebookPage}" 
