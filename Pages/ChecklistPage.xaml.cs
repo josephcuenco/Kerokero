@@ -19,5 +19,15 @@ public partial class ChecklistPage : ContentPage
     {
         InitializeComponent();
         BindingContext = new ChecklistViewModel();
+        /*List<string> todo = new List<string>()
+            {
+                "Upload documents",
+                "Save important locations",
+                "Save routes for safety",
+                "Get some food and water, ya know, in case..."
+
+            };
+        listTodo.ItemsSource = todo;*/
+
     }
 }
