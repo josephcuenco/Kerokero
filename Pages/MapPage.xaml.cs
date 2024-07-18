@@ -12,7 +12,8 @@ using Map = Microsoft.Maui.Controls.Maps.Map;
 using CsvHelper;
 using System.Globalization;
 using System.Reflection;
-//using static Android.Icu.Text.Transliterator;
+using static Android.Icu.Text.Transliterator;
+using System.Text.RegularExpressions;
 
 namespace KeroKero.Pages;
 
@@ -142,7 +143,7 @@ public partial class MapPage : ContentPage
             if (response.IsSuccessStatusCode)
             {
                 var responseString = await response.Content.ReadAsStringAsync();
-                Debug.WriteLine(responseString);
+                //Debug.WriteLine(responseString);
 
                 var directions = JObject.Parse(responseString);
                 var route = directions["routes"].FirstOrDefault();
@@ -152,23 +153,41 @@ public partial class MapPage : ContentPage
                     if (legs != null)
                     {
                         var durationText = legs["duration"]?["text"]?.ToString();
-                        Debug.WriteLine($"Duration: {durationText}");
+                        //Debug.WriteLine($"Duration: {durationText}");
 
                         Device.BeginInvokeOnMainThread(() =>
                         {
                             durationLabel.Text = $"Duration: {durationText}";
                             durationLabel.IsVisible = true;
+                            yourButton.IsVisible = true;
                         });
 
                         var steps = legs["steps"];
+
                         var polylineCoordinates = new List<Location>();
+
+                        List<string> s = new List<string>();
+                        string dir = "";
 
                         foreach (var step in steps)
                         {
                             var polyline = step["polyline"]["points"].ToString();
+                            var instruct = step["html_instructions"];
+                            //Debug.WriteLine($"Instruction: {durationText}");
                             var locations = DecodePolyline(polyline);
                             polylineCoordinates.AddRange(locations);
+                            string t = step["html_instructions"] + " for " + step["distance"]["text"] + " (" + step["duration"]["text"] + ") \n";
+                            string cleaned = Regex.Replace(t, "<.*?>", String.Empty);
+                            dir += cleaned;
+                            //Debug.WriteLine($"Step: {cleaned}");
+                            //s.Add(cleaned);
+                            
+                            //s.Add(step["html_instructions"] + " for " + step["distance"]["text"] + " (" + step["duration"]["text"] + ")");
+
                         }
+                        direct.Text = $"Route: {dir}";
+
+
 
                         var mapPolyline = new Polyline
                         {
@@ -202,6 +221,25 @@ public partial class MapPage : ContentPage
         }
     }
 
+    private void YourButton_Clicked(object sender, EventArgs e)
+    {
+        // Handle button click event
+        //DisplayAlert("Button Clicked", "You clicked the button!", "OK");
+        direct.IsVisible = true;
+        yourButton.Text = "Back to Map";
+        yourButton.Clicked -= YourButton_Clicked;
+        yourButton.Clicked += Back_Clicked;
+    }
+
+    private void Back_Clicked(object sender, EventArgs e)
+    {
+        // Handle button click event
+        //DisplayAlert("Button Clicked", "You clicked the button!", "OK");
+        direct.IsVisible = false;
+        yourButton.Text = "See Route";
+        yourButton.Clicked -= Back_Clicked;
+        yourButton.Clicked += YourButton_Clicked;
+    }
 
 
     public List<Location> DecodePolyline(string encodedPoints)

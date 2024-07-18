@@ -17,6 +17,19 @@
 
         </Grid.RowDefinitions>
         <maps:Map x:Name="map" IsTrafficEnabled="false" IsShowingUser="true" MapType="Street" Grid.Row="0"/>
+        <Button x:Name="yourButton" 
+                Text="See Route" 
+                IsVisible="False" 
+                VerticalOptions="Start"
+                Grid.Row ="0"
+                Clicked="YourButton_Clicked"/>
+        <Label x:Name="direct"
+               Text="See Route"
+               FontSize="20"
+               TextColor="Black"
+               BackgroundColor="White"
+               IsVisible="False" 
+               />
         <Label x:Name="durationLabel" Grid.Row="1"
            Text="Duration: "
            FontSize="20"
@@ -35,11 +48,7 @@
             HorizontalOptions="Center"
             VerticalOptions="Start"
             IsVisible="True" />-->
-        <Button Grid.Row="2"
-            Text="Home" 
-            Command="{Binding HomeBtn}" 
-            FontSize="20"
-            CornerRadius="20"/>
+        
     </Grid>
 
 
