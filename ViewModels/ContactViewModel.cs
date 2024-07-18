@@ -3,22 +3,18 @@ using KeroKero.Pages;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace KeroKero.ViewModels
 {
-    internal class ChecklistViewModel: INotifyPropertyChanged
+    internal class ContactViewModel : INotifyPropertyChanged
     {
         //private INavigation _navigation;
         private string userEmail;
         private string userPassword;
-
-        
 
         public Command MapBtn { get; }
         public Command HomeBtn { get; }
@@ -45,36 +41,16 @@ namespace KeroKero.ViewModels
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public class T
-        {
-            public string Todo { get; set; }
-            public bool IsChecked { get; set; }
-        }
-        public ObservableCollection<T> Todos { get; set; }
-
-        public ChecklistViewModel()
+        public ContactViewModel()
         {
             //this._navigation = navigation;
             MapBtn = new Command(MapBtnTappedAsync);
             HomeBtn = new Command(HomeBtnTappedAsync);
-            Todos = new ObservableCollection<T>
-            {
-                new T { Todo = "Upload documents", IsChecked = false },
-                new T { Todo = "Save important locations", IsChecked = false },
-                new T { Todo = "Save routes for safety", IsChecked = false },
-                new T { Todo = "Get some food and water, ya know, in case...", IsChecked = false }
-            };
-
             //LoginBtn = new Command(LoginBtnTappedAsync);
 
         }
 
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-
+        
 
         /*private async void LoginBtnTappedAsync(object obj)
         {

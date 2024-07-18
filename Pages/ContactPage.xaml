@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="KeroKero.Pages.ChecklistPage"
+             x:Class="KeroKero.Pages.ContactPage"
              NavigationPage.HasNavigationBar="False"
              Title="">
 
@@ -11,20 +11,10 @@
         Spacing="10">
 
             <Label
-            Text="Welcome to the Checklist Page"
+            Text="Welcome to the Contact Page"
             Style="{StaticResource Headline}"
             SemanticProperties.HeadingLevel="Level1" />
 
-            <CollectionView ItemsSource="{Binding Todos}">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout Orientation="Horizontal" Padding="10">
-                            <CheckBox IsChecked="{Binding IsChecked}" />
-                            <Label Text="{Binding Todo}" VerticalOptions="Center" Margin="10,0,0,0"/>
-                        </StackLayout>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
             <Label
             Text="Page is currently under construction"
             Style="{StaticResource SubHeadline}"
