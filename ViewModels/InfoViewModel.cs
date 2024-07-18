@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace KeroKero.ViewModels
 {
-    internal class ChecklistViewModel : INotifyPropertyChanged
+    internal class InfoViewModel : INotifyPropertyChanged
     {
         //private INavigation _navigation;
         private string userEmail;
@@ -41,7 +41,7 @@ namespace KeroKero.ViewModels
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public ChecklistViewModel()
+        public InfoViewModel()
         {
             //this._navigation = navigation;
             MapBtn = new Command(MapBtnTappedAsync);

@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -119,17 +120,18 @@ namespace KeroKero.ViewModels
 
         private async void DocTappedAsync(object obj)
         {
-            await Shell.Current.GoToAsync("//InfoPage");
+            await Shell.Current.GoToAsync("//ChatbotPage");
         }
 
         private async void CheckTappedAsync(object obj)
         {
+            
             await Shell.Current.GoToAsync("//ChecklistPage");
         }
 
         private async void ContactTappedAsync(object obj)
         {
-            await Shell.Current.GoToAsync("//PhonebookPage");
+            await Shell.Current.GoToAsync("//ContactPage");
         }
 
         private async void SettingsTappedAsync(object obj)
