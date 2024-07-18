@@ -10,43 +10,15 @@ using System.Threading.Tasks;
 
 namespace KeroKero.ViewModels
 {
-    internal class MainViewModel : INotifyPropertyChanged
+    internal class InfoViewModel : INotifyPropertyChanged
     {
-        //progress bar
-        public double CurrentProgress { get; set; } = 0.0;
-
-        // private INavigation _navigation;
+        //private INavigation _navigation;
         private string userEmail;
         private string userPassword;
 
-        private static MainViewModel _instance;
-        public static MainViewModel Instance => _instance ?? (_instance = new MainViewModel());
-
         public Command MapBtn { get; }
-        public Command InfoBtn { get; }
-
-        public Command DocumentsBtnMapBtn { get; }
-        public Command ContactBtn { get; }
-
-        public Command ChecklistBtn { get; }
-        public Command SettingsBtn { get; }
-        public Command ProfileBtn { get; }
-
-        private string _fullName;
-        public string FullName
-        {
-            get => _fullName;
-            set
-            {
-                if (_fullName != value)
-                {
-                    _fullName = value;
-                    RaisePropertyChanged(nameof(FullName));
-                }
-            }
-        }
-
-
+        public Command HomeBtn { get; }
+       
         public string UserEmail { get => userEmail;
             set
             {
@@ -69,17 +41,13 @@ namespace KeroKero.ViewModels
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public MainViewModel()
+        public InfoViewModel()
         {
             //this._navigation = navigation;
             MapBtn = new Command(MapBtnTappedAsync);
-            InfoBtn = new Command(InfoBtnTappedAsync);
+            HomeBtn = new Command(HomeBtnTappedAsync);
             //LoginBtn = new Command(LoginBtnTappedAsync);
-            DocumentsBtnMapBtn = new Command(DocTappedAsync);
-            ChecklistBtn = new Command(CheckTappedAsync);
-            ContactBtn = new Command(ContactTappedAsync);
-            SettingsBtn = new Command(SettingsTappedAsync);
-            ProfileBtn = new Command(ProfileTappedAsync);
+
         }
 
         
@@ -107,39 +75,14 @@ namespace KeroKero.ViewModels
             await Shell.Current.GoToAsync("//MapPage");
         }
 
-        private async void InfoBtnTappedAsync(object obj)
+        private async void HomeBtnTappedAsync(object obj)
         {
-            await Shell.Current.GoToAsync("//InfoPage");
+            await Shell.Current.GoToAsync("//MainPage");
         }
 
         private void RaisePropertyChanged(string v)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(v));
-        }
-
-        private async void DocTappedAsync(object obj)
-        {
-            await Shell.Current.GoToAsync("//InfoPage");
-        }
-
-        private async void CheckTappedAsync(object obj)
-        {
-            await Shell.Current.GoToAsync("//ChecklistPage");
-        }
-
-        private async void ContactTappedAsync(object obj)
-        {
-            await Shell.Current.GoToAsync("//PhonebookPage");
-        }
-
-        private async void SettingsTappedAsync(object obj)
-        {
-            await Shell.Current.GoToAsync("//MainPage");
-        }
-
-        private async void ProfileTappedAsync(object obj)
-        {
-            await Shell.Current.GoToAsync("//PhonebookPage");
         }
     }
 }
