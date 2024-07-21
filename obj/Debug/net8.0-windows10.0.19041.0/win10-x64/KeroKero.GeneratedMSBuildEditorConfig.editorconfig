@@ -8,71 +8,71 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = KeroKero
-build_property.ProjectDir = C:\Users\jdavi\source\repos\KeroKero\Kerokero\
+build_property.ProjectDir = C:\Users\jdavi\source\repos\KeroKero\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[C:/Users/jdavi/source/repos/KeroKero/Kerokero/App.xaml]
+[C:/Users/jdavi/source/repos/KeroKero/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = KeroKero.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[C:/Users/jdavi/source/repos/KeroKero/Kerokero/AppShell.xaml]
+[C:/Users/jdavi/source/repos/KeroKero/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = KeroKero.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[C:/Users/jdavi/source/repos/KeroKero/Kerokero/Pages/InfoPage.xaml]
+[C:/Users/jdavi/source/repos/KeroKero/Pages/InfoPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = KeroKero.Pages.InfoPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\InfoPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\InfoPage.xaml
 
-[C:/Users/jdavi/source/repos/KeroKero/Kerokero/Pages/LoginPage.xaml]
+[C:/Users/jdavi/source/repos/KeroKero/Pages/LoginPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = KeroKero.Pages.LoginPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\LoginPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\LoginPage.xaml
 
-[C:/Users/jdavi/source/repos/KeroKero/Kerokero/Pages/MainPage.xaml]
+[C:/Users/jdavi/source/repos/KeroKero/Pages/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = KeroKero.Pages.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\MainPage.xaml
 
-[C:/Users/jdavi/source/repos/KeroKero/Kerokero/Pages/MapPage.xaml]
+[C:/Users/jdavi/source/repos/KeroKero/Pages/MapPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = KeroKero.Pages.MapPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\MapPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\MapPage.xaml
 
-[C:/Users/jdavi/source/repos/KeroKero/Kerokero/Pages/PhonebookPage.xaml]
+[C:/Users/jdavi/source/repos/KeroKero/Pages/PhonebookPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = KeroKero.Pages.PhonebookPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\PhonebookPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\PhonebookPage.xaml
 
-[C:/Users/jdavi/source/repos/KeroKero/Kerokero/Pages/SignUpPage.xaml]
+[C:/Users/jdavi/source/repos/KeroKero/Pages/SignUpPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = KeroKero.Pages.SignUpPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\SignUpPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\SignUpPage.xaml
 
-[C:/Users/jdavi/source/repos/KeroKero/Kerokero/Pages/WelcomePage.xaml]
+[C:/Users/jdavi/source/repos/KeroKero/Pages/WelcomePage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = KeroKero.Pages.WelcomePage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\WelcomePage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\WelcomePage.xaml
 
-[C:/Users/jdavi/source/repos/KeroKero/Kerokero/Resources/Styles/Colors.xaml]
+[C:/Users/jdavi/source/repos/KeroKero/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = KeroKero.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
-[C:/Users/jdavi/source/repos/KeroKero/Kerokero/Resources/Styles/Styles.xaml]
+[C:/Users/jdavi/source/repos/KeroKero/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = KeroKero.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml

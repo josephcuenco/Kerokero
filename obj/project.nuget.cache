@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PZxxzeOy1mM=",
+  "dgSpecHash": "4cpsy8bAlsY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\Kerokero\\KeroKero.csproj",
+  "projectFilePath": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\KeroKero.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jdavi\\.nuget\\packages\\csvhelper\\33.0.1\\csvhelper.33.0.1.nupkg.sha512",
     "C:\\Users\\jdavi\\.nuget\\packages\\firebaseauthentication.net\\3.7.2\\firebaseauthentication.net.3.7.2.nupkg.sha512",
