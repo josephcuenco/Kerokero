@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KeroKero.Pages.ProfilePage"
+             NavigationPage.HasNavigationBar="False"
+             Title="">
+
+    <ScrollView>
+        <VerticalStackLayout
+        Padding="30,0"
+        Spacing="10">
+
+            <Label
+            Text="Welcome to the Profile Page"
+            Style="{StaticResource Headline}"
+            SemanticProperties.HeadingLevel="Level1" />
+
+            <Label
+            Text="Page is currently under construction"
+            Style="{StaticResource SubHeadline}"
+            SemanticProperties.HeadingLevel="Level1" />
+            
+            <Button
+                Text="Home" 
+                Command="{Binding HomeBtn}" 
+                FontSize="20"
+                CornerRadius="20"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+
+</ContentPage>

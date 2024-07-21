@@ -156,7 +156,7 @@ namespace KeroKero.ViewModels
 
         private async void ProfileTappedAsync(object obj)
         {
-            await Shell.Current.GoToAsync("//PhonebookPage");
+            await Shell.Current.GoToAsync("//ProfilePage");
         }
     }
 }
