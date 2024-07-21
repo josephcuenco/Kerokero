@@ -26,12 +26,14 @@ namespace KeroKero.ViewModels
         public Command MapBtn { get; }
         public Command InfoBtn { get; }
 
-        public Command DocumentsBtnMapBtn { get; }
+        public Command DocumentsBtn { get; }
         public Command ContactBtn { get; }
 
         public Command ChecklistBtn { get; }
         public Command SettingsBtn { get; }
         public Command ProfileBtn { get; }
+
+        public Command ChatbotBtn { get; }
 
         private string _fullName;
         public string FullName
@@ -76,14 +78,15 @@ namespace KeroKero.ViewModels
             MapBtn = new Command(MapBtnTappedAsync);
             InfoBtn = new Command(InfoBtnTappedAsync);
             //LoginBtn = new Command(LoginBtnTappedAsync);
-            DocumentsBtnMapBtn = new Command(DocTappedAsync);
+            DocumentsBtn = new Command(DocTappedAsync);
             ChecklistBtn = new Command(CheckTappedAsync);
             ContactBtn = new Command(ContactTappedAsync);
             SettingsBtn = new Command(SettingsTappedAsync);
             ProfileBtn = new Command(ProfileTappedAsync);
+            ChatbotBtn = new Command(ChatbotBtnTappedAsync);
         }
 
-        
+
 
         /*private async void LoginBtnTappedAsync(object obj)
         {
@@ -103,6 +106,11 @@ namespace KeroKero.ViewModels
             }
         }*/
 
+        private async void ChatbotBtnTappedAsync(object obj)
+        {
+            await Shell.Current.GoToAsync("//ChatbotPage");
+        }
+
         private async void MapBtnTappedAsync(object obj)
         {
             await Shell.Current.GoToAsync("//MapPage");
@@ -120,7 +128,7 @@ namespace KeroKero.ViewModels
 
         private async void DocTappedAsync(object obj)
         {
-            await Shell.Current.GoToAsync("//ChatbotPage");
+            await Shell.Current.GoToAsync("//DocumentPage");
         }
 
         private async void CheckTappedAsync(object obj)

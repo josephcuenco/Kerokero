@@ -75,6 +75,14 @@
         Title="Contact"
         ContentTemplate="{DataTemplate local:ContactPage}"
         Route="ContactPage" />
+    <ShellContent
+        Title="Chatbot"
+        ContentTemplate="{DataTemplate local:ChatbotPage}"
+        Route="ChatbotPage" />
+    <ShellContent
+        Title="Document"
+        ContentTemplate="{DataTemplate local:DocumentPage}"
+        Route="DocumentPage" />
     <!-- <ShellContent
         Title="Phonebook"
         ContentTemplate="{DataTemplate local:PhonebookPage}" 

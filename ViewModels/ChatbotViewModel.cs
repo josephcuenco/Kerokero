@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace KeroKero.ViewModels
 {
-    internal class ContactViewModel : INotifyPropertyChanged
+    internal class ChatbotViewModel : INotifyPropertyChanged
     {
         //private INavigation _navigation;
         private string userEmail;
@@ -21,7 +21,7 @@ namespace KeroKero.ViewModels
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public ContactViewModel()
+        public ChatbotViewModel()
         {
             //this._navigation = navigation;
             ReturnHomeBtn = new Command(ReturnHomeTappedAsync);
