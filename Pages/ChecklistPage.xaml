@@ -5,38 +5,91 @@
              NavigationPage.HasNavigationBar="False"
              Title="">
 
-    <ScrollView>
-        <VerticalStackLayout
-        Padding="30,0"
-        Spacing="10">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
 
-            <Label
-            Text="Welcome to the Checklist Page"
-            Style="{StaticResource Headline}"
-            SemanticProperties.HeadingLevel="Level1" />
+        <ScrollView Grid.Row="0">
+            <VerticalStackLayout
+                Padding="30,0"
+                Spacing="10">
 
-            <CollectionView ItemsSource="{Binding Todos}">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout Orientation="Horizontal" Padding="10">
-                            <CheckBox IsChecked="{Binding IsChecked}" />
-                            <Label Text="{Binding Todo}" VerticalOptions="Center" Margin="10,0,0,0"/>
-                        </StackLayout>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-            <Label
-            Text="Page is currently under construction"
-            Style="{StaticResource SubHeadline}"
-            SemanticProperties.HeadingLevel="Level1" />
-            
-            <Button
-                Text="Home" 
-                Command="{Binding HomeBtn}" 
-                FontSize="20"
-                CornerRadius="20"/>
-        </VerticalStackLayout>
-    </ScrollView>
+                <Label
+                Text="Disaster Preparedness Checklist"
+                FontFamily="Inter-Bold"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+                <CollectionView ItemsSource="{Binding Todos}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Orientation="Horizontal" Padding="10">
+                                <CheckBox IsChecked="{Binding IsChecked}" />
+                                <Label Text="{Binding Todo}" VerticalOptions="Center" Margin="10,0,0,0"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!---This mimics the nav bar-->
+        <Grid Grid.Row="1"
+              BackgroundColor="#FAFBFC"
+              Padding="10"
+              VerticalOptions="End">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <ImageButton Grid.Column="0"
+                         Source="home.png"
+                         Command="{Binding HomeBtn}"
+                         HeightRequest="35"
+                         WidthRequest="35"
+                         Aspect="AspectFit">
+                <ImageButton.Triggers>
+                    <DataTrigger TargetType="ImageButton" Binding="{Binding IsHomeButtonPressed}" Value="True">
+                        <Setter Property="Source" Value="homepressed.png"/>
+                    </DataTrigger>
+                </ImageButton.Triggers>
+            </ImageButton>
+
+            <ImageButton Grid.Column="1"
+                         Source="map.png"
+                         Command="{Binding MapBtn}"
+                         HeightRequest="35"
+                         WidthRequest="35"
+                         Aspect="AspectFit">
+                <ImageButton.Triggers>
+                    <DataTrigger TargetType="ImageButton" Binding="{Binding IsMapButtonPressed}" Value="True">
+                        <Setter Property="Source" Value="mappressed.png"/>
+                    </DataTrigger>
+                </ImageButton.Triggers>
+            </ImageButton>
+
+            <ImageButton Grid.Column="2"
+                         Source="lightbulb.png"
+                         Command="{Binding InfoBtn}"
+                         HeightRequest="35"
+                         WidthRequest="35"
+                         Aspect="AspectFit">
+                <ImageButton.Triggers>
+                    <DataTrigger TargetType="ImageButton" Binding="{Binding IsInfoButtonPressed}" Value="True">
+                        <Setter Property="Source" Value="infopressed.png"/>
+                    </DataTrigger>
+                </ImageButton.Triggers>
+            </ImageButton>
+        </Grid>
+    </Grid>
+
 
 
 </ContentPage>

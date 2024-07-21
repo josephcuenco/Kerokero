@@ -123,8 +123,7 @@
             Title="Info"
             ContentTemplate="{DataTemplate local:InfoPage}"
             Route="InfoPage"
-            Icon="{OnPlatform 'lightbulb.png'}" 
-        />
+            Icon="{OnPlatform 'lightbulb.png'}" />
 
     </TabBar>
 
