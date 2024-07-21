@@ -14,6 +14,7 @@ using System.Globalization;
 using System.Reflection;
 //using static Android.Icu.Text.Transliterator;
 using System.Text.RegularExpressions;
+using Microsoft.Maui.Storage;
 
 namespace KeroKero.Pages;
 
@@ -80,7 +81,8 @@ public partial class MapPage : ContentPage
         Debug.WriteLine("You're here!!");
         //adding shelters from Database
         var assembly = Assembly.GetExecutingAssembly();
-        using var pathCSV = await FileSystem.OpenAppPackageFileAsync("Pages/ES.csv");
+        using var pathCSV = await FileSystem.OpenAppPackageFileAsync("Resources/ES.csv");
+        
         using var reader = new StreamReader(pathCSV);
         using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
         var list = csv.GetRecords<Shelter>();
