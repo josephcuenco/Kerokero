@@ -1,1 +1,1 @@
-C:\Users\jjjcu\source\repos\KeroKero\KeroKero.csproj;x64
+C:\Users\jdavi\source\repos\KeroKero\Kerokero\KeroKero.csproj;x64

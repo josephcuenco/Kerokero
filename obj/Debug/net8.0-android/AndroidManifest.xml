@@ -31,4 +31,11 @@
     <service android:name="crc64396a3fe5f8138e3f.KeepAliveService" />
     <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="1999999999" android:authorities="com.companyname.kerokero.mono.MonoRuntimeProvider.__mono_init__" />
   </application>
+  <!-- The following gives permission to use Android's phone dialer -->
+  <queries>
+    <intent>
+      <action android:name="android.intent.action.DIAL" />
+      <data android:scheme="tel" />
+    </intent>
+  </queries>
 </manifest>

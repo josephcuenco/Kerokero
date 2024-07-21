@@ -11,13 +11,18 @@
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-  <permission android:name="com.companyname.kerokero.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature" />
-  <uses-permission android:name="com.companyname.kerokero.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-  <uses-feature android:glEsVersion="0x00020000" android:required="true" />
+  <!-- The following gives permission to use Android's phone dialer -->
   <queries>
+    <intent>
+      <action android:name="android.intent.action.DIAL" />
+      <data android:scheme="tel" />
+    </intent>
     <!-- Needs to be explicitly declared on Android R+ -->
     <package android:name="com.google.android.apps.maps" />
   </queries>
+  <permission android:name="com.companyname.kerokero.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature" />
+  <uses-permission android:name="com.companyname.kerokero.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+  <uses-feature android:glEsVersion="0x00020000" android:required="true" />
   <application android:name="crc64112fcaa19ad2fe95.MainApplication" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:debuggable="true" android:extractNativeLibs="true" android:icon="@mipmap/appicon" android:label="KeroKero" android:roundIcon="@mipmap/appicon_round" android:supportsRtl="true">
     <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyAiTr6Ugzxf_do2aulyj8d4pyFYcJjuPqY" />
     <uses-library android:name="org.apache.http.legacy" android:required="false" />

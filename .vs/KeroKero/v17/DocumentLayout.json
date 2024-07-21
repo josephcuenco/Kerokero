@@ -3,20 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\Kerokero\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|c:\\users\\jdavi\\source\\repos\\kerokero\\kerokero\\pages\\mappage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|solutionrelative:pages\\mappage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|c:\\users\\jdavi\\source\\repos\\kerokero\\kerokero\\pages\\phonebookpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|solutionrelative:pages\\phonebookpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|c:\\users\\jdavi\\source\\repos\\kerokero\\kerokero\\pages\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|solutionrelative:pages\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|c:\\users\\jdavi\\source\\repos\\kerokero\\kerokero\\viewmodels\\phonebookviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|solutionrelative:viewmodels\\phonebookviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|c:\\users\\jdavi\\source\\repos\\kerokero\\kerokero\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|c:\\users\\jdavi\\source\\repos\\kerokero\\kerokero\\pages\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|solutionrelative:pages\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|c:\\users\\jdavi\\source\\repos\\kerokero\\kerokero\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|c:\\users\\jdavi\\source\\repos\\kerokero\\kerokero\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|solutionrelative:appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|c:\\users\\jdavi\\source\\repos\\kerokero\\kerokero\\viewmodels\\appshellviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|solutionrelative:viewmodels\\appshellviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|c:\\users\\jdavi\\source\\repos\\kerokero\\kerokero\\pages\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|solutionrelative:pages\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|c:\\users\\jdavi\\source\\repos\\kerokero\\kerokero\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|solutionrelative:viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|c:\\users\\jdavi\\source\\repos\\kerokero\\kerokero\\pages\\phonebookpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|solutionrelative:pages\\phonebookpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,54 +62,104 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MapPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\Kerokero\\Pages\\MapPage.xaml.cs",
-              "RelativeDocumentMoniker": "Pages\\MapPage.xaml.cs",
-              "ToolTip": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\Kerokero\\Pages\\MapPage.xaml.cs",
-              "RelativeToolTip": "Pages\\MapPage.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAWAAAA",
+              "DocumentIndex": 4,
+              "Title": "AppShellViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\Kerokero\\ViewModels\\AppShellViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\AppShellViewModel.cs",
+              "ToolTip": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\Kerokero\\ViewModels\\AppShellViewModel.cs",
+              "RelativeToolTip": "ViewModels\\AppShellViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-17T15:40:56.603Z",
+              "WhenOpened": "2024-07-21T08:37:17.185Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\Kerokero\\App.xaml.cs",
-              "RelativeDocumentMoniker": "App.xaml.cs",
-              "ToolTip": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\Kerokero\\App.xaml.cs",
-              "RelativeToolTip": "App.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Title": "MainPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\Kerokero\\Pages\\MainPage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\MainPage.xaml.cs",
+              "ToolTip": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\Kerokero\\Pages\\MainPage.xaml.cs",
+              "RelativeToolTip": "Pages\\MainPage.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T04:04:17.789Z",
+              "WhenOpened": "2024-07-18T03:55:38.727Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PhonebookPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\Kerokero\\Pages\\PhonebookPage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\PhonebookPage.xaml.cs",
+              "ToolTip": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\Kerokero\\Pages\\PhonebookPage.xaml.cs",
+              "RelativeToolTip": "Pages\\PhonebookPage.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T03:39:03.892Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "App.xaml",
-              "DocumentMoniker": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\Kerokero\\App.xaml",
-              "RelativeDocumentMoniker": "App.xaml",
-              "ToolTip": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\Kerokero\\App.xaml",
-              "RelativeToolTip": "App.xaml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "AppShell.xaml",
+              "DocumentMoniker": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\Kerokero\\AppShell.xaml",
+              "RelativeDocumentMoniker": "AppShell.xaml",
+              "ToolTip": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\Kerokero\\AppShell.xaml",
+              "RelativeToolTip": "AppShell.xaml",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAAAwAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-06-20T04:04:15.023Z",
+              "WhenOpened": "2024-07-18T03:30:03.586Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\Kerokero\\ViewModels\\MainViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\MainViewModel.cs",
+              "ToolTip": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\Kerokero\\ViewModels\\MainViewModel.cs",
+              "RelativeToolTip": "ViewModels\\MainViewModel.cs",
+              "ViewState": "AQIAAHAAAAAAAAAAAAAqwH4AAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T03:24:37.274Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\Kerokero\\Pages\\MainPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\MainPage.xaml",
+              "ToolTip": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\Kerokero\\Pages\\MainPage.xaml",
+              "RelativeToolTip": "Pages\\MainPage.xaml",
+              "ViewState": "AQIAADMAAAAAAAAAAAAAADcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-18T03:24:12.251Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "LoginPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\Kerokero\\Pages\\LoginPage.xaml.cs",
-              "RelativeDocumentMoniker": "Pages\\LoginPage.xaml.cs",
-              "ToolTip": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\Kerokero\\Pages\\LoginPage.xaml.cs",
-              "RelativeToolTip": "Pages\\LoginPage.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Title": "PhonebookViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\Kerokero\\ViewModels\\PhonebookViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\PhonebookViewModel.cs",
+              "ToolTip": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\Kerokero\\ViewModels\\PhonebookViewModel.cs",
+              "RelativeToolTip": "ViewModels\\PhonebookViewModel.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABQAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T04:16:42.711Z",
+              "WhenOpened": "2024-07-18T03:22:29.988Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PhonebookPage.xaml",
+              "DocumentMoniker": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\Kerokero\\Pages\\PhonebookPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\PhonebookPage.xaml",
+              "ToolTip": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\Kerokero\\Pages\\PhonebookPage.xaml",
+              "RelativeToolTip": "Pages\\PhonebookPage.xaml",
+              "ViewState": "AQIAACoAAAAAAAAAAAAAAAcAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-18T03:21:59.441Z",
               "EditorCaption": ""
             }
           ]

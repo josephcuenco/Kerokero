@@ -48,6 +48,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = KeroKero.Pages.MapPage.xam
 build_metadata.AdditionalFiles.TargetPath = Pages\MapPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\MapPage.xaml
 
+[C:/Users/jdavi/source/repos/KeroKero/Kerokero/Pages/PhonebookPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = KeroKero.Pages.PhonebookPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\PhonebookPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\PhonebookPage.xaml
+
 [C:/Users/jdavi/source/repos/KeroKero/Kerokero/Pages/SignUpPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = KeroKero.Pages.SignUpPage.xaml

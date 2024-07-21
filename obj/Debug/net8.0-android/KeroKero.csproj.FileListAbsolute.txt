@@ -2169,3 +2169,10 @@ C:\Users\jdavi\source\repos\KeroKero\Kerokero\obj\Debug\net8.0-android\stamp\_Co
 C:\Users\jdavi\source\repos\KeroKero\Kerokero\obj\Debug\net8.0-android\stamp\_GenerateJavaStubs.stamp
 C:\Users\jdavi\source\repos\KeroKero\Kerokero\obj\Debug\net8.0-android\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\jdavi\source\repos\KeroKero\Kerokero\obj\Debug\net8.0-android\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\jdavi\source\repos\KeroKero\Kerokero\obj\Debug\net8.0-android\resizetizer\r\drawable\phone_white.png
+C:\Users\jdavi\source\repos\KeroKero\Kerokero\obj\Debug\net8.0-android\resizetizer\r\drawable\fire_department.png
+C:\Users\jdavi\source\repos\KeroKero\Kerokero\obj\Debug\net8.0-android\resizetizer\r\drawable\hospital.png
+C:\Users\jdavi\source\repos\KeroKero\Kerokero\obj\Debug\net8.0-android\resizetizer\r\drawable\police.png
+C:\Users\jdavi\source\repos\KeroKero\Kerokero\obj\Debug\net8.0-android\resizetizer\r\drawable\phone_green.png
+C:\Users\jdavi\source\repos\KeroKero\Kerokero\obj\Debug\net8.0-android\resizetizer\r\drawable\back_home_btn.png
+C:\Users\jdavi\source\repos\KeroKero\Kerokero\obj\Debug\net8.0-android\resizetizer\r\drawable\message_board.png

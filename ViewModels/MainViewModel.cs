@@ -25,7 +25,7 @@ namespace KeroKero.ViewModels
         public Command MapBtn { get; }
         public Command InfoBtn { get; }
 
-        public Command DocumentsBtnMapBtn { get; }
+        public Command DocumentsBtn { get; }
         public Command ContactBtn { get; }
 
         public Command ChecklistBtn { get; }
@@ -75,7 +75,7 @@ namespace KeroKero.ViewModels
             MapBtn = new Command(MapBtnTappedAsync);
             InfoBtn = new Command(InfoBtnTappedAsync);
             //LoginBtn = new Command(LoginBtnTappedAsync);
-            DocumentsBtnMapBtn = new Command(DocTappedAsync);
+            DocumentsBtn = new Command(DocTappedAsync);
             ChecklistBtn = new Command(CheckTappedAsync);
             ContactBtn = new Command(ContactTappedAsync);
             SettingsBtn = new Command(SettingsTappedAsync);
