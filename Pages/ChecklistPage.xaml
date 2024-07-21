@@ -11,7 +11,8 @@
         Spacing="10">
 
             <Label
-            Text="Welcome to the Checklist Page"
+            Text="Disaster Preparedness Checklist"
+            FontFamily="Inter-Bold"
             Style="{StaticResource Headline}"
             SemanticProperties.HeadingLevel="Level1" />
 
@@ -25,11 +26,7 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <Label
-            Text="Page is currently under construction"
-            Style="{StaticResource SubHeadline}"
-            SemanticProperties.HeadingLevel="Level1" />
-            
+
             <Button
                 Text="Home" 
                 Command="{Binding HomeBtn}" 

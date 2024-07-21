@@ -59,10 +59,19 @@ namespace KeroKero.ViewModels
             HomeBtn = new Command(HomeBtnTappedAsync);
             Todos = new ObservableCollection<T>
             {
-                new T { Todo = "Upload documents", IsChecked = false },
-                new T { Todo = "Save important locations", IsChecked = false },
-                new T { Todo = "Save routes for safety", IsChecked = false },
-                new T { Todo = "Get some food and water, ya know, in case...", IsChecked = false }
+                new T { Todo = "Water", IsChecked = false },
+                new T { Todo = "Bob-perishable food (canned, dried)", IsChecked = false },
+                new T { Todo = "First aid kit", IsChecked = false },
+                new T { Todo = "Batteries", IsChecked = false },
+                new T { Todo = "Matches", IsChecked = false },
+                new T { Todo = "Blanket", IsChecked = false },
+                new T { Todo = "Medication", IsChecked = false },
+                new T { Todo = "Emergency Documents", IsChecked = false },
+                new T { Todo = "Cash", IsChecked = false },
+                new T { Todo = "Chargers/ Portable charger", IsChecked = false },
+                new T { Todo = "Sanitary Products", IsChecked = false },
+                new T { Todo = "Towel", IsChecked = false },
+                new T { Todo = "Clothes", IsChecked = false },
             };
 
             //LoginBtn = new Command(LoginBtnTappedAsync);
