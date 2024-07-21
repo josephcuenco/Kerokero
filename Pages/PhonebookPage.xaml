@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8" ?>
+    
+<!-- NOTES / TODO -->
+<!-- The contact list would be better implemented in a .cs file which
+     reads in a list of contact names and numbers, then adds each
+     contact card to the VerticalStackLayout. For now they're just
+     copy and pasted here, in the xaml. -Joey, Jul. 21             -->
+    
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KeroKero.Pages.PhonebookPage"
+             Title="PhonebookPage"
+             BackgroundColor="#F9F9F9">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <!-- "Emergency Numbers" Heading -->
+            <RowDefinition Height="Auto"/>
+            <!-- Main Emergency Call Button -->
+            <RowDefinition Height="Auto"/>
+            <!-- List of Other Emergency Numbers (Scrollable) -->
+            <RowDefinition Height="*"/>
+            <!-- Return Home Button -->
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!--Header-->
+        <Label Grid.Row="0"
+            Text="Emergency Numbers"
+            VerticalOptions="Start" 
+            HorizontalOptions="Start"
+            FontSize="Medium"   
+            Margin="20,10"/>
+
+        <!-- Main Emergency Button (Fire Department / Ambulance) -->
+        <Border Grid.Row="1"
+                Stroke="LightGray"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 10,10,10,10"
+                Background="White"
+                Margin="16,8">
+            <Border.Shadow>
+                <Shadow Brush="Black"
+                        Offset="0,8"
+                        Radius="2"
+                        Opacity="0.7"/>
+            </Border.Shadow>
+
+            <VerticalStackLayout
+                    Padding="0,20"
+                    Spacing="12">
+
+                <Label Text="Fire Department / Ambulance"
+                        HorizontalTextAlignment="Center"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="FillAndExpand"
+                        FontSize="Body"
+                       FontAttributes="None"/>
+
+                <Label Text="119"
+                        HorizontalTextAlignment="Center"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="FillAndExpand"
+                        FontSize="Body"
+                       FontAttributes="Bold"/>
+
+                <Frame BorderColor="#b6ca8c"
+                       BackgroundColor="#b6ca8c"
+                       Padding="8"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       CornerRadius="110">
+
+                    <Border
+                    StrokeThickness="10"
+                    Stroke="#98b45d"
+                    StrokeShape="Ellipse"
+                    Background="#6C9418"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Padding="48, 48">
+
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer
+                            NumberOfTapsRequired="1"
+                            Command="{Binding DialNumberBtn}"
+                            CommandParameter="119"/>
+                        </Border.GestureRecognizers>
+
+                        <Image Source="phone_white.png"
+                               HeightRequest="48"
+                               WidthRequest="48"/>
+
+                    </Border>
+                </Frame>
+            </VerticalStackLayout>
+        </Border>  
+
+        <!-- List of Emergency Phone Numbers (Scrollable) -->
+        <ScrollView Grid.Row="2"
+                    VerticalScrollBarVisibility="Always">
+
+            <VerticalStackLayout>
+                
+                <!-- Police: 110 -->
+                <Border
+                    Stroke="LightGray"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 10,10,10,10"
+                    Background="White"
+                    Margin="16,8">
+                    <Border.Shadow>
+                        <Shadow Brush="Black"
+                        Offset="0,8"
+                        Radius="2"
+                        Opacity="0.7"/>
+                    </Border.Shadow>
+
+                    <Grid
+                        Margin="0,8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="64" />
+                            <ColumnDefinition Width="84" />
+                        </Grid.ColumnDefinitions>
+
+                        <VerticalStackLayout Grid.Column="0"
+                                             HorizontalOptions="Start"
+                                             Margin="24,0">
+                            <Label Text="Police"
+                                   FontSize="Body"
+                                   HorizontalOptions="Start"/>
+
+
+                            <Image Source="police.png"
+                                   WidthRequest="36"
+                                   HeightRequest="36"
+                                   HorizontalOptions="Start"/>
+
+                        </VerticalStackLayout>
+
+                        <Label Grid.Column="2" 
+                               Text="110"
+                               FontSize="Medium"
+                               FontAttributes="Bold"
+                               HorizontalOptions="End"
+                               VerticalOptions="Center"/>
+
+                        <ImageButton Grid.Column="3" 
+                                     Source="phone.png"
+                                     Command="{Binding DialNumberBtn}"
+                                     CommandParameter="110"
+                                     WidthRequest="32"
+                                     HeightRequest="32"
+                                     HorizontalOptions="Center"
+                                     VerticalOptions="Center"/>
+
+                    </Grid>
+
+                </Border>
+
+                <!-- Fire Department: 119 -->
+                <Border Stroke="LightGray"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 10,10,10,10"
+                        Background="White"
+                        Margin="16,8">
+                    <Border.Shadow>
+                        <Shadow Brush="Black"
+                                Offset="0,8"
+                                Radius="2"
+                                Opacity="0.7"/>
+                    </Border.Shadow>
+
+                    <Grid Margin="0,8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="64" />
+                            <ColumnDefinition Width="84" />
+                        </Grid.ColumnDefinitions>
+
+                        <VerticalStackLayout Grid.Column="0"
+                                             HorizontalOptions="Start"
+                                             Margin="24,0">
+                            
+                            <Label Text="Fire Department"
+                                   FontSize="Body"
+                                   HorizontalOptions="Start"/>
+
+                            <Image Source="fire_department.png"
+                                   HorizontalOptions="Start"
+                                   WidthRequest="36"
+                                   HeightRequest="36"/>
+
+                        </VerticalStackLayout>
+
+                        <Label Grid.Column="2" 
+                               Text="119"
+                               FontSize="Medium"
+                               FontAttributes="Bold"
+                               HorizontalOptions="End"
+                               VerticalOptions="Center"/>
+
+                        <ImageButton Grid.Column="3" 
+                                     Source="phone.png"
+                                     Command="{Binding DialNumberBtn}"
+                                     CommandParameter="119"
+                                     WidthRequest="32"
+                                     HeightRequest="32"
+                                     HorizontalOptions="Center"
+                                     VerticalOptions="Center"/>
+
+                    </Grid>
+
+                </Border>
+
+                <!-- Ambulance: 119 -->
+                <Border Stroke="LightGray"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 10,10,10,10"
+                        Background="White"
+                        Margin="16,8">
+                    <Border.Shadow>
+                        <Shadow Brush="Black"
+                                Offset="0,8"
+                                Radius="2"
+                                Opacity="0.7"/>
+                    </Border.Shadow>
+
+                    <Grid Margin="0,8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="64" />
+                            <ColumnDefinition Width="84" />
+                        </Grid.ColumnDefinitions>
+
+                        <VerticalStackLayout Grid.Column="0"
+                                             HorizontalOptions="Start"
+                                             Margin="24,0">
+
+                            <Label Text="Ambulance"
+                                   FontSize="Body"
+                                   HorizontalOptions="Start"/>
+
+                            <Image Source="hospital.png"
+                                   WidthRequest="36"
+                                   HeightRequest="36"
+                                   HorizontalOptions="Start"/>
+
+                        </VerticalStackLayout>
+
+                        <Label Grid.Column="2" 
+                               Text="119"
+                               FontSize="Medium"
+                               FontAttributes="Bold"
+                               HorizontalOptions="End"
+                               VerticalOptions="Center"/>
+
+                        <ImageButton Grid.Column="3" 
+                                     Source="phone.png"
+                                     Command="{Binding DialNumberBtn}"
+                                     CommandParameter="119"
+                                     WidthRequest="32"
+                                     HeightRequest="32"
+                                     HorizontalOptions="Center"
+                                     VerticalOptions="Center"/>
+
+                    </Grid>
+
+                </Border>
+
+                <!-- Disaster Emergency Message Service: 171 -->
+                <Border Stroke="LightGray"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 10,10,10,10"
+                        Background="White"
+                        Margin="16,8">
+                    <Border.Shadow>
+                        <Shadow Brush="Black"
+                                Offset="0,8"
+                                Radius="2"
+                                Opacity="0.7"/>
+                    </Border.Shadow>
+
+                    <Grid Margin="0,8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="64" />
+                            <ColumnDefinition Width="84" />
+                        </Grid.ColumnDefinitions>
+
+                        <VerticalStackLayout Grid.Column="0"
+                                             HorizontalOptions="Start"
+                                             Margin="24,0">
+
+                            <Label Text="Disaster Message Board"
+                                   FontSize="Body"
+                                   HorizontalOptions="Start"/>
+
+                            <Image Source="message_board.png"
+                                   WidthRequest="36"
+                                   HeightRequest="36"
+                                   HorizontalOptions="Start"/>
+
+                        </VerticalStackLayout>
+
+                        <Label Grid.Column="2" 
+                               Text="171"
+                               FontSize="Medium"
+                               FontAttributes="Bold"
+                               HorizontalOptions="End"
+                               VerticalOptions="Center"/>
+
+                        <ImageButton Grid.Column="3" 
+                                     Source="phone.png"
+                                     Command="{Binding DialNumberBtn}"
+                                     CommandParameter="171"
+                                     WidthRequest="32"
+                                     HeightRequest="32"
+                                     HorizontalOptions="Center"
+                                     VerticalOptions="Center"/>
+
+                    </Grid>
+
+                </Border>
+
+                <!-- Kyoto Prefectural Police Headquarters, General Consultation Office: 075-414-0110 -->
+                <Border Stroke="LightGray"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 10,10,10,10"
+                        Background="White"
+                        Margin="16,8">
+                    <Border.Shadow>
+                        <Shadow Brush="Black"
+                                Offset="0,8"
+                                Radius="2"
+                                Opacity="0.7"/>
+                    </Border.Shadow>
+
+                    <Grid Margin="0,8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="84" />
+                        </Grid.ColumnDefinitions>
+
+                        <VerticalStackLayout Grid.Column="0"
+                                             HorizontalOptions="Start"
+                                             Margin="24,0">
+
+                            <Label Text="Kyoto Police HQ"
+                                   FontSize="Body"
+                                   HorizontalOptions="Start"/>
+
+                            <Image Source="police.png"
+                                   WidthRequest="36"
+                                   HeightRequest="36"
+                                   HorizontalOptions="Start"/>
+
+                        </VerticalStackLayout>
+
+                        <Label Grid.Column="2" 
+                               Text="075-414-0110"
+                               FontSize="Medium"
+                               FontAttributes="Bold"
+                               HorizontalOptions="End"
+                               VerticalOptions="Center"/>
+
+                        <ImageButton Grid.Column="3" 
+                                     Source="phone.png"
+                                     Command="{Binding DialNumberBtn}"
+                                     CommandParameter="0754140110"
+                                     WidthRequest="32"
+                                     HeightRequest="32"
+                                     HorizontalOptions="Center"
+                                     VerticalOptions="Center"/>
+
+                    </Grid>
+
+                </Border>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!--Return Home-->
+        <Border Grid.Row="3"
+                Stroke="White"
+                StrokeThickness="1"
+                StrokeShape="Rectangle"
+                Background="White"
+                HorizontalOptions="Center"
+                Margin="0,6">
+
+            <Border.GestureRecognizers>
+                    <TapGestureRecognizer
+                                NumberOfTapsRequired="1"
+                                Command="{Binding ReturnHomeBtn}"/>
+                </Border.GestureRecognizers>
+
+            <VerticalStackLayout
+                    Padding="0,0"
+                    Spacing="0">
+                
+                <Image Source="back_home_btn.png" HeightRequest="30" WidthRequest="30"/>
+
+                <Label Text="Return Home"
+                        HorizontalTextAlignment="Center"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        FontSize="Caption"
+                        FontAttributes="None"/>
+                
+             </VerticalStackLayout>
+         </Border>
+
+    </Grid>
+
+</ContentPage>
