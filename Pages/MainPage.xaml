@@ -68,7 +68,7 @@
             <StackLayout Grid.Column="1" Spacing="0">
                 <ImageButton 
                     Source="emergencybtn.png"
-                    Command="{Binding ContactBtn}"
+                    Command="{Binding PhonebookBtn}"
                     HeightRequest="125"
                     WidthRequest="300"/>
             </StackLayout>

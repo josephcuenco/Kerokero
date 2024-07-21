@@ -10,7 +10,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KeroKero.Pages.PhonebookPage"
              Title="PhonebookPage"
-             BackgroundColor="#F9F9F9">
+             BackgroundColor="White">
 
     <Grid>
         <Grid.RowDefinitions>
