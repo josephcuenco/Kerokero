@@ -1,38 +1,50 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\",
+  "WorkspaceRootPath": "C:\\Users\\jjjcu\\source\\repos\\KeroKero\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|c:\\users\\jdavi\\source\\repos\\kerokero\\pages\\phonebookpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|solutionrelative:pages\\phonebookpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|c:\\users\\jjjcu\\source\\repos\\kerokero\\pages\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|solutionrelative:pages\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|c:\\users\\jdavi\\source\\repos\\kerokero\\viewmodels\\phonebookviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|solutionrelative:viewmodels\\phonebookviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|c:\\users\\jjjcu\\source\\repos\\kerokero\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|solutionrelative:appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|c:\\users\\jdavi\\source\\repos\\kerokero\\pages\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|solutionrelative:pages\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|c:\\users\\jdavi\\source\\repos\\kerokero\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|c:\\users\\jjjcu\\source\\repos\\kerokero\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|solutionrelative:appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|c:\\users\\jdavi\\source\\repos\\kerokero\\viewmodels\\appshellviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|solutionrelative:viewmodels\\appshellviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|c:\\users\\jjjcu\\source\\repos\\kerokero\\pages\\signuppage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|solutionrelative:pages\\signuppage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|c:\\users\\jdavi\\source\\repos\\kerokero\\pages\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|c:\\users\\jjjcu\\source\\repos\\kerokero\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|c:\\users\\jjjcu\\source\\repos\\kerokero\\pages\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|solutionrelative:pages\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|c:\\users\\jdavi\\source\\repos\\kerokero\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|solutionrelative:viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|c:\\users\\jjjcu\\source\\repos\\kerokero\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|c:\\users\\jdavi\\source\\repos\\kerokero\\pages\\phonebookpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|solutionrelative:pages\\phonebookpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|c:\\users\\jjjcu\\source\\repos\\kerokero\\pages\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|solutionrelative:pages\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|c:\\users\\jjjcu\\source\\repos\\kerokero\\pages\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|solutionrelative:pages\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|c:\\users\\jjjcu\\source\\repos\\kerokero\\pages\\signuppage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|solutionrelative:pages\\signuppage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|c:\\users\\jjjcu\\source\\repos\\kerokero\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6DA0171-B75C-4027-BC74-F6B31D9BDC2E}|KeroKero.csproj|solutionrelative:mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,120 +54,149 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 6,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MainPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\jjjcu\\source\\repos\\KeroKero\\Pages\\MainPage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\MainPage.xaml.cs",
+              "ToolTip": "C:\\Users\\jjjcu\\source\\repos\\KeroKero\\Pages\\MainPage.xaml.cs",
+              "RelativeToolTip": "Pages\\MainPage.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T04:04:59.548Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AppShellViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\ViewModels\\AppShellViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModels\\AppShellViewModel.cs",
-              "ToolTip": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\ViewModels\\AppShellViewModel.cs",
-              "RelativeToolTip": "ViewModels\\AppShellViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 3,
+              "Title": "SignUpPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\jjjcu\\source\\repos\\KeroKero\\Pages\\SignUpPage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\SignUpPage.xaml.cs",
+              "ToolTip": "C:\\Users\\jjjcu\\source\\repos\\KeroKero\\Pages\\SignUpPage.xaml.cs",
+              "RelativeToolTip": "Pages\\SignUpPage.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T08:37:17.185Z",
+              "WhenOpened": "2024-06-20T04:32:10.837Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AppShell.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\jjjcu\\source\\repos\\KeroKero\\AppShell.xaml.cs",
+              "RelativeDocumentMoniker": "AppShell.xaml.cs",
+              "ToolTip": "C:\\Users\\jjjcu\\source\\repos\\KeroKero\\AppShell.xaml.cs",
+              "RelativeToolTip": "AppShell.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T04:04:42.712Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "MainPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\Pages\\MainPage.xaml.cs",
-              "RelativeDocumentMoniker": "Pages\\MainPage.xaml.cs",
-              "ToolTip": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\Pages\\MainPage.xaml.cs",
-              "RelativeToolTip": "Pages\\MainPage.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-18T03:55:38.727Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PhonebookPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\Pages\\PhonebookPage.xaml.cs",
-              "RelativeDocumentMoniker": "Pages\\PhonebookPage.xaml.cs",
-              "ToolTip": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\Pages\\PhonebookPage.xaml.cs",
-              "RelativeToolTip": "Pages\\PhonebookPage.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-18T03:39:03.892Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "AppShell.xaml",
-              "DocumentMoniker": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\AppShell.xaml",
+              "DocumentMoniker": "C:\\Users\\jjjcu\\source\\repos\\KeroKero\\AppShell.xaml",
               "RelativeDocumentMoniker": "AppShell.xaml",
-              "ToolTip": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\AppShell.xaml",
+              "ToolTip": "C:\\Users\\jjjcu\\source\\repos\\KeroKero\\AppShell.xaml",
               "RelativeToolTip": "AppShell.xaml",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAAAwAAAANAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-07-18T03:30:03.586Z"
+              "WhenOpened": "2024-06-20T04:04:36.004Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\jjjcu\\source\\repos\\KeroKero\\App.xaml.cs",
+              "RelativeDocumentMoniker": "App.xaml.cs",
+              "ToolTip": "C:\\Users\\jjjcu\\source\\repos\\KeroKero\\App.xaml.cs",
+              "RelativeToolTip": "App.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T04:04:17.789Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "MainViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\ViewModels\\MainViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModels\\MainViewModel.cs",
-              "ToolTip": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\ViewModels\\MainViewModel.cs",
-              "RelativeToolTip": "ViewModels\\MainViewModel.cs",
-              "ViewState": "AQIAAHAAAAAAAAAAAAAqwH4AAAAxAAAA",
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\jjjcu\\source\\repos\\KeroKero\\App.xaml",
+              "RelativeDocumentMoniker": "App.xaml",
+              "ToolTip": "C:\\Users\\jjjcu\\source\\repos\\KeroKero\\App.xaml",
+              "RelativeToolTip": "App.xaml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-06-20T04:04:15.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoginPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\jjjcu\\source\\repos\\KeroKero\\Pages\\LoginPage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\LoginPage.xaml.cs",
+              "ToolTip": "C:\\Users\\jjjcu\\source\\repos\\KeroKero\\Pages\\LoginPage.xaml.cs",
+              "RelativeToolTip": "Pages\\LoginPage.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-18T03:24:37.274Z"
+              "WhenOpened": "2024-06-20T04:16:42.711Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "MainPage.xaml",
-              "DocumentMoniker": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\Pages\\MainPage.xaml",
+              "DocumentMoniker": "C:\\Users\\jjjcu\\source\\repos\\KeroKero\\Pages\\MainPage.xaml",
               "RelativeDocumentMoniker": "Pages\\MainPage.xaml",
-              "ToolTip": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\Pages\\MainPage.xaml",
+              "ToolTip": "C:\\Users\\jjjcu\\source\\repos\\KeroKero\\Pages\\MainPage.xaml",
               "RelativeToolTip": "Pages\\MainPage.xaml",
-              "ViewState": "AQIAADMAAAAAAAAAAAAAADcAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-07-18T03:24:12.251Z"
+              "WhenOpened": "2024-06-20T04:05:43.087Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PhonebookViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\ViewModels\\PhonebookViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModels\\PhonebookViewModel.cs",
-              "ToolTip": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\ViewModels\\PhonebookViewModel.cs",
-              "RelativeToolTip": "ViewModels\\PhonebookViewModel.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABQAAAAkAAAA",
+              "DocumentIndex": 8,
+              "Title": "LoginPage.xaml",
+              "DocumentMoniker": "C:\\Users\\jjjcu\\source\\repos\\KeroKero\\Pages\\LoginPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\LoginPage.xaml",
+              "ToolTip": "C:\\Users\\jjjcu\\source\\repos\\KeroKero\\Pages\\LoginPage.xaml",
+              "RelativeToolTip": "Pages\\LoginPage.xaml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-06-20T04:03:20.423Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SignUpPage.xaml",
+              "DocumentMoniker": "C:\\Users\\jjjcu\\source\\repos\\KeroKero\\Pages\\SignUpPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\SignUpPage.xaml",
+              "ToolTip": "C:\\Users\\jjjcu\\source\\repos\\KeroKero\\Pages\\SignUpPage.xaml",
+              "RelativeToolTip": "Pages\\SignUpPage.xaml",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAwAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-06-20T04:03:35.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MauiProgram.cs",
+              "DocumentMoniker": "C:\\Users\\jjjcu\\source\\repos\\KeroKero\\MauiProgram.cs",
+              "RelativeDocumentMoniker": "MauiProgram.cs",
+              "ToolTip": "C:\\Users\\jjjcu\\source\\repos\\KeroKero\\MauiProgram.cs",
+              "RelativeToolTip": "MauiProgram.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-18T03:22:29.988Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PhonebookPage.xaml",
-              "DocumentMoniker": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\Pages\\PhonebookPage.xaml",
-              "RelativeDocumentMoniker": "Pages\\PhonebookPage.xaml",
-              "ToolTip": "C:\\Users\\jdavi\\source\\repos\\KeroKero\\Pages\\PhonebookPage.xaml",
-              "RelativeToolTip": "Pages\\PhonebookPage.xaml",
-              "ViewState": "AQIAADMAAAAAAAAAAAAAAAcAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-07-18T03:21:59.441Z",
+              "WhenOpened": "2024-06-20T04:04:45.43Z",
               "EditorCaption": ""
             }
           ]

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KeroKero")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+74ed59314ca00c39032cdd34122cfe11e363d920")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+2ab6aacfec3ef935e130e1419f66e528ec17acab")]
 [assembly: System.Reflection.AssemblyProductAttribute("KeroKero")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KeroKero")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
