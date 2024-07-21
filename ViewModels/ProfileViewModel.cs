@@ -20,6 +20,7 @@ namespace KeroKero.ViewModels
         public string webApiKey = "AIzaSyCPz-5MixGymeUJlMKwkyhpZ9ynIGTxIRM";
 
         public Command ReturnHomeBtn { get; }
+        
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -27,6 +28,7 @@ namespace KeroKero.ViewModels
         {
             //this._navigation = navigation;
             ReturnHomeBtn = new Command(ReturnHomeTappedAsync);
+            
 
         }
 
@@ -34,6 +36,8 @@ namespace KeroKero.ViewModels
         {
             await Shell.Current.GoToAsync("//MainPage");
         }
+
+        
 
     }
 }

@@ -8,6 +8,8 @@
     Shell.FlyoutBehavior="Disabled"
     Title="KeroKero">
 
+    
+    
     <!-- Header -->
     <Shell.TitleView>
         <Grid
@@ -122,8 +124,6 @@
             ContentTemplate="{DataTemplate local:InfoPage}"
             Route="InfoPage"
             Icon="{OnPlatform 'lightbulb.png'}" />
-        
-        
 
     </TabBar>
 
