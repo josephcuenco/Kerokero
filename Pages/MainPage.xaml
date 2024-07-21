@@ -60,7 +60,7 @@
             <StackLayout Grid.Column="0" Spacing="0">
                 <ImageButton 
                     Source="importantdocbtn.png"
-                    Command="{Binding ChecklistBtn}"
+                    Command="{Binding DocumentsBtn}"
                     HeightRequest="125"
                     WidthRequest="300"/>
 
@@ -83,7 +83,7 @@
 
         <ImageButton Grid.Row="7"
              Source="chatbot.png"
-             Command="{Binding ChecklistBtn}"
+             Command="{Binding ChatbotBtn}"
         />
 
     </Grid>
