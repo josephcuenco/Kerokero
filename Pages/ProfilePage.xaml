@@ -16,10 +16,62 @@
             SemanticProperties.HeadingLevel="Level1" />
 
             <Label
-            Text="Page is currently under construction"
-            Style="{StaticResource SubHeadline}"
+            Text="Add your important locations down below"
+            Style="{StaticResource Headline}"
             SemanticProperties.HeadingLevel="Level1" />
-            
+
+            <Entry x:Name="homeInput"
+               Placeholder="Enter text here"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="CenterAndExpand" />
+            <Button 
+                x:Name="homeAddressBTN" 
+                Text="Set Home location"
+                Clicked="OnSaveInputClicked"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand" />
+
+            <Label x:Name="home"
+                Text="You home address will show up here once inputed"
+                FontSize="20"
+                TextColor="Black"
+                BackgroundColor="White" 
+                />
+
+            <Entry x:Name="schoolInput"
+                Placeholder="Enter text here"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand" />
+            <Button 
+                x:Name="schoolAddressBTN" 
+                Text="Set School location"
+                Clicked="OnSchoolInputClicked"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand" />
+
+            <Label x:Name="school"
+                Text="You school address will show up here once inputed"
+                FontSize="20"
+                TextColor="Black"
+                BackgroundColor="White" />
+
+            <Entry x:Name="workInput"
+                Placeholder="Enter text here"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand" />
+            <Button 
+                x:Name="workAddressBTN" 
+                Text="Set Work location"
+                Clicked="OnWorkInputClicked"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand" />
+
+            <Label x:Name="work"
+                Text="You work address will show up here once inputed"
+                FontSize="20"
+                TextColor="Black"
+                BackgroundColor="White" />
+
             <Button
                 Text="Home" 
                 Command="{Binding HomeBtn}" 
