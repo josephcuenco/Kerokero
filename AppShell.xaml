@@ -122,6 +122,8 @@
             ContentTemplate="{DataTemplate local:InfoPage}"
             Route="InfoPage"
             Icon="{OnPlatform 'lightbulb.png'}" />
+        
+        
 
     </TabBar>
 
