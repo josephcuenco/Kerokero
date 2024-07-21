@@ -13,6 +13,7 @@
     <!-- Header -->
     <Shell.TitleView>
         <Grid
+        
         RowSpacing="8"
         ColumnSpacing="8"
         HorizontalOptions="Fill">
@@ -93,6 +94,7 @@
         Title="Phonebook"
         ContentTemplate="{DataTemplate local:PhonebookPage}" 
         Route="PhonebookPage" /> 
+    <!--
     <ShellContent
         Title="Profile"
         ContentTemplate="{DataTemplate local:ProfilePage}"
