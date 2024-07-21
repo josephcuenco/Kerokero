@@ -74,7 +74,7 @@
 
             <Button
                 Text="Home" 
-                Command="{Binding HomeBtn}" 
+                Command="{Binding ReturnHomeBtn}" 
                 FontSize="20"
                 CornerRadius="20"/>
         </VerticalStackLayout>

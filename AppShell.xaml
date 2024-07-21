@@ -31,7 +31,8 @@
                 Source="person.png"
                 HeightRequest="30"
                 WidthRequest="30"
-                Command="{Binding ProfileBtn}"/>
+                Command="{Binding ProfileBtn}"
+                />
             <Label
                 Grid.Row="0" Grid.Column="1"
                 Text="Kero&lt;span&gt;&lt;strong&gt;Kero&lt;/strong&gt;&lt;/span&gt;"
@@ -108,22 +109,23 @@
     <TabBar>
 
         <ShellContent
-            Title="Home"
+            
             ContentTemplate="{DataTemplate local:MainPage}"
             Route="MainPage"
             Icon="{OnPlatform 'home.png'}"/>
         
         <ShellContent
-            Title="Map"
+            
             ContentTemplate="{DataTemplate local:MapPage}"
             Route="MapPage"
             Icon="{OnPlatform 'map.png'}" />
 
         <ShellContent
-            Title="Info"
+            
             ContentTemplate="{DataTemplate local:InfoPage}"
             Route="InfoPage"
-            Icon="{OnPlatform 'lightbulb.png'}" />
+            Icon="{OnPlatform 'lightbulb.png'}" 
+        />
 
     </TabBar>
 
