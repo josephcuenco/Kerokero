@@ -30,6 +30,12 @@
                BackgroundColor="White"
                IsVisible="False" 
                />
+        <Button x:Name="saveBtn" 
+            Text="Save Route" 
+            IsVisible="False" 
+            VerticalOptions="Start"
+            Grid.Row ="1"
+            />
         <Label x:Name="durationLabel" Grid.Row="1"
            Text="Duration: "
            FontSize="20"

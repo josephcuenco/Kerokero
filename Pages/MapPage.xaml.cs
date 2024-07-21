@@ -7,6 +7,8 @@ using Newtonsoft.Json.Linq;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Text.Json;
+using Microsoft.Maui.Storage;
 using System.Collections.Generic;
 using Map = Microsoft.Maui.Controls.Maps.Map;
 using CsvHelper;
@@ -37,7 +39,27 @@ public partial class MapPage : ContentPage
 
     }
 
+    
+    public class LocationPinService
+    {
+        public void SaveLocationPins(string key, Pin pin)
+        {
+            string json = JsonSerializer.Serialize(pin);
+            Preferences.Set(key, json);
+        }
 
+        public Pin GetLocationPins(string key)
+        {
+            string json = Preferences.Get(key, string.Empty);
+            if (string.IsNullOrEmpty(json))
+            {
+                return new Pin();
+            }
+            return JsonSerializer.Deserialize<Pin>(json);
+        }
+    }
+
+    private readonly LocationPinService _locationPinService = new LocationPinService();
     protected override async void OnAppearing()
     {
         //base.OnAppearing();
@@ -59,13 +81,13 @@ public partial class MapPage : ContentPage
             Location = new Location(35.038108, 135.733235)
         };
 
-        Pin origin = new Pin
+        /*Pin origin = new Pin
         {
             Label = "Starting Point",
             Address = "Origin location",
             Type = PinType.SavedPin,
             Location = new Location(35.0048, 135.7690)
-        };
+        };*/
 
         Pin Kamigamo = new Pin
         {
@@ -74,6 +96,10 @@ public partial class MapPage : ContentPage
             Type = PinType.Place,
             Location = new Location(35.055878, 135.758261)
         };
+
+        Pin origin = _locationPinService.GetLocationPins("HomePin");
+        /*DisplayAlert("Geocode Result", $"Got Pin: {retrievedPin.Label}", "OK");
+        map.Pins.Add(retrievedPin);*/
 
         map.Pins.Add(KinugasaJunior);
         map.Pins.Add(origin);
@@ -228,6 +254,8 @@ public partial class MapPage : ContentPage
         // Handle button click event
         //DisplayAlert("Button Clicked", "You clicked the button!", "OK");
         direct.IsVisible = true;
+        saveBtn.IsVisible = true;
+
         yourButton.Text = "Back to Map";
         yourButton.Clicked -= YourButton_Clicked;
         yourButton.Clicked += Back_Clicked;
