@@ -83,6 +83,10 @@
         Title="Document"
         ContentTemplate="{DataTemplate local:DocumentPage}"
         Route="DocumentPage" />
+    <ShellContent
+    Title="Profile"
+    ContentTemplate="{DataTemplate local:ProfilePage}"
+    Route="ProfilePage" />
     <!-- <ShellContent
         Title="Phonebook"
         ContentTemplate="{DataTemplate local:PhonebookPage}" 
