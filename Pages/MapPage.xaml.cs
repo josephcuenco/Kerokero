@@ -98,12 +98,16 @@ public partial class MapPage : ContentPage
         };
 
         Pin origin = _locationPinService.GetLocationPins("HomePin");
+        Pin work = _locationPinService.GetLocationPins("WorkPin");
+        Pin school = _locationPinService.GetLocationPins("SchoolPin");
         /*DisplayAlert("Geocode Result", $"Got Pin: {retrievedPin.Label}", "OK");
         map.Pins.Add(retrievedPin);*/
 
         map.Pins.Add(KinugasaJunior);
         map.Pins.Add(origin);
         map.Pins.Add(Kamigamo);
+        map.Pins.Add(work);
+        map.Pins.Add(school);
         Debug.WriteLine("You're here!!");
         //adding shelters from Database
         var assembly = Assembly.GetExecutingAssembly();

@@ -23,6 +23,8 @@
                 VerticalOptions="Start"
                 Grid.Row ="0"
                 Clicked="YourButton_Clicked"/>
+
+        
         <Label x:Name="direct"
                Text="See Route"
                FontSize="20"

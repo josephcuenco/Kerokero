@@ -114,10 +114,16 @@ public partial class ProfilePage : ContentPage
                 double lat = (double)location["lat"];
                 double lng = (double)location["lng"];
 
-
+                Pin s = new Pin
+                {
+                    Location = new Location(lat, lng),
+                    Label = "School",
+                    Address = UserInput
+                };
+                _locationPinService.SaveLocationPins("SchoolPin", s);
 
                 // Display the latitude and longitude
-                await DisplayAlert("Geocode Result", $"Latitude: {lat}, Longitude: {lng}", "OK");
+                //await DisplayAlert("Geocode Result", $"Latitude: {lat}, Longitude: {lng}", "OK");
             }
             else
             {
@@ -155,10 +161,16 @@ public partial class ProfilePage : ContentPage
                 double lat = (double)location["lat"];
                 double lng = (double)location["lng"];
 
-
+                Pin w = new Pin
+                {
+                    Location = new Location(lat, lng),
+                    Label = "Work",
+                    Address = UserInput
+                };
+                _locationPinService.SaveLocationPins("WorkPin", w);
 
                 // Display the latitude and longitude
-                await DisplayAlert("Geocode Result", $"Latitude: {lat}, Longitude: {lng}", "OK");
+                //await DisplayAlert("Geocode Result", $"Latitude: {lat}, Longitude: {lng}", "OK");
             }
             else
             {
