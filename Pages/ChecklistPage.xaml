@@ -7,11 +7,12 @@
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <ScrollView Grid.Row="0">
+        <ScrollView Grid.Row="1">
             <VerticalStackLayout
                 Padding="30,0"
                 Spacing="10">
@@ -19,6 +20,8 @@
                 <Label
                 Text="Disaster Preparedness Checklist"
                 FontFamily="Inter-Bold"
+                FontSize="19"
+                VerticalTextAlignment="Start"
                 Style="{StaticResource Headline}"
                 SemanticProperties.HeadingLevel="Level1" />
 
@@ -26,7 +29,7 @@
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout Orientation="Horizontal" Padding="10">
-                                <CheckBox IsChecked="{Binding IsChecked}" />
+                                <CheckBox IsChecked="{Binding IsChecked}" Color="#81A339"/>
                                 <Label Text="{Binding Todo}" VerticalOptions="Center" Margin="10,0,0,0"/>
                             </StackLayout>
                         </DataTemplate>
@@ -38,7 +41,7 @@
         </ScrollView>
 
         <!---This mimics the nav bar-->
-        <Grid Grid.Row="1"
+        <Grid Grid.Row="2"
               BackgroundColor="#FAFBFC"
               Padding="10"
               VerticalOptions="End">
@@ -52,8 +55,8 @@
             <ImageButton Grid.Column="0"
                          Source="home.png"
                          Command="{Binding HomeBtn}"
-                         HeightRequest="35"
-                         WidthRequest="35"
+                         HeightRequest="25"
+                         WidthRequest="25"
                          Aspect="AspectFit">
                 <ImageButton.Triggers>
                     <DataTrigger TargetType="ImageButton" Binding="{Binding IsHomeButtonPressed}" Value="True">
@@ -65,8 +68,8 @@
             <ImageButton Grid.Column="1"
                          Source="map.png"
                          Command="{Binding MapBtn}"
-                         HeightRequest="35"
-                         WidthRequest="35"
+                         HeightRequest="25"
+                         WidthRequest="25"
                          Aspect="AspectFit">
                 <ImageButton.Triggers>
                     <DataTrigger TargetType="ImageButton" Binding="{Binding IsMapButtonPressed}" Value="True">
@@ -78,8 +81,8 @@
             <ImageButton Grid.Column="2"
                          Source="lightbulb.png"
                          Command="{Binding InfoBtn}"
-                         HeightRequest="35"
-                         WidthRequest="35"
+                         HeightRequest="25"
+                         WidthRequest="25"
                          Aspect="AspectFit">
                 <ImageButton.Triggers>
                     <DataTrigger TargetType="ImageButton" Binding="{Binding IsInfoButtonPressed}" Value="True">
