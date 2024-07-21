@@ -12,7 +12,7 @@ using Map = Microsoft.Maui.Controls.Maps.Map;
 using CsvHelper;
 using System.Globalization;
 using System.Reflection;
-using static Android.Icu.Text.Transliterator;
+//using static Android.Icu.Text.Transliterator;
 using System.Text.RegularExpressions;
 using Microsoft.Maui.Storage;
 
