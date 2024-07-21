@@ -16,11 +16,11 @@
             <!-- 4 Spacing  -->
             <RowDefinition Height="40" />
             <!-- 5 Features bar-->
-            <RowDefinition Height="0" />
+            <RowDefinition Height="Auto" />
             <!-- 6 Spacing-->
             <RowDefinition Height="0" />
             <!-- 7 Chat bot box -->
-            <RowDefinition Height="550" />
+            <RowDefinition Height="325" />
             
         </Grid.RowDefinitions>
 
@@ -60,14 +60,14 @@
             <StackLayout Grid.Column="0" Spacing="0">
                 <ImageButton 
                     Source="importantdocbtn.png"
-                    Command="{Binding DocumentsBtn}"
+                    Command="{Binding ChecklistBtn}"
                     HeightRequest="125"
                     WidthRequest="300"/>
 
             </StackLayout>
             <StackLayout Grid.Column="1" Spacing="0">
                 <ImageButton 
-                     Source="emergencybtn.png"
+                    Source="emergencybtn.png"
                     Command="{Binding ContactBtn}"
                     HeightRequest="125"
                     WidthRequest="300"/>
