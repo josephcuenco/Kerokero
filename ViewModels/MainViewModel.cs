@@ -35,6 +35,8 @@ namespace KeroKero.ViewModels
 
         public Command ChatbotBtn { get; }
 
+        public Command HomeBtn { get; }
+
         private string _fullName;
         public string FullName
         {
@@ -84,6 +86,7 @@ namespace KeroKero.ViewModels
             SettingsBtn = new Command(SettingsTappedAsync);
             ProfileBtn = new Command(ProfileTappedAsync);
             ChatbotBtn = new Command(ChatbotBtnTappedAsync);
+            HomeBtn= new Command(HomeBtnTappedAsync);   
         }
 
 
@@ -106,6 +109,10 @@ namespace KeroKero.ViewModels
             }
         }*/
 
+        private async void HomeBtnTappedAsync(object obj)
+        {
+            await Shell.Current.GoToAsync("//MainPage");
+        }
         private async void ChatbotBtnTappedAsync(object obj)
         {
             await Shell.Current.GoToAsync("//ChatbotPage");
