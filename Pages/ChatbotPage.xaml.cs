@@ -12,12 +12,12 @@ using Map = Microsoft.Maui.Controls.Maps.Map;
 
 namespace KeroKero.Pages;
 
-public partial class ChecklistPage : ContentPage
+public partial class ChatbotPage : ContentPage
 {
    
-    public ChecklistPage()
+    public ChatbotPage()
     {
         InitializeComponent();
-        BindingContext = new ChecklistViewModel();
+        BindingContext = new ChatbotViewModel();
     }
 }
