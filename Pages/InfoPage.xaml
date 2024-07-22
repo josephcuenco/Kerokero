@@ -7,11 +7,11 @@
 
     <ScrollView>
         <VerticalStackLayout
-        Padding="30,0"
+        Padding="20,0"
         Spacing="10">
             <StackLayout Padding="10">
                 <!-- Title -->
-                <Label Text="Latest Earthquakes Near Kyoto" FontSize="25" HorizontalOptions="Center" HeightRequest="100"/>
+                <Label Text="Latest Earthquakes Near Kyoto, Japan" FontSize="18" HorizontalOptions="Start" HeightRequest="50" FontAttributes="Bold"/>
 
                 <!-- Header Grid -->
                 <Grid Padding="10,0" ColumnSpacing="10">
@@ -20,9 +20,9 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Text="Magnitude" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" Grid.Column="0"/>
-                    <Label Text="Date" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Grid.Column="1"/>
-                    <Label Text="Distance" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Grid.Column="2"/>
+                    <Label Text="Magnitude" FontSize="16" FontAttributes="Bold" HorizontalOptions="Start" Grid.Column="0"/>
+                    <Label Text="Date" FontSize="16" FontAttributes="Bold" HorizontalOptions="Start" Grid.Column="1"/>
+                    <Label Text="Distance" FontSize="16" FontAttributes="Bold" HorizontalOptions="Start" Grid.Column="2"/>
                 </Grid>
 
                 <!-- Earthquake List -->
@@ -31,8 +31,8 @@
                         <DataTemplate>
                             <ViewCell>
                                 <StackLayout Orientation="Horizontal" Padding="10">
-                                    <Label Text="{Binding Magnitude}" FontSize="Small" WidthRequest="100"/>
-                                    <Label Text="{Binding Date}" FontSize="Small" WidthRequest="100"/>
+                                    <Label Text="{Binding Magnitude}"  FontSize="Medium" WidthRequest="110" TextColor="#6C9418" FontAttributes="Bold" />
+                                    <Label Text="{Binding Date}" FontSize="Small" WidthRequest="105"/>
                                     <Label Text="{Binding Distance}" FontSize="Small" WidthRequest="100"/>
                                 </StackLayout>
                             </ViewCell>
@@ -42,11 +42,11 @@
             </StackLayout>
 
 
-            <Button
+            <!--<Button
                 Text="Home" 
                 Command="{Binding HomeBtn}" 
                 FontSize="20"
-                CornerRadius="20"/>
+                CornerRadius="20"/>-->
         </VerticalStackLayout>
     </ScrollView>
 
