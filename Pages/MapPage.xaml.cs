@@ -17,12 +17,15 @@ using System.Reflection;
 //using static Android.Icu.Text.Transliterator;
 using System.Text.RegularExpressions;
 using Microsoft.Maui.Storage;
+using System.Net.NetworkInformation;
 
 namespace KeroKero.Pages;
 
 public partial class MapPage : ContentPage
 {
     private HttpClient _httpClient;
+
+    private Pin Origin = null;
     public MapPage()
 	{
 		InitializeComponent();
@@ -53,22 +56,47 @@ public partial class MapPage : ContentPage
             string json = Preferences.Get(key, string.Empty);
             if (string.IsNullOrEmpty(json))
             {
-                return new Pin();
+                return null;
             }
             return JsonSerializer.Deserialize<Pin>(json);
         }
     }
 
+    public class RouteService
+    {
+        public void SaveRoute(string key, string route)
+        {
+            string json = JsonSerializer.Serialize(route);
+            Preferences.Set(key, json);
+        }
+
+        public String GetRoute(string key)
+        {
+            string json = Preferences.Get(key, string.Empty);
+            if (string.IsNullOrEmpty(json))
+            {
+                return null;
+            }
+            return JsonSerializer.Deserialize<String>(json);
+        }
+    }
+
     private readonly LocationPinService _locationPinService = new LocationPinService();
+    private RouteService _routeService = new RouteService();
 
     string oInput = "";
 
-    Pin Origin { get; set; }
+    
 
     private async void originClicked(object sender, EventArgs e)
     {
         oInput = originInput.Text;
-        
+        if(string.IsNullOrWhiteSpace(oInput))
+        {
+            await DisplayAlert("Error", "Please enter a valid origin.", "OK");
+            return;
+        }
+
         string apiKey = "AIzaSyB7YTUD-ANSh4fDAqNU00QNT7YbrD1KFYw";
         string geocodeUrl = $"https://maps.googleapis.com/maps/api/geocode/json?address={Uri.EscapeDataString(oInput)}&key={apiKey}";
 
@@ -82,13 +110,15 @@ public partial class MapPage : ContentPage
         double lat = (double)location["lat"];
         double lng = (double)location["lng"];
 
-        Pin Origin = new Pin
+        Origin = new Pin
         {
             Label = "Origin",
             Address = oInput,
             Type = PinType.Place,
             Location = new Location(lat, lng)
         };
+        map.Pins.Add(Origin);
+        DisplayAlert("Finished setting origin", $"{lat}, {lng}", "OK");
 
     }
     protected override async void OnAppearing()
@@ -135,10 +165,14 @@ public partial class MapPage : ContentPage
         map.Pins.Add(retrievedPin);*/
 
         map.Pins.Add(KinugasaJunior);
-        map.Pins.Add(home);
+        if (home != null) { map.Pins.Add(home); }
+        if (work != null) { map.Pins.Add(work); }
+        if (school != null) { map.Pins.Add(school); }
+
+        
         map.Pins.Add(Kamigamo);
-        map.Pins.Add(work);
-        map.Pins.Add(school);
+        
+        
         Debug.WriteLine("You're here!!");
         //adding shelters from Database
         var assembly = Assembly.GetExecutingAssembly();
@@ -159,8 +193,12 @@ public partial class MapPage : ContentPage
             };
             temp.MarkerClicked += async (s, e) =>
             {
-                /*kam = true;
-                kin = false;*/
+                if (Origin?.Location == null)
+                {
+                    await DisplayAlert("Error", "Please set the origin first.", "OK");
+                    return;
+                }
+                
                 await DisplayRoute(Origin.Location, temp.Location);
 
             };
@@ -177,6 +215,12 @@ public partial class MapPage : ContentPage
         {
             /*kam = true;
             kin = false;*/
+            if (Origin?.Location == null)
+            {
+                await DisplayAlert("Error", "Please set the origin first.", "OK");
+                return;
+            }
+            
             await DisplayRoute(Origin.Location, Kamigamo.Location);
 
         };
@@ -184,6 +228,12 @@ public partial class MapPage : ContentPage
         {
             /*kin = true;
             kam = false;*/
+            if (Origin?.Location == null)
+            {
+                await DisplayAlert("Error", "Please set the origin first.", "OK");
+                return;
+            }
+            
             await DisplayRoute(Origin.Location, KinugasaJunior.Location);
 
         };
@@ -194,7 +244,9 @@ public partial class MapPage : ContentPage
     }
     private async Task DisplayRoute(Location originLocation, Location destinationLocation)
     {
-        
+        originInput.IsVisible = false;
+        originBTN.IsVisible = false;
+
         string originCoords = $"{originLocation.Latitude},{originLocation.Longitude}";
         string destinationCoords = $"{destinationLocation.Latitude},{destinationLocation.Longitude}";
         string apiKey = "AIzaSyBY8pIiPG1tZkFeBU7EVjHTCGjZcaJRyLs";
@@ -304,6 +356,14 @@ public partial class MapPage : ContentPage
         yourButton.Text = "See Route";
         yourButton.Clicked -= Back_Clicked;
         yourButton.Clicked += YourButton_Clicked;
+    }
+
+    private void Save_Clicked(object sender, EventArgs e)
+    {
+        // Handle button click event
+        //DisplayAlert("Button Clicked", "You clicked the button!", "OK");
+        _routeService.SaveRoute("r", direct.Text);
+        
     }
 
 

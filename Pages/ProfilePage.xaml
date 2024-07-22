@@ -72,6 +72,12 @@
                 TextColor="Black"
                 BackgroundColor="White" />
 
+            <Label x:Name="route"
+                Text="Routes appear here"
+    FontSize="20"
+    TextColor="Black"
+    BackgroundColor="White" />
+
             <Button
                 Text="Home" 
                 Command="{Binding ReturnHomeBtn}" 
