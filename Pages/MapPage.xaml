@@ -25,12 +25,14 @@
                 Clicked="YourButton_Clicked"/>
 
         <Entry x:Name="originInput"
+            BackgroundColor="White"
             Placeholder="Enter Starting Point Here"
             VerticalOptions="Start"
             Grid.Row ="0" />
         <Button 
             x:Name="originBTN" 
             Text="Set origin"
+            IsVisible="False" 
             VerticalOptions="Start"
             Grid.Row ="0"
             Clicked="originClicked"
