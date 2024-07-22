@@ -9,18 +9,39 @@
         <VerticalStackLayout
         Padding="30,0"
         Spacing="10">
+            <StackLayout Padding="10">
+                <!-- Title -->
+                <Label Text="Latest Earthquakes Near Kyoto" FontSize="25" HorizontalOptions="Center" HeightRequest="100"/>
 
-            <Label
-            Text="Welcome to the Information Page"
-            Style="{StaticResource Headline}"
-            SemanticProperties.HeadingLevel="Level1" />
+                <!-- Header Grid -->
+                <Grid Padding="10,0" ColumnSpacing="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Magnitude" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" Grid.Column="0"/>
+                    <Label Text="Date" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Grid.Column="1"/>
+                    <Label Text="Distance" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Grid.Column="2"/>
+                </Grid>
 
-            <Image Source="construction.png" />
-            <Label
-            Text="Page is currently under construction"
-            Style="{StaticResource SubHeadline}"
-            SemanticProperties.HeadingLevel="Level1" />
-            
+                <!-- Earthquake List -->
+                <ListView ItemsSource="{Binding EarthquakeList}" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" Padding="10">
+                                    <Label Text="{Binding Magnitude}" FontSize="Small" WidthRequest="100"/>
+                                    <Label Text="{Binding Date}" FontSize="Small" WidthRequest="100"/>
+                                    <Label Text="{Binding Distance}" FontSize="Small" WidthRequest="100"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+
             <Button
                 Text="Home" 
                 Command="{Binding HomeBtn}" 

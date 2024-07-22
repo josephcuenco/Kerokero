@@ -20,4 +20,11 @@ public partial class InfoPage : ContentPage
         InitializeComponent();
         BindingContext = new InfoViewModel();
     }
+
+
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+        await ((InfoViewModel)BindingContext).LoadEarthquakeDataAsync();
+    }
 }
