@@ -7,25 +7,46 @@
 
     <ScrollView>
         <VerticalStackLayout
-        Padding="30,0"
+        Padding="20,0"
         Spacing="10">
+            <StackLayout Padding="10">
+                <!-- Title -->
+                <Label Text="Latest Earthquakes Near Kyoto, Japan" FontSize="18" HorizontalOptions="Start" HeightRequest="50" FontAttributes="Bold"/>
 
-            <Label
-            Text="Welcome to the Information Page"
-            Style="{StaticResource Headline}"
-            SemanticProperties.HeadingLevel="Level1" />
+                <!-- Header Grid -->
+                <Grid Padding="10,0" ColumnSpacing="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Magnitude" FontSize="16" FontAttributes="Bold" HorizontalOptions="Start" Grid.Column="0"/>
+                    <Label Text="Date" FontSize="16" FontAttributes="Bold" HorizontalOptions="Start" Grid.Column="1"/>
+                    <Label Text="Distance" FontSize="16" FontAttributes="Bold" HorizontalOptions="Start" Grid.Column="2"/>
+                </Grid>
 
-            <Image Source="construction.png" />
-            <Label
-            Text="Page is currently under construction"
-            Style="{StaticResource SubHeadline}"
-            SemanticProperties.HeadingLevel="Level1" />
-            
-            <Button
+                <!-- Earthquake List -->
+                <ListView ItemsSource="{Binding EarthquakeList}" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" Padding="10">
+                                    <Label Text="{Binding Magnitude}"  FontSize="Medium" WidthRequest="110" TextColor="#6C9418" FontAttributes="Bold" />
+                                    <Label Text="{Binding Date}" FontSize="Small" WidthRequest="105"/>
+                                    <Label Text="{Binding Distance}" FontSize="Small" WidthRequest="100"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+
+            <!--<Button
                 Text="Home" 
                 Command="{Binding HomeBtn}" 
                 FontSize="20"
-                CornerRadius="20"/>
+                CornerRadius="20"/>-->
         </VerticalStackLayout>
     </ScrollView>
 
