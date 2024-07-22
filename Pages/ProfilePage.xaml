@@ -72,11 +72,12 @@
                 TextColor="Black"
                 BackgroundColor="White" />
 
-            <Label x:Name="routes"
-                Text="Routes will show up here once saved."
-                FontSize="20"
-                TextColor="Black"
-                BackgroundColor="White" />
+            <Label x:Name="route"
+                Text="Routes appear here"
+    FontSize="20"
+    TextColor="Black"
+    BackgroundColor="White" />
+
 
             <Button
                 Text="Home" 

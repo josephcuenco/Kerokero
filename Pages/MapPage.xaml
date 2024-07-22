@@ -7,50 +7,66 @@
              Title="">
 
     <Grid>
-        
-        <Grid.RowDefinitions>
-            <RowDefinition Height="600"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="Auto"/>
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <maps:Map x:Name="map" IsTrafficEnabled="false" IsShowingUser="true" MapType="Street" Grid.Row="0"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <maps:Map x:Name="map" IsTrafficEnabled="false" IsShowingUser="true" MapType="Street" Grid.RowSpan="4" Grid.ColumnSpan="4"/>
         <Button x:Name="yourButton" 
                 Text="See Route" 
                 IsVisible="False" 
                 VerticalOptions="Start"
-                Grid.Row ="0"
+                Grid.Row ="1"
                 Clicked="YourButton_Clicked"/>
 
         <Entry x:Name="originInput"
             BackgroundColor="White"
             Placeholder="Enter Starting Point Here"
             VerticalOptions="Start"
-            Grid.Row ="0" />
+            BackgroundColor="White"
+            Grid.Row ="1"
+            Grid.Column="0" />
         <Button 
             x:Name="originBTN" 
             Text="Set origin"
             IsVisible="False" 
             VerticalOptions="Start"
-            Grid.Row ="0"
+            Grid.Row ="1"
+            Grid.Column="1"
             Clicked="originClicked"
             />
-        <Label x:Name="direct"
-               Text="See Route"
-               FontSize="20"
-               TextColor="Black"
-               BackgroundColor="White"
-               IsVisible="False" 
-               />
+        
+            <Label x:Name="direct"
+                Text="See Route"
+                FontSize="20"
+                TextColor="Black"
+                BackgroundColor="White"
+                IsVisible="False" 
+                Grid.Row="2" 
+                Grid.RowSpan="3"
+                Grid.ColumnSpan="4"/>
+        
+        
         <Button x:Name="saveBtn" 
             Text="Save Route" 
             IsVisible="False" 
             VerticalOptions="Start"
-            Grid.Row ="1"
+            Grid.Row ="4"
+            Clicked="Save_Clicked"
             />
-        <Label x:Name="durationLabel" Grid.Row="1"
+        <Label x:Name="durationLabel" Grid.Row="4"
            Text="Duration: "
            FontSize="20"
            TextColor="Black"
