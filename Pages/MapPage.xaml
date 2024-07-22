@@ -24,7 +24,17 @@
                 Grid.Row ="0"
                 Clicked="YourButton_Clicked"/>
 
-        
+        <Entry x:Name="originInput"
+            Placeholder="Enter Starting Point Here"
+            VerticalOptions="Start"
+            Grid.Row ="0" />
+        <Button 
+            x:Name="originBTN" 
+            Text="Set origin"
+            VerticalOptions="Start"
+            Grid.Row ="0"
+            Clicked="originClicked"
+            />
         <Label x:Name="direct"
                Text="See Route"
                FontSize="20"

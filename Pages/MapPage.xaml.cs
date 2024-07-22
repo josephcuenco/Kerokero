@@ -60,15 +60,46 @@ public partial class MapPage : ContentPage
     }
 
     private readonly LocationPinService _locationPinService = new LocationPinService();
+
+    string oInput = "";
+
+    Pin Origin { get; set; }
+
+    private async void originClicked(object sender, EventArgs e)
+    {
+        oInput = originInput.Text;
+        
+        string apiKey = "AIzaSyB7YTUD-ANSh4fDAqNU00QNT7YbrD1KFYw";
+        string geocodeUrl = $"https://maps.googleapis.com/maps/api/geocode/json?address={Uri.EscapeDataString(oInput)}&key={apiKey}";
+
+        var response = await _httpClient.GetAsync(geocodeUrl);
+        response.EnsureSuccessStatusCode();
+
+        var content = await response.Content.ReadAsStringAsync();
+        var json = JObject.Parse(content);
+
+        var location = json["results"][0]["geometry"]["location"];
+        double lat = (double)location["lat"];
+        double lng = (double)location["lng"];
+
+        Pin Origin = new Pin
+        {
+            Label = "Origin",
+            Address = oInput,
+            Type = PinType.Place,
+            Location = new Location(lat, lng)
+        };
+
+    }
     protected override async void OnAppearing()
     {
         //base.OnAppearing();
         var geoR = new GeolocationRequest(GeolocationAccuracy.High, TimeSpan.FromSeconds(10));
         // var location = await Geolocation.GetLocationAsync(geoR);
+
+
         
-
-
-        Location mapCenter = new Location(35.01163630, 135.76802940);
+            Location mapCenter = new Location(35.01163630, 135.76802940);
         map.MoveToRegion(MapSpan.FromCenterAndRadius(mapCenter, Distance.FromMiles(10)));
         MapSpan mapSpan = new MapSpan(mapCenter, 0.1, 0.1);
         map.MoveToRegion(mapSpan);
@@ -97,14 +128,14 @@ public partial class MapPage : ContentPage
             Location = new Location(35.055878, 135.758261)
         };
 
-        Pin origin = _locationPinService.GetLocationPins("HomePin");
+        Pin home = _locationPinService.GetLocationPins("HomePin");
         Pin work = _locationPinService.GetLocationPins("WorkPin");
         Pin school = _locationPinService.GetLocationPins("SchoolPin");
         /*DisplayAlert("Geocode Result", $"Got Pin: {retrievedPin.Label}", "OK");
         map.Pins.Add(retrievedPin);*/
 
         map.Pins.Add(KinugasaJunior);
-        map.Pins.Add(origin);
+        map.Pins.Add(home);
         map.Pins.Add(Kamigamo);
         map.Pins.Add(work);
         map.Pins.Add(school);
@@ -130,7 +161,7 @@ public partial class MapPage : ContentPage
             {
                 /*kam = true;
                 kin = false;*/
-                await DisplayRoute(origin.Location, temp.Location);
+                await DisplayRoute(Origin.Location, temp.Location);
 
             };
             map.Pins.Add(temp);
@@ -146,14 +177,14 @@ public partial class MapPage : ContentPage
         {
             /*kam = true;
             kin = false;*/
-            await DisplayRoute(origin.Location, Kamigamo.Location);
+            await DisplayRoute(Origin.Location, Kamigamo.Location);
 
         };
         KinugasaJunior.MarkerClicked += async (s, e) =>
         {
             /*kin = true;
             kam = false;*/
-            await DisplayRoute(origin.Location, KinugasaJunior.Location);
+            await DisplayRoute(Origin.Location, KinugasaJunior.Location);
 
         };
 
