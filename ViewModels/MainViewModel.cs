@@ -140,7 +140,6 @@ namespace KeroKero.ViewModels
 
         private async void CheckTappedAsync(object obj)
         {
-            
             await Shell.Current.GoToAsync("//ChecklistPage");
         }
 
