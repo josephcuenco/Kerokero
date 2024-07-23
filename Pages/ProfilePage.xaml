@@ -4,102 +4,206 @@
              x:Class="KeroKero.Pages.ProfilePage"
              NavigationPage.HasNavigationBar="False"
              Title="">
+    <Grid>
+        <Grid.RowDefinitions>
+            <!-- 0 Top Spacing -->
+            <RowDefinition Height="10" />
+            <!-- 1 Title log in -->
+            <RowDefinition Height="auto" />
+            <!-- 2 Spacing -->
+            <RowDefinition Height="50" />
+            <!-- 3 Title Email -->
+            <RowDefinition Height="Auto" />
+            <!-- 4 Spacing for email -->
+            <RowDefinition Height="5" />
+            <!-- 5 Email textbox-->
+            <RowDefinition Height="50" />
+            <!-- 6 Spacing-->
+            <RowDefinition Height="15" />
+            <!-- 7 Title password -->
+            <RowDefinition Height="Auto" />
+            <!-- 8 Spacing for password-->
+            <RowDefinition Height="5" />
+            <!-- 9 Password Textbox-->
+            <RowDefinition Height="50" />
+            <!-- 10 Spacing -->
+            <RowDefinition Height="35" />
+            <!-- 11 Login Up button -->
+            <RowDefinition Height="Auto" />
+            <!-- 12 Login Up button -->
+            <RowDefinition Height="Auto" />
+            <!-- 13 Spacing -->
+            <RowDefinition Height="20" />
+            <!-- 14 backbtn-->
+            <RowDefinition Height="Auto" />
 
-    <ScrollView>
-        <VerticalStackLayout
-        Padding="30,0"
-        Spacing="10">
-
-            <Label
-            Text="Welcome to the Profile Page"
-            Style="{StaticResource Headline}"
-            SemanticProperties.HeadingLevel="Level1" />
-
-            <Label
-            Text="Add your important locations down below"
-            Style="{StaticResource Headline}"
-            SemanticProperties.HeadingLevel="Level1" />
-
-            <Entry x:Name="homeInput"
-               Placeholder="Enter text here"
-               VerticalOptions="CenterAndExpand"
-               HorizontalOptions="CenterAndExpand" />
-            <Button 
-                x:Name="homeAddressBTN" 
-                Text="Set Home location"
-                Clicked="OnSaveInputClicked"
-                VerticalOptions="CenterAndExpand"
-                HorizontalOptions="CenterAndExpand"
-                BackgroundColor="#6C9418"
-                />
-
-            <Label x:Name="home"
-                Text="You home address will show up here once inputed"
-                FontSize="20"
-                TextColor="Black"
-                BackgroundColor="White" 
-                />
-
-            <Entry x:Name="schoolInput"
-                Placeholder="Enter text here"
-                VerticalOptions="CenterAndExpand"
-                HorizontalOptions="CenterAndExpand" />
-            <Button 
-                x:Name="schoolAddressBTN" 
-                Text="Set School location"
-                Clicked="OnSchoolInputClicked"
-                VerticalOptions="CenterAndExpand"
-                HorizontalOptions="CenterAndExpand" 
-                BackgroundColor="#6C9418"
-                />
-
-            <Label x:Name="school"
-                Text="You school address will show up here once inputed"
-                FontSize="20"
-                TextColor="Black"
-                BackgroundColor="White" />
-
-            <Entry x:Name="workInput"
-                Placeholder="Enter text here"
-                VerticalOptions="CenterAndExpand"
-                HorizontalOptions="CenterAndExpand" />
-            <Button 
-                x:Name="workAddressBTN" 
-                Text="Set Work location"
-                Clicked="OnWorkInputClicked"
-                VerticalOptions="CenterAndExpand"
-                HorizontalOptions="CenterAndExpand"
-                BackgroundColor="#6C9418"
-                />
-
-            <Label x:Name="work"
-                Text="You work address will show up here once inputed"
-                FontSize="20"
-                TextColor="Black"
-                BackgroundColor="White" />
-
-            <Label x:Name="RouteSection" 
-                   Text="Your Routes"
-                   FontSize="25"
-                   
-                   />
-            
-
-            <Label x:Name="route"
-                Text="Routes appear here"
-    FontSize="20"
+        </Grid.RowDefinitions>
+        <Label Grid.Row="1"
+    Text="Profile"
+    SemanticProperties.HeadingLevel="Level1"
     TextColor="Black"
-    BackgroundColor="White" />
+    HorizontalTextAlignment="Start"
+    VerticalTextAlignment="Start"
+    FontSize="14"
+    FontFamily="Inter-Bold"        
+            
+/>
+        <Image Source="kerokero.png" Grid.Row="2" 
+               HeightRequest="150"
+                WidthRequest="150"
+               
+               />
+        <Label Grid.Row="3"
+    Text="Important Addresses"
+    TextColor="Black"
+    HorizontalTextAlignment="Start"
+    VerticalTextAlignment="Start"
+    FontSize="14"
+    FontFamily="Inter" />
+
+        <!---Email entry design-->
+        <Image Grid.Row="5"
+     Source="lightgreenentrytextbox.png"
+     HeightRequest="45"
+     WidthRequest="292"
+ />
+        <Entry Grid.Row="5"
+    Text="{Binding UserEmail}"
+    BackgroundColor="Transparent"
+        />
 
 
-            <Button
-                Text="Home" 
-                Command="{Binding ReturnHomeBtn}" 
-                FontSize="20"
-                CornerRadius="20"
-                BackgroundColor="#6C9418"/>
-        </VerticalStackLayout>
-    </ScrollView>
+        <Label Grid.Row="7"
+    Text="Password"
+    TextColor="Black"
+    HorizontalTextAlignment="Start"
+    VerticalTextAlignment="Start"
+    FontSize="14"
+    FontFamily="Inter" />
 
+        <!---Password entry design-->
+        <Image Grid.Row="9"
+     Source="lightgreenentrytextbox.png"
+     HeightRequest="45"
+     WidthRequest="292"
+ />
+
+        <Entry Grid.Row="9"
+        Text="{Binding UserPassword}" IsPassword="True"
+        BackgroundColor="Transparent"
+  />
+
+        <ImageButton Grid.Row="11"
+     Source="login2btn.png"
+     HeightRequest="40"
+     WidthRequest="292"
+     Command="{Binding LoginBtn}" 
+ />
+
+        <ImageButton Grid.Row="14"
+     Source="backbtn.png"
+     HeightRequest="40"
+     WidthRequest="292"
+     Command="{Binding BackBtn}"
+         />
+        <ScrollView>
+            <VerticalStackLayout
+    Padding="30,0"
+    Spacing="10">
+
+                <Label
+        Text="Welcome to the Profile Page"
+        Style="{StaticResource Headline}"
+        SemanticProperties.HeadingLevel="Level1" />
+
+                <Label
+        Text="Add your important locations down below"
+        Style="{StaticResource Headline}"
+        SemanticProperties.HeadingLevel="Level1" />
+
+                <Entry x:Name="homeInput"
+           Placeholder="Enter text here"
+           VerticalOptions="CenterAndExpand"
+           HorizontalOptions="CenterAndExpand" />
+                <Button 
+            x:Name="homeAddressBTN" 
+            Text="Set Home location"
+            Clicked="OnSaveInputClicked"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand"
+            BackgroundColor="#6C9418"
+            />
+
+                <Label x:Name="home"
+            Text="You home address will show up here once inputed"
+            FontSize="20"
+            TextColor="Black"
+            BackgroundColor="White" 
+            />
+
+                <Entry x:Name="schoolInput"
+            Placeholder="Enter text here"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand" />
+                <Button 
+            x:Name="schoolAddressBTN" 
+            Text="Set School location"
+            Clicked="OnSchoolInputClicked"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand" 
+            BackgroundColor="#6C9418"
+            />
+
+                <Label x:Name="school"
+            Text="You school address will show up here once inputed"
+            FontSize="20"
+            TextColor="Black"
+            BackgroundColor="White" />
+
+                <Entry x:Name="workInput"
+            Placeholder="Enter text here"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand" />
+                <Button 
+            x:Name="workAddressBTN" 
+            Text="Set Work location"
+            Clicked="OnWorkInputClicked"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand"
+            BackgroundColor="#6C9418"
+            />
+
+                <Label x:Name="work"
+            Text="You work address will show up here once inputed"
+            FontSize="20"
+            TextColor="Black"
+            BackgroundColor="White" />
+
+                <Label x:Name="RouteSection" 
+               Text="Your Routes"
+               FontSize="25"
+               
+               />
+
+
+                <Label x:Name="route"
+            Text="Routes appear here"
+FontSize="20"
+TextColor="Black"
+BackgroundColor="White" />
+
+
+                <Button
+            Text="Home" 
+            Command="{Binding ReturnHomeBtn}" 
+            FontSize="20"
+            CornerRadius="20"
+            BackgroundColor="#6C9418"/>
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </Grid>
+
+    
 
 </ContentPage>
