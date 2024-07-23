@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -17,7 +18,7 @@ namespace KeroKero.ViewModels
     {
         public double Latitude { get; set; }
         public double Longitude { get; set; }
-        public double Magnitude { get; set; }
+        public string Magnitude { get; set; }
         public DateTime Date { get; set; }
         public string Id { get; set; }
         public string Distance { get; set; }
@@ -88,7 +89,7 @@ namespace KeroKero.ViewModels
                 {
                     Latitude = Convert.ToDouble(row.GetAttributeValue("data-lat", "0")),
                     Longitude = Convert.ToDouble(row.GetAttributeValue("data-lng", "0")),
-                    Magnitude = Convert.ToDouble(row.GetAttributeValue("data-mag", "0")),
+                    Magnitude = UpdateMagnitude(Convert.ToDouble(row.GetAttributeValue("data-mag", "0"))),
                     Date = DateTime.Parse(row.GetAttributeValue("data-date", "")),
                     Id = row.GetAttributeValue("data-id", ""),
                     Distance = row.GetAttributeValue("data-dist", "")
@@ -101,7 +102,13 @@ namespace KeroKero.ViewModels
         }
 
 
-
+        public string UpdateMagnitude(double dataMag)
+        {
+            // Convert to double and format with one decimal place
+            string Magnitude;
+            Magnitude = Convert.ToDouble(dataMag).ToString("0.0");
+            return Magnitude;
+        }
 
 
 
