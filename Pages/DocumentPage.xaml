@@ -4,10 +4,11 @@
              x:Class="KeroKero.Pages.DocumentPage"
              NavigationPage.HasNavigationBar="False"
              Title="">
+        
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="10"/>
+            <RowDefinition Height="5"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
@@ -15,30 +16,32 @@
 
         <ImageButton Grid.Row="1"
             Source="upload.png"
-            Command="{Binding uploadBtn}">
+            HeightRequest="400"
+            WidthRequest="350"
+            Command="{Binding upload}">
         </ImageButton>
 
         <ScrollView Grid.Row="2">
-            <VerticalStackLayout
-            Padding="30,0"
-            Spacing="10">
+            <VerticalStackLayout>
 
                 <Label
-                    Text="Uploaded Files:"
+                    Text="        My documents:"
                     FontFamily="Inter-Bold"
                     FontSize="19"
-                    VerticalTextAlignment="Start"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Start"
                     Style="{StaticResource Headline}"
                     SemanticProperties.HeadingLevel="Level1" />
                 <CollectionView ItemsSource="{Binding Files}">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <Label Text="{Binding .}" VerticalOptions="Center" />
+                            <Grid>
+                                <ImageButton Source="fileuploadbutton.png" Command="{Binding BindingContext.open, Source={RelativeSource AncestorType={x:Type ContentPage}}}" CommandParameter="{Binding .}" HeightRequest="100" WidthRequest="350"/>
+                                <Label Text="{Binding fileName}"  VerticalOptions="Center"  HorizontalOptions="Center"></Label>
+                            </Grid>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
-
-
 
             </VerticalStackLayout>
         </ScrollView>
@@ -46,7 +49,6 @@
         <!---This mimics the nav bar-->
         <Grid Grid.Row="3"
           BackgroundColor="#FAFBFC"
-          Padding="10"
           VerticalOptions="End">
 
             <Grid.ColumnDefinitions>
