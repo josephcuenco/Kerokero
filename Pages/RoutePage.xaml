@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KeroKero.Pages.RoutePage"
+             NavigationPage.HasNavigationBar="False"
+             Title="">
+
+    <ScrollView>
+        <VerticalStackLayout
+        Padding="30,0"
+        Spacing="10">
+            <Button x:Name="backBtn" 
+                    Text="Go Back to Map"
+                    FontSize="20"
+                TextColor="Black"
+                Padding="20"
+                Clicked="Back_Clicked"
+                    BackgroundColor="#6C9418"
+                    
+                    />
+            <Label x:Name="directions"
+                Text="See Route"
+                FontSize="20"
+                TextColor="Black"
+                BackgroundColor="White"
+                   />
+
+            <Button x:Name="saveBtn" 
+                Text="Save Route" 
+    
+                BackgroundColor="#6C9418"
+                VerticalOptions="Start"
+                Clicked="Save_Clicked"
+    />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+
+</ContentPage>

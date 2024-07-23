@@ -78,6 +78,13 @@
                 TextColor="Black"
                 BackgroundColor="White" />
 
+            <Label x:Name="RouteSection" 
+                   Text="Your Routes"
+                   FontSize="25"
+                   
+                   />
+            
+
             <Label x:Name="route"
                 Text="Routes appear here"
     FontSize="20"

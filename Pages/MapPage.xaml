@@ -38,13 +38,12 @@
             BackgroundColor="White"
             Placeholder="Enter Starting Point Here"
             VerticalOptions="Start"
-            BackgroundColor="White"
             Grid.Row ="1"
             Grid.Column="0" />
+        
         <Button 
             x:Name="originBTN" 
-            Text="Set origin"
-            IsVisible="False" 
+            Text="Set origin" 
             VerticalOptions="Start"
             Grid.Row ="1"
             Grid.Column="1"
@@ -52,27 +51,7 @@
             Clicked="originClicked"
             />
         
-            <Label x:Name="direct"
-                Text="See Route"
-                FontSize="20"
-        TextColor="Black"
-        BackgroundColor="White"
-        IsVisible="False" 
-        Grid.Row="1" 
-        Grid.RowSpan="3"
-        Grid.ColumnSpan="4"/>
-        
-        
-        
-        
-        <Button x:Name="saveBtn" 
-            Text="Save Route" 
-            IsVisible="False" 
-            BackgroundColor="#6C9418"
-            VerticalOptions="Start"
-            Grid.Row ="4"
-            Clicked="Save_Clicked"
-            />
+            
         <Label x:Name="durationLabel" Grid.Row="4"
            Text="Duration: "
            FontSize="20"
