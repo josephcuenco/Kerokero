@@ -86,7 +86,9 @@ public partial class MapPage : ContentPage
 
     string oInput = "";
 
-    
+    string dir = "";
+
+
 
     private async void originClicked(object sender, EventArgs e)
     {
@@ -282,7 +284,7 @@ public partial class MapPage : ContentPage
                         var polylineCoordinates = new List<Location>();
 
                         List<string> s = new List<string>();
-                        string dir = "";
+                        
 
                         foreach (var step in steps)
                         {
@@ -300,7 +302,7 @@ public partial class MapPage : ContentPage
                             //s.Add(step["html_instructions"] + " for " + step["distance"]["text"] + " (" + step["duration"]["text"] + ")");
 
                         }
-                        direct.Text = $"Route: {dir}";
+                        //direct.Text = $"Route: {dir}";
 
 
 
@@ -340,19 +342,18 @@ public partial class MapPage : ContentPage
     {
         // Handle button click event
         //DisplayAlert("Button Clicked", "You clicked the button!", "OK");
-        direct.IsVisible = true;
-        saveBtn.IsVisible = true;
 
-        yourButton.Text = "Back to Map";
-        yourButton.Clicked -= YourButton_Clicked;
-        yourButton.Clicked += Back_Clicked;
+
+        var targetPage = new RoutePage();
+        targetPage.Dir = dir; // Pass the string value to the target page
+        Navigation.PushAsync(targetPage);
     }
 
     private void Back_Clicked(object sender, EventArgs e)
     {
         // Handle button click event
         //DisplayAlert("Button Clicked", "You clicked the button!", "OK");
-        direct.IsVisible = false;
+        //direct.IsVisible = false;
         yourButton.Text = "See Route";
         yourButton.Clicked -= Back_Clicked;
         yourButton.Clicked += YourButton_Clicked;
@@ -362,7 +363,7 @@ public partial class MapPage : ContentPage
     {
         // Handle button click event
         //DisplayAlert("Button Clicked", "You clicked the button!", "OK");
-        _routeService.SaveRoute("r", direct.Text);
+       // _routeService.SaveRoute("r", direct.Text);
         
     }
 

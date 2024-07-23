@@ -11,7 +11,9 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="0"/>
             <RowDefinition Height="200"/>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="220"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="200"/>
             <RowDefinition Height="200"/>
             <RowDefinition Height="200"/>
             <RowDefinition Height="200"/>
@@ -23,12 +25,13 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <maps:Map x:Name="map" IsTrafficEnabled="false" IsShowingUser="true" MapType="Street" Grid.RowSpan="4" Grid.ColumnSpan="4"/>
+        <maps:Map x:Name="map" IsTrafficEnabled="false" IsShowingUser="true" MapType="Street" Grid.RowSpan="5" Grid.ColumnSpan="4"/>
         <Button x:Name="yourButton" 
                 Text="See Route" 
                 IsVisible="False" 
                 VerticalOptions="Start"
                 Grid.Row ="1"
+                BackgroundColor="#6C9418"
                 Clicked="YourButton_Clicked"/>
 
         <Entry x:Name="originInput"
@@ -37,34 +40,18 @@
             VerticalOptions="Start"
             Grid.Row ="1"
             Grid.Column="0" />
+        
         <Button 
             x:Name="originBTN" 
-            Text="Set origin"
-            IsVisible="False" 
+            Text="Set origin" 
             VerticalOptions="Start"
             Grid.Row ="1"
             Grid.Column="1"
+            BackgroundColor="#6C9418"
             Clicked="originClicked"
             />
         
-            <Label x:Name="direct"
-                Text="See Route"
-                FontSize="20"
-                TextColor="Black"
-                BackgroundColor="White"
-                IsVisible="False" 
-                Grid.Row="2" 
-                Grid.RowSpan="3"
-                Grid.ColumnSpan="4"/>
-        
-        
-        <Button x:Name="saveBtn" 
-            Text="Save Route" 
-            IsVisible="False" 
-            VerticalOptions="Start"
-            Grid.Row ="4"
-            Clicked="Save_Clicked"
-            />
+            
         <Label x:Name="durationLabel" Grid.Row="4"
            Text="Duration: "
            FontSize="20"
