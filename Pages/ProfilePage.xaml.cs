@@ -18,7 +18,7 @@ namespace KeroKero.Pages;
 
 public partial class ProfilePage : ContentPage
 {
-
+    /*
     public class RouteService
     {
         public void SaveRoute(string key, string route)
@@ -53,22 +53,23 @@ public partial class ProfilePage : ContentPage
             Preferences.Set(key, json);
         }
     }
-
+    
     private readonly HttpClient _httpClient;
+    */
     public ProfilePage()
     {
         InitializeComponent();
-        _httpClient = new HttpClient();
+        //_httpClient = new HttpClient();
         BindingContext = new ProfileViewModel();
-        string r = _routeService.GetRoute("r");
-        if (r != null) {
-            DisplayAlert("add routes to", "","OK");
-        }
-        route.Text = r;
+        //string r = _routeService.GetRoute("r");
+        //if (r != null) {
+          //  DisplayAlert("add routes to", "","OK");
+        //}
+        //route.Text = r;
 
 
     }
-    
+    /*
 
     public string UserInput { get; set; }
     private readonly LocationPinService _locationPinService = new LocationPinService();
@@ -210,6 +211,9 @@ public partial class ProfilePage : ContentPage
         catch (Exception ex)
         {
             await DisplayAlert("Error", ex.Message, "OK");
+    
         }
     }
+    */
+
 }
