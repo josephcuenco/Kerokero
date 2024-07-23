@@ -35,14 +35,15 @@ namespace KeroKero.ViewModels
             }
         }
 
-        
 
+        private readonly OfflineService OS = new OfflineService();
         public string webApiKey = "AIzaSyCPz-5MixGymeUJlMKwkyhpZ9ynIGTxIRM";
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
         public InfoViewModel()
         {
+            string answer = OS.GetOffline("offline");
             //this._navigation = navigation;
             MapBtn = new Command(MapBtnTappedAsync);
             HomeBtn = new Command(HomeBtnTappedAsync);
