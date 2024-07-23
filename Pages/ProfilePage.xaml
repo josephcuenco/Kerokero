@@ -29,7 +29,9 @@
                 Text="Set Home location"
                 Clicked="OnSaveInputClicked"
                 VerticalOptions="CenterAndExpand"
-                HorizontalOptions="CenterAndExpand" />
+                HorizontalOptions="CenterAndExpand"
+                BackgroundColor="#6C9418"
+                />
 
             <Label x:Name="home"
                 Text="You home address will show up here once inputed"
@@ -47,7 +49,9 @@
                 Text="Set School location"
                 Clicked="OnSchoolInputClicked"
                 VerticalOptions="CenterAndExpand"
-                HorizontalOptions="CenterAndExpand" />
+                HorizontalOptions="CenterAndExpand" 
+                BackgroundColor="#6C9418"
+                />
 
             <Label x:Name="school"
                 Text="You school address will show up here once inputed"
@@ -64,7 +68,9 @@
                 Text="Set Work location"
                 Clicked="OnWorkInputClicked"
                 VerticalOptions="CenterAndExpand"
-                HorizontalOptions="CenterAndExpand" />
+                HorizontalOptions="CenterAndExpand"
+                BackgroundColor="#6C9418"
+                />
 
             <Label x:Name="work"
                 Text="You work address will show up here once inputed"
@@ -82,7 +88,8 @@
                 Text="Home" 
                 Command="{Binding ReturnHomeBtn}" 
                 FontSize="20"
-                CornerRadius="20"/>
+                CornerRadius="20"
+                BackgroundColor="#6C9418"/>
         </VerticalStackLayout>
     </ScrollView>
 
