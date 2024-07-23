@@ -67,7 +67,8 @@ namespace KeroKero.Pages
             // Handle button click event
             //DisplayAlert("Button Clicked", "You clicked the button!", "OK");
             //direct.IsVisible = false;
-            
+            Shell.Current.GoToAsync("//MapPage");
+
         }
 
         private void Save_Clicked(object sender, EventArgs e)
