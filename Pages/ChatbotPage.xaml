@@ -69,28 +69,42 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-                <Picker Grid.Column="0"
-                        x:Name="ResponsePicker"
+            <Border Grid.Column="0"
+                    Stroke="#5B7D16"
+                    StrokeThickness="2"
+                    StrokeShape="RoundRectangle 10,10,10,10"
+                    Background="White"
+                    HorizontalOptions="Fill"
+                    Margin="7,7,0,7">
+                <Picker x:Name="ResponsePicker"
                         Title="Select a Response"
+                        TextColor="Black"
                         ItemsSource="{Binding PossibleResponses}"
-                        SelectedItem="{Binding ResponseChosen}"
-                        SelectedIndex="{Binding ResponseChosenIndex}">
-                        
-                </Picker>
+                        SelectedItem="{Binding ChosenResponse}"
+                        SelectedIndex="{Binding ResponseChosenIndex}"
+                        HorizontalOptions="Fill"
+                        Margin="3,0">
 
-            <Border Grid.Column="2"
-                    Stroke="Gray"
+                </Picker>
+            </Border>
+
+            <Border Grid.Column="1"
+                    Stroke="Transparent"
                     StrokeThickness="1"
                     StrokeShape="Ellipse"
-                    Background="White"
+                    Background="#5B7D16"
                     HorizontalOptions="Center"
-                    Margin="0,6">
+                    Margin="7,7"
+                    HeightRequest="36"
+                    WidthRequest="36">
 
-                <Button Text="T"
-                        BackgroundColor="White"
-                        TextColor="Black"
-                        Command="{Binding AddNewMessageBtn}"
-                        WidthRequest="40"/>
+                <ImageButton Source="send.png"
+                             BackgroundColor="#5B7D16"
+                             Command="{Binding AddNewMessageBtn}"
+                             HeightRequest="32"
+                             WidthRequest="32"
+                             VerticalOptions="Center"
+                             HorizontalOptions="Center"/>
             </Border>
 
         </Grid>
