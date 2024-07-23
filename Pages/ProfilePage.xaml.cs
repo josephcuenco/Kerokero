@@ -18,6 +18,25 @@ namespace KeroKero.Pages;
 
 public partial class ProfilePage : ContentPage
 {
+
+    public class RouteService
+    {
+        public void SaveRoute(string key, string route)
+        {
+            string json = JsonSerializer.Serialize(route);
+            Preferences.Set(key, json);
+        }
+
+        public String GetRoute(string key)
+        {
+            string json = Preferences.Get(key, string.Empty);
+            if (string.IsNullOrEmpty(json))
+            {
+                return null;
+            }
+            return JsonSerializer.Deserialize<String>(json);
+        }
+    }
     public class LocationPin
     {
         public double Latitude { get; set; }
@@ -41,12 +60,19 @@ public partial class ProfilePage : ContentPage
         InitializeComponent();
         _httpClient = new HttpClient();
         BindingContext = new ProfileViewModel();
+        string r = _routeService.GetRoute("r");
+        if (r != null) {
+            DisplayAlert("add routes to", "","OK");
+        }
+        route.Text = r;
+
 
     }
     
 
     public string UserInput { get; set; }
     private readonly LocationPinService _locationPinService = new LocationPinService();
+    private readonly RouteService _routeService = new RouteService();
 
     private async void OnSaveInputClicked(object sender, EventArgs e)
     {
