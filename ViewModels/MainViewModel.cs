@@ -27,7 +27,7 @@ namespace KeroKero.ViewModels
         public Command InfoBtn { get; }
 
         public Command DocumentsBtn { get; }
-        public Command ContactBtn { get; }
+        public Command PhonebookBtn { get; }
 
         public Command ChecklistBtn { get; }
         public Command SettingsBtn { get; }
@@ -82,7 +82,7 @@ namespace KeroKero.ViewModels
             //LoginBtn = new Command(LoginBtnTappedAsync);
             DocumentsBtn = new Command(DocTappedAsync);
             ChecklistBtn = new Command(CheckTappedAsync);
-            ContactBtn = new Command(ContactTappedAsync);
+            PhonebookBtn = new Command(PhonebookTappedAsync);
             SettingsBtn = new Command(SettingsTappedAsync);
             ProfileBtn = new Command(ProfileTappedAsync);
             ChatbotBtn = new Command(ChatbotBtnTappedAsync);
@@ -140,13 +140,12 @@ namespace KeroKero.ViewModels
 
         private async void CheckTappedAsync(object obj)
         {
-            
             await Shell.Current.GoToAsync("//ChecklistPage");
         }
 
-        private async void ContactTappedAsync(object obj)
+        private async void PhonebookTappedAsync(object obj)
         {
-            await Shell.Current.GoToAsync("//ContactPage");
+            await Shell.Current.GoToAsync("//PhonebookPage");
         }
 
         private async void SettingsTappedAsync(object obj)

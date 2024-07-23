@@ -2,21 +2,131 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KeroKero.Pages.ChatbotPage"
+             xmlns:Converters="clr-namespace:KeroKero.Converters"
              NavigationPage.HasNavigationBar="False"
-             Title="">
+             Title="Chatbot Page">
 
-    <ScrollView>
-        <VerticalStackLayout
-        Padding="30,0"
-        Spacing="10">
+    <ContentPage.Resources>
+        <Converters:DirectionToAlignmentConverter x:Key="DirectionToAlignmentConverter" />
+        <Converters:DirectionToColorConverter x:Key="DirectionToColorConverter" />
+        <Converters:DirectionToShapeConverter x:Key="DirectionToShapeConverter" />
+    </ContentPage.Resources>
 
-            <Label
-            Text="Welcome to the Chatbot Page"
-            Style="{StaticResource Headline}"
-            SemanticProperties.HeadingLevel="Level1" />
+    <Grid>
+        <Grid.RowDefinitions>
+            <!--  Heading (empty) -->
+            <RowDefinition Height="0"/>
+            <!-- Chat (Scrollable) -->
+            <RowDefinition Height="*"/>
+            <!-- Choose an Option -->
+            <RowDefinition Height="Auto"/>
+            <!-- Footer (return Home) -->
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
 
-        </VerticalStackLayout>
-    </ScrollView>
+        <!--Header-->
+        <Label Grid.Row="0"
+            Text="{Binding ATest}"
+            VerticalOptions="Start" 
+            HorizontalOptions="Start"
+            FontSize="Medium"   
+            Margin="20,10"/>
+
+        <!-- List of Emergency Phone Numbers (Scrollable) -->
+        <CollectionView Grid.Row="1"
+                        ItemsSource="{Binding MessagesToDisplay}"
+                        BackgroundColor="White"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                        ItemsUpdatingScrollMode="KeepLastItemInView"
+                        VerticalScrollBarVisibility="Never">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border Stroke="Transparent"
+                            StrokeThickness="1"
+                            HorizontalOptions="{Binding MessageIsInbound, Converter={StaticResource DirectionToAlignmentConverter}}"
+                            StrokeShape="{Binding MessageIsInbound, Converter={StaticResource DirectionToShapeConverter}}"
+                            BackgroundColor="{Binding MessageIsInbound, Converter={StaticResource DirectionToColorConverter}}"
+                            Margin="8,3"
+                            Padding="8,8">
+
+                        <Label Text="{Binding MessageContent}"
+                               BackgroundColor="Transparent"
+                               TextColor="White"
+                               FontSize="Body"
+                               MaximumWidthRequest="220"/>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+        <!--Return Home-->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+                <Picker Grid.Column="0"
+                        x:Name="ResponsePicker"
+                        Title="Select a Response"
+                        ItemsSource="{Binding PossibleResponses}"
+                        SelectedItem="{Binding ResponseChosen}"
+                        SelectedIndex="{Binding ResponseChosenIndex}">
+                        
+                </Picker>
+
+            <Border Grid.Column="2"
+                    Stroke="Gray"
+                    StrokeThickness="1"
+                    StrokeShape="Ellipse"
+                    Background="White"
+                    HorizontalOptions="Center"
+                    Margin="0,6">
+
+                <Button Text="T"
+                        BackgroundColor="White"
+                        TextColor="Black"
+                        Command="{Binding AddNewMessageBtn}"
+                        WidthRequest="40"/>
+            </Border>
+
+        </Grid>
+
+        <!--Return Home-->
+        <Border Grid.Row="3"
+                Stroke="White"
+                StrokeThickness="1"
+                StrokeShape="Rectangle"
+                Background="White"
+                HorizontalOptions="Center"
+                Margin="0,6">
+
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer
+                                NumberOfTapsRequired="1"
+                                Command="{Binding ReturnHomeBtn}"/>
+            </Border.GestureRecognizers>
+
+            <VerticalStackLayout
+                    Padding="0,0"
+                    Spacing="0">
+
+                <Image Source="back_home_btn.png" HeightRequest="30" WidthRequest="30"/>
+
+                <Label Text="Return Home"
+                        HorizontalTextAlignment="Center"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        FontSize="Caption"
+                        FontAttributes="None"/>
+
+            </VerticalStackLayout>
+        </Border>
+
+    </Grid>
 
 
 </ContentPage>
