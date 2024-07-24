@@ -110,35 +110,56 @@
         </Grid>
 
         <!--Return Home-->
-        <Border Grid.Row="3"
-                Stroke="White"
-                StrokeThickness="1"
-                StrokeShape="Rectangle"
-                Background="White"
-                HorizontalOptions="Center"
-                Margin="0,6">
+        <Grid Grid.Row="3"
+          BackgroundColor="#FAFBFC"
+          Padding="10"
+          VerticalOptions="End">
 
-            <Border.GestureRecognizers>
-                <TapGestureRecognizer
-                                NumberOfTapsRequired="1"
-                                Command="{Binding ReturnHomeBtn}"/>
-            </Border.GestureRecognizers>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-            <VerticalStackLayout
-                    Padding="0,0"
-                    Spacing="0">
+            <ImageButton Grid.Column="0"
+                 Source="home.png"
+                 Command="{Binding HomeBtn}"
+                 HeightRequest="25"
+                 WidthRequest="25"
+                 Aspect="AspectFit">
+                <ImageButton.Triggers>
+                    <DataTrigger TargetType="ImageButton" Binding="{Binding IsHomeButtonPressed}" Value="True">
+                        <Setter Property="Source" Value="homepressed.png"/>
+                    </DataTrigger>
+                </ImageButton.Triggers>
+            </ImageButton>
 
-                <Image Source="back_home_btn.png" HeightRequest="30" WidthRequest="30"/>
+            <ImageButton Grid.Column="1"
+                 Source="map.png"
+                 Command="{Binding MapBtn}"
+                 HeightRequest="25"
+                 WidthRequest="25"
+                 Aspect="AspectFit">
+                <ImageButton.Triggers>
+                    <DataTrigger TargetType="ImageButton" Binding="{Binding IsMapButtonPressed}" Value="True">
+                        <Setter Property="Source" Value="mappressed.png"/>
+                    </DataTrigger>
+                </ImageButton.Triggers>
+            </ImageButton>
 
-                <Label Text="Return Home"
-                        HorizontalTextAlignment="Center"
-                        HorizontalOptions="Center"
-                        VerticalOptions="Center"
-                        FontSize="Caption"
-                        FontAttributes="None"/>
-
-            </VerticalStackLayout>
-        </Border>
+            <ImageButton Grid.Column="2"
+                 Source="lightbulb.png"
+                 Command="{Binding InfoBtn}"
+                 HeightRequest="25"
+                 WidthRequest="25"
+                 Aspect="AspectFit">
+                <ImageButton.Triggers>
+                    <DataTrigger TargetType="ImageButton" Binding="{Binding IsInfoButtonPressed}" Value="True">
+                        <Setter Property="Source" Value="infopressed.png"/>
+                    </DataTrigger>
+                </ImageButton.Triggers>
+            </ImageButton>
+        </Grid>
 
     </Grid>
 
