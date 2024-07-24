@@ -62,12 +62,13 @@ namespace KeroKero.Pages
             directions.Text = Dir;
         }
 
-        private void Back_Clicked(object sender, EventArgs e)
+        async public void Back_Clicked(object sender, EventArgs e)
         {
             // Handle button click event
             //DisplayAlert("Button Clicked", "You clicked the button!", "OK");
             //direct.IsVisible = false;
-            
+            await Shell.Current.GoToAsync("//MapPage");
+
         }
 
         private void Save_Clicked(object sender, EventArgs e)

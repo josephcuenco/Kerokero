@@ -53,11 +53,12 @@
         
             
         <Label x:Name="durationLabel" Grid.Row="4"
+               Grid.ColumnSpan="4"
            Text="Duration: "
            FontSize="20"
            TextColor="Black"
            BackgroundColor="White"
-           Padding="10"
+           Padding="20"
            VerticalOptions="Start"
            IsVisible="True" />
         <!--<Label x:Name="directions" Grid.Row="2"

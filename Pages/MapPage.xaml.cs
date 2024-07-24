@@ -18,6 +18,7 @@ using System.Reflection;
 using System.Text.RegularExpressions;
 using Microsoft.Maui.Storage;
 using System.Net.NetworkInformation;
+//using Android.Locations;
 
 namespace KeroKero.Pages;
 
@@ -32,6 +33,13 @@ public partial class MapPage : ContentPage
         _httpClient = new HttpClient();
         BindingContext = new MapViewModel();
 	}
+
+    public class CustomPin : Pin
+    {
+        public Color PinColor { get; set; } = Colors.Green;  // Default to standard green
+    }
+
+
 
     public class Shelter
     {
@@ -120,7 +128,7 @@ public partial class MapPage : ContentPage
             Location = new Location(lat, lng)
         };
         map.Pins.Add(Origin);
-        DisplayAlert("Finished setting origin", $"{lat}, {lng}", "OK");
+        DisplayAlert("Finished setting origin", "", "OK");
 
     }
     protected override async void OnAppearing()
@@ -194,6 +202,18 @@ public partial class MapPage : ContentPage
                 Address = item.Type,
                 Location = new Location(item.Location1, item.Location2)
             };
+
+            /*CustomPin temp = new CustomPin
+            {
+                Label = item.Label,
+                Address = item.Type,
+                Location = new Location(item.Location1, item.Location2),
+                PinColor = Colors.Green  // Set the custom color here
+            };
+
+            pn*/
+
+
             temp.MarkerClicked += async (s, e) =>
             {
                 if (Origin?.Location == null)
