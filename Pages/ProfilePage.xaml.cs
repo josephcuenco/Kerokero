@@ -60,7 +60,7 @@ public partial class ProfilePage : ContentPage
     {
         InitializeComponent();
         _httpClient = new HttpClient();
-        BindingContext = new ProfileViewModel();
+        BindingContext = ProfileViewModel.Instance;
         
         
 
