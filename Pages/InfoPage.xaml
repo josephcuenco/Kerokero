@@ -7,14 +7,17 @@
 
     <ScrollView>
         <VerticalStackLayout
-        Padding="20,0"
+            
+            Padding="20,0"
         Spacing="10">
+            
             <StackLayout Padding="10">
+                <Image Source="offline.png" IsVisible="false" x:Name="o"/>
                 <!-- Title -->
-                <Label Text="Latest Earthquakes Near Kyoto, Japan" FontSize="18" HorizontalOptions="Start" HeightRequest="50" FontAttributes="Bold"/>
+                <Label x:Name="t" Text="Latest Earthquakes Near Kyoto, Japan" FontSize="18" HorizontalOptions="Start" HeightRequest="50" FontAttributes="Bold"/>
 
                 <!-- Header Grid -->
-                <Grid Padding="10,0" ColumnSpacing="10">
+                <Grid x:Name="v" Padding="10,0" ColumnSpacing="10">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
@@ -26,7 +29,7 @@
                 </Grid>
 
                 <!-- Earthquake List -->
-                <ListView ItemsSource="{Binding EarthquakeList}" HasUnevenRows="True">
+                <ListView x:Name="e" ItemsSource="{Binding EarthquakeList}" HasUnevenRows="True">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
