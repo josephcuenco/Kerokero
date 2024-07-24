@@ -79,6 +79,9 @@ namespace KeroKero.ViewModels
                     var mainViewModel = MainViewModel.Instance;
                     mainViewModel.FullName = $"{auth.User.DisplayName}";
 
+                    var profileVM = ProfileViewModel.Instance;
+                    profileVM.FullName = $"{auth.User.DisplayName}";
+
                     loginCorrect = true;
                 }
                 catch (Exception ex)

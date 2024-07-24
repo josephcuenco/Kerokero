@@ -23,12 +23,17 @@ namespace KeroKero.ViewModels
         private bool isMapPressed;
         public string webApiKey = "AIzaSyCPz-5MixGymeUJlMKwkyhpZ9ynIGTxIRM";
 
+        private static ProfileViewModel _instance;
+        public static ProfileViewModel Instance => _instance ?? (_instance = new ProfileViewModel());
+
         public Command ReturnHomeBtn { get; }
 
         public Command MapBtn { get; }
         public Command HomeBtn { get; }
 
         public Command InfoBtn { get; }
+
+        public Command DeleteBtn { get; }
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -78,7 +83,19 @@ namespace KeroKero.ViewModels
         }
 
 
-       
+        private string _fullName;
+        public string FullName
+        {
+            get => _fullName;
+            set
+            {
+                if (_fullName != value)
+                {
+                    _fullName = value;
+                    RaisePropertyChanged(nameof(FullName));
+                }
+            }
+        }
 
         public ProfileViewModel()
         {
@@ -87,6 +104,8 @@ namespace KeroKero.ViewModels
             MapBtn = new Command(MapBtnTappedAsync);
             HomeBtn = new Command(HomeBtnTappedAsync);
             InfoBtn = new Command(InfoBtnTappedAsync);
+            DeleteBtn = new Command(DeleteBtnTappedAsync);
+
 
 
         }
@@ -118,6 +137,14 @@ namespace KeroKero.ViewModels
             IsHomeButtonPressed = false;
             IsInfoButtonPressed = true;
             await Shell.Current.GoToAsync("//InfoPage");
+        }
+
+        private async void DeleteBtnTappedAsync(object obj)
+        {
+            IsMapButtonPressed = false;
+            IsHomeButtonPressed = false;
+            IsInfoButtonPressed = false;
+            await Shell.Current.GoToAsync("//WelcomePage");
         }
 
         private void RaisePropertyChanged(string v)
