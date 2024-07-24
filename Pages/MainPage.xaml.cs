@@ -33,7 +33,9 @@ public partial class MainPage : ContentPage
         {
             alert.Source= "alertoff.png";
             //doc.Command -= DocumentsBtn;
-            doc.Source = "document.png";
+            //doc.Source = "document.png";
+            doc.IsVisible = false;
+            doc1.IsVisible = true;
 
         }
     }

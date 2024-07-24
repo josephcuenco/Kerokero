@@ -35,7 +35,7 @@
         
         <Image Grid.Row="3"
              x:Name="alert"
-             Source="progressbackground.png"
+             Source="tip.png"
              HeightRequest="150"
              WidthRequest="350"
              
@@ -65,6 +65,12 @@
                     Command="{Binding DocumentsBtn}"
                     HeightRequest="125"
                     WidthRequest="300"/>
+                <Image 
+    Source="document.png"
+    x:Name="doc1"
+    IsVisible="False"
+    HeightRequest="125"
+    WidthRequest="300"/>
 
             </StackLayout>
             <StackLayout Grid.Column="1" Spacing="0">
