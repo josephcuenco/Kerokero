@@ -1,7 +1,8 @@
 ﻿using Firebase.Auth;
 using HtmlAgilityPack;
 using KeroKero.Pages;
-using Newtonsoft.Json;
+
+using System.Text.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -15,6 +16,7 @@ using System.Threading.Tasks;
 
 namespace KeroKero.ViewModels
 {
+
     public class Earthquake
     {
         public string Magnitude { get; set; }
@@ -50,6 +52,7 @@ namespace KeroKero.ViewModels
 
         public InfoViewModel()
         {
+            
             MapBtn = new Command(MapBtnTappedAsync);
             HomeBtn = new Command(HomeBtnTappedAsync);
             EarthquakeList = new ObservableCollection<Earthquake>();

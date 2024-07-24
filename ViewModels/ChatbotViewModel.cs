@@ -16,6 +16,10 @@ namespace KeroKero.ViewModels
 {
     internal class ChatbotViewModel : INotifyPropertyChanged
     {
+        private bool isHomePressed;
+        private bool isInfoPressed;
+        private bool isMapPressed;
+
         // Stores all possible bot messages
         private IDictionary<string, string> _BotMessageDict;
 
@@ -39,12 +43,21 @@ namespace KeroKero.ViewModels
         public Command ReturnHomeBtn { get; }
         public Command AddNewMessageBtn { get; }
 
+
+        public Command MapBtn { get; }
+        public Command HomeBtn { get; }
+
+        public Command InfoBtn { get; }
+
         public event PropertyChangedEventHandler? PropertyChanged;
 
         public ChatbotViewModel()
         {
             ReturnHomeBtn = new Command(ReturnHomeTappedAsync);
             AddNewMessageBtn = new Command(AddNewMessageTapped);
+            MapBtn = new Command(MapBtnTappedAsync);
+            HomeBtn = new Command(HomeBtnTappedAsync);
+            InfoBtn = new Command(InfoBtnTappedAsync);
 
             _BotState = "prompt";
             _ChosenResponse = "empty";
@@ -127,6 +140,48 @@ namespace KeroKero.ViewModels
             }
         }
 
+        //Makes the mimic of the nav bar 
+        public bool IsHomeButtonPressed
+        {
+            get => isHomePressed;
+            set
+            {
+                if (isHomePressed != value)
+                {
+                    isHomePressed = value;
+                    OnPropertyChanged(nameof(IsHomeButtonPressed));
+                }
+            }
+        }
+
+        public bool IsInfoButtonPressed
+        {
+            get => isInfoPressed;
+            set
+            {
+                if (isInfoPressed != value)
+                {
+                    isInfoPressed = value;
+                    OnPropertyChanged(nameof(IsInfoButtonPressed));
+                }
+            }
+        }
+
+        public bool IsMapButtonPressed
+        {
+            get => isMapPressed;
+            set
+            {
+                if (isMapPressed != value)
+                {
+                    isMapPressed = value;
+                    OnPropertyChanged(nameof(IsMapButtonPressed));
+                }
+            }
+        }
+
+
+
         private async void ReturnHomeTappedAsync(object obj)
         {
             await Shell.Current.GoToAsync("//MainPage");
@@ -200,11 +255,25 @@ namespace KeroKero.ViewModels
 
         private void PrintEarthquakeInfo()
         {
+            MessagesToDisplay.Add(new ChatbotMessage(BotMessageDict["earthquake_info0"], true));
             MessagesToDisplay.Add(new ChatbotMessage(BotMessageDict["earthquake_info1"], true));
+            MessagesToDisplay.Add(new ChatbotMessage(BotMessageDict["earthquake_info2"], true));
+            MessagesToDisplay.Add(new ChatbotMessage(BotMessageDict["earthquake_info3"], true));
+            MessagesToDisplay.Add(new ChatbotMessage(BotMessageDict["earthquake_info4"], true));
+            MessagesToDisplay.Add(new ChatbotMessage(BotMessageDict["earthquake_info5"], true));
+
         }
         private void PrintTyphoonInfo()
         {
+            MessagesToDisplay.Add(new ChatbotMessage(BotMessageDict["typhoon_info0"], true));
             MessagesToDisplay.Add(new ChatbotMessage(BotMessageDict["typhoon_info1"], true));
+            MessagesToDisplay.Add(new ChatbotMessage(BotMessageDict["typhoon_info2"], true));
+            MessagesToDisplay.Add(new ChatbotMessage(BotMessageDict["typhoon_info3"], true));
+            MessagesToDisplay.Add(new ChatbotMessage(BotMessageDict["typhoon_info4"], true));
+            MessagesToDisplay.Add(new ChatbotMessage(BotMessageDict["typhoon_info5"], true));
+            MessagesToDisplay.Add(new ChatbotMessage(BotMessageDict["typhoon_info6"], true));
+
+
         }
         private void PrintNewPrompt()
         {
@@ -229,9 +298,6 @@ namespace KeroKero.ViewModels
         private void PrintShelterInfo()
         {
             MessagesToDisplay.Add(new ChatbotMessage(BotMessageDict["shelter_info0"], true));
-            MessagesToDisplay.Add(new ChatbotMessage(BotMessageDict["shelter_info1"], true));
-            MessagesToDisplay.Add(new ChatbotMessage(BotMessageDict["shelter_info2"], true));
-            MessagesToDisplay.Add(new ChatbotMessage(BotMessageDict["shelter_info3"], true));
         }
         private void PrintCommunicationInfo()
         {
@@ -240,6 +306,9 @@ namespace KeroKero.ViewModels
         private void PrintKitInfo()
         {
             MessagesToDisplay.Add(new ChatbotMessage(BotMessageDict["kit_info0"], true));
+            MessagesToDisplay.Add(new ChatbotMessage(BotMessageDict["kit_info1"], true));
+            MessagesToDisplay.Add(new ChatbotMessage(BotMessageDict["kit_info2"], true));
+
         }
 
 
@@ -268,17 +337,40 @@ namespace KeroKero.ViewModels
             BotMessageDict.Add("disaster_info1", "> Earthquakes");
             BotMessageDict.Add("disaster_info2", "> Typhoons");
 
-            BotMessageDict.Add("typhoon_info1", "Typhoons info");
-            BotMessageDict.Add("earthquake_info1", "Earthquake info");
+            BotMessageDict.Add("typhoon_info0", "Here are some suggestions on how to stay safe during a typhoon:");
+            BotMessageDict.Add("typhoon_info1", "1. Stay up-to-date on the weather forecast.");
+            BotMessageDict.Add("typhoon_info2", "2. Seal gaps in windows and doors, and close shutters.");
+            BotMessageDict.Add("typhoon_info3", "3. Prepare an emergency kit (see the Checklist page).");
+            BotMessageDict.Add("typhoon_info4", "4. If your home has gas, turn it off at the main outlet.");
+            BotMessageDict.Add("typhoon_info5", "4. Locate the nearest emergency evacuation route to your home.");
+            BotMessageDict.Add("typhoon_info6", "For more info see https://www.kcif.or.jp/web/en/livingguide/emergency/.");
 
-            BotMessageDict.Add("shelter_info0", "Your current position is:");
-            BotMessageDict.Add("shelter_info1", "<Current position>");
-            BotMessageDict.Add("shelter_info2", "The nearest shelter is:");
-            BotMessageDict.Add("shelter_info3", "<Nearest shelter>");
+            BotMessageDict.Add("earthquake_info0", "Here are some suggestions on how to prepare" +
+                " for an earthquake:");
+            BotMessageDict.Add("earthquake_info1", "1. Locate a safe place in your home.");
+            BotMessageDict.Add("earthquake_info2", "2. Prepare an emergency kit (see the Checklist page).");
+            BotMessageDict.Add("earthquake_info3", "3. Secure your furniture, and install anti-shatter " +
+                "film on windows and other glass items.");
+            BotMessageDict.Add("earthquake_info4", "4. Locate the nearest emergency evacuation route to your home.");
+            BotMessageDict.Add("earthquake_info5", "For more info see https://www.kcif.or.jp/web/en/livingguide/emergency/.");
 
-            BotMessageDict.Add("communication_info0", "Info about 171");
 
-            BotMessageDict.Add("kit_info0", "Info about disaster kits");
+
+
+
+            BotMessageDict.Add("shelter_info0", "See the Map page for shelter info and route finding.");
+
+            BotMessageDict.Add("communication_info0", "In the event of a natural diaster, phone networks may go down. In" +
+                " that case, the Disaster Emergency Message Service (171) may be activated. In cases of emergency, it acts as" +
+                " a message board where individuals can leave and recieve messages. For more information on how to use the 171 service, " +
+                "see https://www.kcif.or.jp/web/en/livingguide/emergency/");
+
+            BotMessageDict.Add("kit_info0", "Here are some items you may want to keep in a disaster kit:");
+            BotMessageDict.Add("kit_info1", "Water (3L per person per day), non-perishable food, cash (10 yen coins are useful for payphones)," +
+                " copies of important documents (See Documents page), first-aid kit, flashlights and batteries, and some clothes.");
+
+            BotMessageDict.Add("kit_info2", "See the Checklist page for an interactive checklist.");
+
 
 
 
@@ -302,5 +394,33 @@ namespace KeroKero.ViewModels
             ResponsesDictionary.Add("disaster", disaster_opts);
         }
 
+        private async void MapBtnTappedAsync(object obj)
+        {
+            IsMapButtonPressed = true;
+            IsHomeButtonPressed = false;
+            IsInfoButtonPressed = false;
+            await Shell.Current.GoToAsync("//MapPage");
+        }
+
+        private async void HomeBtnTappedAsync(object obj)
+        {
+            IsMapButtonPressed = false;
+            IsHomeButtonPressed = true;
+            IsInfoButtonPressed = false;
+            await Shell.Current.GoToAsync("//MainPage");
+        }
+
+        private async void InfoBtnTappedAsync(object obj)
+        {
+            IsMapButtonPressed = false;
+            IsHomeButtonPressed = false;
+            IsInfoButtonPressed = true;
+            await Shell.Current.GoToAsync("//InfoPage");
+        }
+
+        private void RaisePropertyChanged(string v)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(v));
+        }
     }
 }

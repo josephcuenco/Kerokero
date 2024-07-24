@@ -60,12 +60,9 @@ public partial class ProfilePage : ContentPage
     {
         InitializeComponent();
         _httpClient = new HttpClient();
-        BindingContext = new ProfileViewModel();
-        //string r = _routeService.GetRoute("r");
-        //if (r != null) {
-          //  DisplayAlert("add routes to", "","OK");
-        //}
-        //route.Text = r;
+        BindingContext = ProfileViewModel.Instance;
+        
+        
 
 
     }

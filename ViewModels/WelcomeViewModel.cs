@@ -1,15 +1,39 @@
 ﻿using Firebase.Auth;
+using Microsoft.Maui.Controls.Maps;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace KeroKero.ViewModels
 {
+    public class OfflineService
+    {
+        public void SaveOffline(string key, bool answer)
+        {
+            string json = JsonSerializer.Serialize(answer);
+            Preferences.Set(key, json);
+        }
+
+        public bool GetOffline(string key)
+        {
+            string json = Preferences.Get(key, string.Empty);
+            if (string.IsNullOrEmpty(json))
+            {
+                return false;
+            }
+            return JsonSerializer.Deserialize<bool>(json);
+        }
+    }
+    //private readonly LocationPinService _locationPinService = new LocationPinService();
+    
     internal class WelcomeViewModel : INotifyPropertyChanged
     {
+        //private OfflineService OS = new OfflineService();
+        private OfflineService OS = new OfflineService();
         public Command OfflineBtn { get; }
         public Command SignUpBtn { get; }
         public Command LoginBtn { get; }
@@ -28,6 +52,7 @@ namespace KeroKero.ViewModels
 
         private async void LoginBtnTappedAsync(object obj)
         {
+            OS.SaveOffline("off", false);
             await Shell.Current.GoToAsync("//LoginPage");
         }
 
@@ -39,6 +64,7 @@ namespace KeroKero.ViewModels
         private async void OfflineBtnTappedAsync(object obj)
 
         {
+            OS.SaveOffline("off", true);
             await Shell.Current.GoToAsync("//MainPage");
         }
 
