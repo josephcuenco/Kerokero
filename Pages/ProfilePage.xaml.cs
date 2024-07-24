@@ -18,7 +18,7 @@ namespace KeroKero.Pages;
 
 public partial class ProfilePage : ContentPage
 {
-    /*
+
     public class RouteService
     {
         public void SaveRoute(string key, string route)
@@ -53,13 +53,13 @@ public partial class ProfilePage : ContentPage
             Preferences.Set(key, json);
         }
     }
-    
+
     private readonly HttpClient _httpClient;
-    */
+
     public ProfilePage()
     {
         InitializeComponent();
-        //_httpClient = new HttpClient();
+        _httpClient = new HttpClient();
         BindingContext = new ProfileViewModel();
         //string r = _routeService.GetRoute("r");
         //if (r != null) {
@@ -69,7 +69,7 @@ public partial class ProfilePage : ContentPage
 
 
     }
-    /*
+
 
     public string UserInput { get; set; }
     private readonly LocationPinService _locationPinService = new LocationPinService();
@@ -77,8 +77,16 @@ public partial class ProfilePage : ContentPage
 
     private async void OnSaveInputClicked(object sender, EventArgs e)
     {
-        UserInput = homeInput.Text;
-        home.Text = $"Home: {UserInput}";
+        if (homeInput != null) {
+            UserInput = homeInput.Text;
+        }
+        else
+        {
+            DisplayAlert("Error", "Entry control is not initialized", "OK");
+        }
+
+
+        //home.Text = $"Home: {UserInput}";
         string apiKey = "AIzaSyB7YTUD-ANSh4fDAqNU00QNT7YbrD1KFYw";
         string geocodeUrl = $"https://maps.googleapis.com/maps/api/geocode/json?address={Uri.EscapeDataString(UserInput)}&key={apiKey}";
 
@@ -96,10 +104,12 @@ public partial class ProfilePage : ContentPage
                 double lat = (double)location["lat"];
                 double lng = (double)location["lng"];
 
-                Pin h = new Pin { 
-                    Location = new Location(lat, lng), 
-                    Label = "Home", 
-                    Address = UserInput };
+                Pin h = new Pin
+                {
+                    Location = new Location(lat, lng),
+                    Label = "Home",
+                    Address = UserInput
+                };
                 _locationPinService.SaveLocationPins("HomePin", h);
 
                 // Display the latitude and longitude
@@ -123,7 +133,7 @@ public partial class ProfilePage : ContentPage
     private async void OnSchoolInputClicked(object sender, EventArgs e)
     {
         UserInput = schoolInput.Text;
-        school.Text = $"School: {UserInput}";
+        //school.Text = $"School: {UserInput}";
         string apiKey = "AIzaSyB7YTUD-ANSh4fDAqNU00QNT7YbrD1KFYw";
         string geocodeUrl = $"https://maps.googleapis.com/maps/api/geocode/json?address={Uri.EscapeDataString(UserInput)}&key={apiKey}";
 
@@ -170,7 +180,7 @@ public partial class ProfilePage : ContentPage
     private async void OnWorkInputClicked(object sender, EventArgs e)
     {
         UserInput = workInput.Text;
-        work.Text = $"Work: {UserInput}";
+        //work.Text = $"Work: {UserInput}";
         string apiKey = "AIzaSyB7YTUD-ANSh4fDAqNU00QNT7YbrD1KFYw";
         string geocodeUrl = $"https://maps.googleapis.com/maps/api/geocode/json?address={Uri.EscapeDataString(UserInput)}&key={apiKey}";
 
@@ -211,9 +221,9 @@ public partial class ProfilePage : ContentPage
         catch (Exception ex)
         {
             await DisplayAlert("Error", ex.Message, "OK");
-    
+
         }
     }
-    */
+
 
 }
