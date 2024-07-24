@@ -18,6 +18,7 @@ namespace KeroKero.ViewModels
         //private INavigation _navigation;
         private string userEmail;
         private string userPassword;
+        private string userName;
 
         public Command LoginBtn { get; }
 
@@ -39,7 +40,16 @@ namespace KeroKero.ViewModels
             }
         }
 
-        
+        public string UserName
+        {
+            get => userName;
+            set
+            {
+                userName = value;
+                RaisePropertyChanged("UserEmail");
+            }
+        }
+
 
         public string webApiKey = "AIzaSyCPz-5MixGymeUJlMKwkyhpZ9ynIGTxIRM";
 
@@ -68,7 +78,7 @@ namespace KeroKero.ViewModels
 
                 try
                 {
-                    var auth = await authProvider.SignInWithEmailAndPasswordAsync(UserEmail, UserPassword);
+                    var auth = await authProvider.SignInWithEmailAndPasswordAsync(UserEmail, UserPassword, UserName);
                     var user = await App.RealmApp.LogInAsync(Credentials.EmailPassword(UserEmail, UserPassword));
 
                     var content = await auth.GetFreshAuthAsync();

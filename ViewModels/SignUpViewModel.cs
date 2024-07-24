@@ -115,6 +115,9 @@ namespace KeroKero.ViewModels
                         var mainViewModel = MainViewModel.Instance;
                         mainViewModel.FullName = $"{auth.User.DisplayName}";
 
+                        var profileViewModel = ProfileViewModel.Instance;
+                        profileViewModel.FullName = $"{auth.User.DisplayName}";
+
 
                         await Shell.Current.GoToAsync("//LoginPage");
                     }
