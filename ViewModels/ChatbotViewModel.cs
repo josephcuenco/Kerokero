@@ -16,6 +16,10 @@ namespace KeroKero.ViewModels
 {
     internal class ChatbotViewModel : INotifyPropertyChanged
     {
+        private bool isHomePressed;
+        private bool isInfoPressed;
+        private bool isMapPressed;
+
         // Stores all possible bot messages
         private IDictionary<string, string> _BotMessageDict;
 
@@ -39,12 +43,21 @@ namespace KeroKero.ViewModels
         public Command ReturnHomeBtn { get; }
         public Command AddNewMessageBtn { get; }
 
+
+        public Command MapBtn { get; }
+        public Command HomeBtn { get; }
+
+        public Command InfoBtn { get; }
+
         public event PropertyChangedEventHandler? PropertyChanged;
 
         public ChatbotViewModel()
         {
             ReturnHomeBtn = new Command(ReturnHomeTappedAsync);
             AddNewMessageBtn = new Command(AddNewMessageTapped);
+            MapBtn = new Command(MapBtnTappedAsync);
+            HomeBtn = new Command(HomeBtnTappedAsync);
+            InfoBtn = new Command(InfoBtnTappedAsync);
 
             _BotState = "prompt";
             _ChosenResponse = "empty";
@@ -126,6 +139,48 @@ namespace KeroKero.ViewModels
                 OnPropertyChanged(nameof(_BotState));
             }
         }
+
+        //Makes the mimic of the nav bar 
+        public bool IsHomeButtonPressed
+        {
+            get => isHomePressed;
+            set
+            {
+                if (isHomePressed != value)
+                {
+                    isHomePressed = value;
+                    OnPropertyChanged(nameof(IsHomeButtonPressed));
+                }
+            }
+        }
+
+        public bool IsInfoButtonPressed
+        {
+            get => isInfoPressed;
+            set
+            {
+                if (isInfoPressed != value)
+                {
+                    isInfoPressed = value;
+                    OnPropertyChanged(nameof(IsInfoButtonPressed));
+                }
+            }
+        }
+
+        public bool IsMapButtonPressed
+        {
+            get => isMapPressed;
+            set
+            {
+                if (isMapPressed != value)
+                {
+                    isMapPressed = value;
+                    OnPropertyChanged(nameof(IsMapButtonPressed));
+                }
+            }
+        }
+
+
 
         private async void ReturnHomeTappedAsync(object obj)
         {
@@ -302,5 +357,33 @@ namespace KeroKero.ViewModels
             ResponsesDictionary.Add("disaster", disaster_opts);
         }
 
+        private async void MapBtnTappedAsync(object obj)
+        {
+            IsMapButtonPressed = true;
+            IsHomeButtonPressed = false;
+            IsInfoButtonPressed = false;
+            await Shell.Current.GoToAsync("//MapPage");
+        }
+
+        private async void HomeBtnTappedAsync(object obj)
+        {
+            IsMapButtonPressed = false;
+            IsHomeButtonPressed = true;
+            IsInfoButtonPressed = false;
+            await Shell.Current.GoToAsync("//MainPage");
+        }
+
+        private async void InfoBtnTappedAsync(object obj)
+        {
+            IsMapButtonPressed = false;
+            IsHomeButtonPressed = false;
+            IsInfoButtonPressed = true;
+            await Shell.Current.GoToAsync("//InfoPage");
+        }
+
+        private void RaisePropertyChanged(string v)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(v));
+        }
     }
 }

@@ -32,6 +32,7 @@ public partial class MainPage : ContentPage
         if (s == true)
         {
             alert.Source= "alertoff.png";
+            //doc.Command -= DocumentsBtn;
             doc.Source = "document.png";
 
         }
