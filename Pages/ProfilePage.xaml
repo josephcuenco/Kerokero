@@ -175,7 +175,7 @@
         
 
         <ImageButton Grid.Row="21"
-     Source="deleteaccbtn.png"
+     Source="logout.png"
      HeightRequest="45"
      WidthRequest="350"
      Command="{Binding DeleteBtn}" 

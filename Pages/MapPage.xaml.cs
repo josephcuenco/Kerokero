@@ -120,7 +120,7 @@ public partial class MapPage : ContentPage
             Location = new Location(lat, lng)
         };
         map.Pins.Add(Origin);
-        DisplayAlert("Finished setting origin", $"{lat}, {lng}", "OK");
+        DisplayAlert("Finished setting origin", $"{Origin.Address}", "OK");
 
     }
     protected override async void OnAppearing()
