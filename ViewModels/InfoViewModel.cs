@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -16,20 +17,15 @@ namespace KeroKero.ViewModels
 {
     public class Earthquake
     {
-        public double Latitude { get; set; }
-        public double Longitude { get; set; }
         public string Magnitude { get; set; }
         public DateTime Date { get; set; }
-        public string Id { get; set; }
         public string Distance { get; set; }
     }
+
     internal class InfoViewModel : INotifyPropertyChanged
     {
-
-
         public Command MapBtn { get; }
         public Command HomeBtn { get; }
-
 
         private ObservableCollection<Earthquake> _earthquakeList;
 
@@ -42,14 +38,15 @@ namespace KeroKero.ViewModels
                 OnPropertyChanged();
             }
         }
+
+        private static readonly HttpClient _httpClient = new HttpClient();
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
-
-        public event PropertyChangedEventHandler? PropertyChanged;
-
 
         public InfoViewModel()
         {
@@ -58,7 +55,6 @@ namespace KeroKero.ViewModels
             EarthquakeList = new ObservableCollection<Earthquake>();
             LoadEarthquakeDataAsync().ConfigureAwait(false);
         }
-
 
         public async Task LoadEarthquakeDataAsync()
         {
@@ -71,46 +67,47 @@ namespace KeroKero.ViewModels
             }
         }
 
-
         private async Task<List<Earthquake>> GetLatestEarthquakesAsync()
         {
+            var currentYear = DateTime.Now.Year;
+            var lastYear = DateTime.Now.Year - 1;
             var earthquakes = new List<Earthquake>();
-            var httpClient = new HttpClient();
 
-            var response = await httpClient.GetStringAsync("https://earthquakelist.org/japan/kyoto/kyoto/");
+            var response = await _httpClient.GetStringAsync("https://earthquakelist.org/japan/kyoto/kyoto/");
             var htmlDoc = new HtmlDocument();
             htmlDoc.LoadHtml(response);
 
-            var rows = htmlDoc.DocumentNode.SelectNodes("//tr[@class='tr_odd' or @class='tr_even']"); // Adjust the XPath as per actual HTML structure
+            var rows = htmlDoc.DocumentNode.SelectNodes("//tr[@class='tr_odd' or @class='tr_even']"); 
 
-            foreach (var row in rows)
+            //processes rows in parallel for increased performance
+            Parallel.ForEach(rows, row =>
             {
-                var data = new Earthquake
+                var date = DateTime.Parse(row.GetAttributeValue("data-date", ""));
+                if (date.Year == currentYear || date.Year == lastYear)
                 {
-                    Latitude = Convert.ToDouble(row.GetAttributeValue("data-lat", "0")),
-                    Longitude = Convert.ToDouble(row.GetAttributeValue("data-lng", "0")),
-                    Magnitude = UpdateMagnitude(Convert.ToDouble(row.GetAttributeValue("data-mag", "0"))),
-                    Date = DateTime.Parse(row.GetAttributeValue("data-date", "")),
-                    Id = row.GetAttributeValue("data-id", ""),
-                    Distance = row.GetAttributeValue("data-dist", "")
-                };
+                    var data = new Earthquake
+                    {
+                        Magnitude = UpdateMagnitude(Convert.ToDouble(row.GetAttributeValue("data-mag", "0"))),
+                        Date = date,
+                        Distance = row.GetAttributeValue("data-dist", "")
+                    };
 
-                earthquakes.Add(data);
-            }
+                    //earthquake list is safely modified by multiple threads
+                    lock (earthquakes)
+                    {
+                        earthquakes.Add(data);
+                    }
+                }
+            });
 
+            earthquakes = earthquakes.OrderByDescending(e => e.Date).ToList();
             return earthquakes;
         }
 
-
         public string UpdateMagnitude(double dataMag)
         {
-            // Convert to double and format with one decimal place
-            string Magnitude;
-            Magnitude = Convert.ToDouble(dataMag).ToString("0.0");
-            return Magnitude;
+            return dataMag.ToString("0.0");
         }
-
-
 
         private async void MapBtnTappedAsync(object obj)
         {
@@ -126,5 +123,5 @@ namespace KeroKero.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(v));
         }
-    }
+    }   
 }
