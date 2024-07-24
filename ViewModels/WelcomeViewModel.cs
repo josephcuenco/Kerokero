@@ -52,6 +52,7 @@ namespace KeroKero.ViewModels
 
         private async void LoginBtnTappedAsync(object obj)
         {
+            OS.SaveOffline("off", false);
             await Shell.Current.GoToAsync("//LoginPage");
         }
 
