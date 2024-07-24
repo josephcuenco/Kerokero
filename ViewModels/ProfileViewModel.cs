@@ -11,6 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.CompilerServices;
 
+
+
 namespace KeroKero.ViewModels
 {
     internal class ProfileViewModel : INotifyPropertyChanged
