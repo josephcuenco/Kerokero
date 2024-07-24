@@ -105,7 +105,9 @@
         
         <!--Replace userEmail for binding-->
         <Entry Grid.Row="11"
-           Text="{Binding UserEmail}"
+           x:Name="homeInput"
+           Completed="OnSaveInputClicked"
+           
            BackgroundColor="Transparent"
            HeightRequest="45"
            WidthRequest="350"
@@ -130,6 +132,8 @@
 
         <!--Replace userEmail for binding-->
         <Entry Grid.Row="15"
+            x:Name="workInput"
+            Completed="OnWorkInputClicked"
             Text="{Binding UserEmail}"
             BackgroundColor="Transparent"
             HeightRequest="45"
@@ -156,6 +160,8 @@
 
         <!--Replace userEmail for binding-->
         <Entry Grid.Row="19"
+            x:Name="schoolInput"
+            Completed="OnSchoolInputClicked"
             Text="{Binding UserEmail}"
             BackgroundColor="Transparent"
             HeightRequest="45"

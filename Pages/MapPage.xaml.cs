@@ -161,6 +161,7 @@ public partial class MapPage : ContentPage
         };
 
         Pin home = _locationPinService.GetLocationPins("HomePin");
+        DisplayAlert("This is home", $"{home.Location}", "OK");
         Pin work = _locationPinService.GetLocationPins("WorkPin");
         Pin school = _locationPinService.GetLocationPins("SchoolPin");
         /*DisplayAlert("Geocode Result", $"Got Pin: {retrievedPin.Label}", "OK");
