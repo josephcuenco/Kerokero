@@ -35,6 +35,8 @@ namespace KeroKero.ViewModels
 
         public Command DeleteBtn { get; }
 
+        public Command routeBtn { get; }
+
         public event PropertyChangedEventHandler? PropertyChanged;
 
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
@@ -105,6 +107,7 @@ namespace KeroKero.ViewModels
             HomeBtn = new Command(HomeBtnTappedAsync);
             InfoBtn = new Command(InfoBtnTappedAsync);
             DeleteBtn = new Command(DeleteBtnTappedAsync);
+            routeBtn = new Command(RouteBtnTappedAsync);
 
 
 
@@ -121,6 +124,14 @@ namespace KeroKero.ViewModels
             IsHomeButtonPressed = false;
             IsInfoButtonPressed = false;
             await Shell.Current.GoToAsync("//MapPage");
+        }
+
+        private async void RouteBtnTappedAsync(object obj)
+        {
+            IsMapButtonPressed = false;
+            IsHomeButtonPressed = false;
+            IsInfoButtonPressed = false;
+            await Shell.Current.GoToAsync("//RoutePage");
         }
 
         private async void HomeBtnTappedAsync(object obj)
