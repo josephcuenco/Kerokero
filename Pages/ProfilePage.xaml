@@ -69,7 +69,7 @@
             Source="profilepic.png"
         />
         <Label Grid.Row="5"
-            Text="KeroKero"
+            Text="{Binding FullName}"
             SemanticProperties.HeadingLevel="Level1"
             TextColor="Black"
             HorizontalOptions="Center"
@@ -172,7 +172,7 @@
              Source="deleteaccbtn.png"
              HeightRequest="45"
              WidthRequest="350"
-             Command="{Binding LoginBtn}" 
+             Command="{Binding DeleteBtn}" 
          />
 
         <Grid Grid.Row="23"
