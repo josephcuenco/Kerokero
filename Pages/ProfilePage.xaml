@@ -100,110 +100,222 @@
      Command="{Binding LoginBtn}" 
  />
 
-        <ImageButton Grid.Row="14"
-     Source="backbtn.png"
-     HeightRequest="40"
-     WidthRequest="292"
-     Command="{Binding BackBtn}"
+    <Grid BackgroundColor="#FAFBFC">
+        <Grid.RowDefinitions>
+            <!-- 0 Top Spacing -->
+            <RowDefinition Height="10" />
+            <!-- 1 Profile Title -->
+            <RowDefinition Height="40" />
+            <!-- 2 Spacing -->
+            <RowDefinition Height="2" />
+            <!-- 3  Profile Picture-->
+            <RowDefinition Height="200" />
+            <!-- 4 Spacing  -->
+            <RowDefinition Height="5" />
+            <!-- 5 Kero Kero Title-->
+            <RowDefinition Height="30" />
+            <!-- 6 Spacing-->
+            <RowDefinition Height="20" />
+            <!-- 7 Important addresses-->
+            <RowDefinition Height="25" />
+            <!-- 8 Spacing-->
+            <RowDefinition Height="10" />
+            <!-- 9 Home Text-->
+            <RowDefinition Height="20" />
+            <!-- 10 Spacing-->
+            <RowDefinition Height="2" />
+            <!-- 11 TextBox-->
+            <RowDefinition Height="Auto" />
+            <!-- 12 Spacing-->
+            <RowDefinition Height="10" />
+            <!-- 13 Work-->
+            <RowDefinition Height="20" />
+            <!-- 14 Spacing-->
+            <RowDefinition Height="2" />
+            <!-- 15  TextBox-->
+            <RowDefinition Height="Auto" />
+            <!-- 16 Spacing-->
+            <RowDefinition Height="5" />
+            <!-- 17 School-->
+            <RowDefinition Height="20" />
+            <!-- 18 Spacing-->
+            <RowDefinition Height="5" />
+            <!-- 19 TextBox-->
+            <RowDefinition Height="Auto" />
+            <!-- 20 Spacing-->
+            <RowDefinition Height="5" />
+            <!-- 21 DeleteTextBox-->
+            <RowDefinition Height="Auto" />
+            <!-- 22 Spacing-->
+            <RowDefinition Height="50" />
+            <!-- 23 Spacing-->
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="1"
+            Text="     Profile"
+            SemanticProperties.HeadingLevel="Level1"
+            TextColor="Black"
+            HorizontalOptions="Start"
+            VerticalOptions="Start"
+            FontSize="18"
+            FontFamily="Inter-Bold" 
+        />
+        <Image Grid.Row="3"
+            Source="profilepic.png"
+        />
+        <Label Grid.Row="5"
+            Text="KeroKero"
+            SemanticProperties.HeadingLevel="Level1"
+            TextColor="Black"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            FontSize="24"
+            FontFamily="Inter-Bold" 
+        />
+        <Label Grid.Row="7"
+            Text="     Important addresses"
+            SemanticProperties.HeadingLevel="Level1"
+            TextColor="Black"
+            HorizontalOptions="Start"
+            VerticalOptions="Start"
+            FontSize="18"
+            FontFamily="Inter-Bold" 
+        />
+        <Label Grid.Row="9"
+            Text="      Home"
+            SemanticProperties.HeadingLevel="Level1"
+            TextColor="Black"
+            HorizontalOptions="Start"
+            VerticalOptions="Start"
+            FontSize="15"
+            FontFamily="Inter-Bold" 
+        />
+        
+        <!---This is for the textbox for input-->
+        <Image Grid.Row="11"
+            Source="lightgreenentrytextbox.png"
+            HeightRequest="45"
+            WidthRequest="400"
+        />
+        
+        <!--Replace userEmail for binding-->
+        <Entry Grid.Row="11"
+           Text="{Binding UserEmail}"
+           BackgroundColor="Transparent"
+           HeightRequest="45"
+           WidthRequest="350"
          />
-        <ScrollView>
-            <VerticalStackLayout
-    Padding="30,0"
-    Spacing="10">
 
-                <Label
-        Text="Welcome to the Profile Page"
-        Style="{StaticResource Headline}"
-        SemanticProperties.HeadingLevel="Level1" />
+        <Label Grid.Row="13"
+             Text="       Work"
+             SemanticProperties.HeadingLevel="Level1"
+             TextColor="Black"
+             HorizontalOptions="Start"
+             VerticalOptions="Start"
+             FontSize="15"
+             FontFamily="Inter-Bold" 
+         />
 
-                <Label
-        Text="Add your important locations down below"
-        Style="{StaticResource Headline}"
-        SemanticProperties.HeadingLevel="Level1" />
+        <!---This is for the textbox for input-->
+        <Image Grid.Row="15"
+             Source="lightgreenentrytextbox.png"
+             HeightRequest="45"
+             WidthRequest="350"
+         />
 
-                <Entry x:Name="homeInput"
-           Placeholder="Enter text here"
-           VerticalOptions="CenterAndExpand"
-           HorizontalOptions="CenterAndExpand" />
-                <Button 
-            x:Name="homeAddressBTN" 
-            Text="Set Home location"
-            Clicked="OnSaveInputClicked"
-            VerticalOptions="CenterAndExpand"
-            HorizontalOptions="CenterAndExpand"
-            BackgroundColor="#6C9418"
-            />
+        <!--Replace userEmail for binding-->
+        <Entry Grid.Row="15"
+            Text="{Binding UserEmail}"
+            BackgroundColor="Transparent"
+            HeightRequest="45"
+            WidthRequest="350"
+          />
 
-                <Label x:Name="home"
-            Text="You home address will show up here once inputed"
-            FontSize="20"
-            TextColor="Black"
-            BackgroundColor="White" 
-            />
+        <Label Grid.Row="17"
+             Text="       School"
+             SemanticProperties.HeadingLevel="Level1"
+             TextColor="Black"
+             HorizontalOptions="Start"
+             VerticalOptions="Start"
+             FontSize="15"
+             FontFamily="Inter-Bold" 
+            
+         />
 
-                <Entry x:Name="schoolInput"
-            Placeholder="Enter text here"
-            VerticalOptions="CenterAndExpand"
-            HorizontalOptions="CenterAndExpand" />
-                <Button 
-            x:Name="schoolAddressBTN" 
-            Text="Set School location"
-            Clicked="OnSchoolInputClicked"
-            VerticalOptions="CenterAndExpand"
-            HorizontalOptions="CenterAndExpand" 
-            BackgroundColor="#6C9418"
-            />
+        <!---This is for the textbox for input-->
+        <Image Grid.Row="19"
+             Source="lightgreenentrytextbox.png"
+             HeightRequest="45"
+             WidthRequest="350"
+         />
 
-                <Label x:Name="school"
-            Text="You school address will show up here once inputed"
-            FontSize="20"
-            TextColor="Black"
-            BackgroundColor="White" />
+        <!--Replace userEmail for binding-->
+        <Entry Grid.Row="19"
+            Text="{Binding UserEmail}"
+            BackgroundColor="Transparent"
+            HeightRequest="45"
+            WidthRequest="350"
+          />
 
-                <Entry x:Name="workInput"
-            Placeholder="Enter text here"
-            VerticalOptions="CenterAndExpand"
-            HorizontalOptions="CenterAndExpand" />
-                <Button 
-            x:Name="workAddressBTN" 
-            Text="Set Work location"
-            Clicked="OnWorkInputClicked"
-            VerticalOptions="CenterAndExpand"
-            HorizontalOptions="CenterAndExpand"
-            BackgroundColor="#6C9418"
-            />
+        <ImageButton Grid.Row="21"
+             Source="deleteaccbtn.png"
+             HeightRequest="45"
+             WidthRequest="350"
+             Command="{Binding LoginBtn}" 
+         />
 
-                <Label x:Name="work"
-            Text="You work address will show up here once inputed"
-            FontSize="20"
-            TextColor="Black"
-            BackgroundColor="White" />
+        <Grid Grid.Row="23"
+       BackgroundColor="#FAFBFC"
+       Padding="10"
+       VerticalOptions="End">
 
-                <Label x:Name="RouteSection" 
-               Text="Your Routes"
-               FontSize="25"
-               
-               />
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
+            <ImageButton Grid.Column="0"
+                  Source="home.png"
+                  Command="{Binding HomeBtn}"
+                  HeightRequest="25"
+                  WidthRequest="25"
+                  Aspect="AspectFit">
+                <ImageButton.Triggers>
+                    <DataTrigger TargetType="ImageButton" Binding="{Binding IsHomeButtonPressed}" Value="True">
+                        <Setter Property="Source" Value="homepressed.png"/>
+                    </DataTrigger>
+                </ImageButton.Triggers>
+            </ImageButton>
 
-                <Label x:Name="route"
-            Text="Routes appear here"
-FontSize="20"
-TextColor="Black"
-BackgroundColor="White" />
+            <ImageButton Grid.Column="1"
+                  Source="map.png"
+                  Command="{Binding MapBtn}"
+                  HeightRequest="25"
+                  WidthRequest="25"
+                  Aspect="AspectFit">
+                <ImageButton.Triggers>
+                    <DataTrigger TargetType="ImageButton" Binding="{Binding IsMapButtonPressed}" Value="True">
+                        <Setter Property="Source" Value="mappressed.png"/>
+                    </DataTrigger>
+                </ImageButton.Triggers>
+            </ImageButton>
 
+            <ImageButton Grid.Column="2"
+                  Source="lightbulb.png"
+                  Command="{Binding InfoBtn}"
+                  HeightRequest="25"
+                  WidthRequest="25"
+                  Aspect="AspectFit">
+                <ImageButton.Triggers>
+                    <DataTrigger TargetType="ImageButton" Binding="{Binding IsInfoButtonPressed}" Value="True">
+                        <Setter Property="Source" Value="infopressed.png"/>
+                    </DataTrigger>
+                </ImageButton.Triggers>
+            </ImageButton>
+        </Grid>
 
-                <Button
-            Text="Home" 
-            Command="{Binding ReturnHomeBtn}" 
-            FontSize="20"
-            CornerRadius="20"
-            BackgroundColor="#6C9418"/>
-            </VerticalStackLayout>
-        </ScrollView>
 
     </Grid>
-
-    
 
 </ContentPage>

@@ -19,8 +19,9 @@ namespace KeroKero
             Routing.RegisterRoute("InfoPage", typeof(KeroKero.Pages.InfoPage));
             Routing.RegisterRoute("WelcomePage", typeof(KeroKero.Pages.WelcomePage));
             //Routing.RegisterRoute("SettingsPage", typeof(KeroKero.Pages.SettingsPage));
-            //Routing.RegisterRoute("ProfilePage", typeof(KeroKero.Pages.ProfilePage));
-            //Routing.RegisterRoute("PhonebookPage", typeof(KeroKero.Pages.PhonebookPage));
+            Routing.RegisterRoute("ProfilePage", typeof(KeroKero.Pages.ProfilePage));
+            Routing.RegisterRoute("PhonebookPage", typeof(KeroKero.Pages.PhonebookPage));
+            Routing.RegisterRoute("ChatbotPage", typeof(KeroKero.Pages.ChatbotPage));
         }
     }
 }
