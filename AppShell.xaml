@@ -40,12 +40,13 @@
                 HorizontalTextAlignment="Center"
                 VerticalTextAlignment="Center"/>
 
-            <ImageButton
+            <!-- The settings button is not implemented -->
+            <!--ImageButton
                 Grid.Row="0" Grid.Column="2"
                 Source="settings.png"
                 HeightRequest="30"
                 WidthRequest="30"
-                Command="{Binding SettingsBtn}"/>
+                Command="{Binding SettingsBtn}"/-->
 
         </Grid>
     </Shell.TitleView>
