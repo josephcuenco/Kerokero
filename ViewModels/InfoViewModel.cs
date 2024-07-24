@@ -1,7 +1,8 @@
 ﻿using Firebase.Auth;
 using HtmlAgilityPack;
 using KeroKero.Pages;
-using Newtonsoft.Json;
+
+using System.Text.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,6 +15,7 @@ using System.Threading.Tasks;
 
 namespace KeroKero.ViewModels
 {
+
     public class Earthquake
     {
         public double Latitude { get; set; }
@@ -23,10 +25,11 @@ namespace KeroKero.ViewModels
         public string Id { get; set; }
         public string Distance { get; set; }
     }
+    
     internal class InfoViewModel : INotifyPropertyChanged
     {
 
-
+        
         public Command MapBtn { get; }
         public Command HomeBtn { get; }
 
@@ -53,6 +56,7 @@ namespace KeroKero.ViewModels
 
         public InfoViewModel()
         {
+            
             MapBtn = new Command(MapBtnTappedAsync);
             HomeBtn = new Command(HomeBtnTappedAsync);
             EarthquakeList = new ObservableCollection<Earthquake>();

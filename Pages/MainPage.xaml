@@ -34,6 +34,7 @@
             FontFamily="Inter-Bold"  />
         
         <Image Grid.Row="3"
+             x:Name="alert"
              Source="progressbackground.png"
              HeightRequest="150"
              WidthRequest="350"
@@ -60,6 +61,7 @@
             <StackLayout Grid.Column="0" Spacing="0">
                 <ImageButton 
                     Source="importantdocbtn.png"
+                    x:Name="doc"
                     Command="{Binding DocumentsBtn}"
                     HeightRequest="125"
                     WidthRequest="300"/>

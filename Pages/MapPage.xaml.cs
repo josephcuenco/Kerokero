@@ -161,7 +161,7 @@ public partial class MapPage : ContentPage
         };
 
         Pin home = _locationPinService.GetLocationPins("HomePin");
-        DisplayAlert("This is home", $"{home.Location}", "OK");
+        
         Pin work = _locationPinService.GetLocationPins("WorkPin");
         Pin school = _locationPinService.GetLocationPins("SchoolPin");
         /*DisplayAlert("Geocode Result", $"Got Pin: {retrievedPin.Label}", "OK");
@@ -184,7 +184,7 @@ public partial class MapPage : ContentPage
         using var reader = new StreamReader(pathCSV);
         using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
         var list = csv.GetRecords<Shelter>();
-        foreach (var item in list)
+        /*foreach (var item in list)
         {
             //goes through each and adds to the map
             string name = item.Label;
@@ -207,7 +207,36 @@ public partial class MapPage : ContentPage
             };
             map.Pins.Add(temp);
 
-        }
+        }*/
+
+        Parallel.ForEach(list, item =>
+        {
+            string label = item.Label;
+            string address = item.Type;
+            var location = new Location(item.Location1, item.Location2);
+
+            Pin temp = new Pin
+            {
+                Label = label,
+                Address = address,
+                Location = location
+            };
+
+            temp.MarkerClicked += async (s, e) =>
+            {
+                if (Origin?.Location == null)
+                {
+                    await MainThread.InvokeOnMainThreadAsync(() =>
+                        DisplayAlert("Error", "Please set the origin first.", "OK"));
+                    return;
+                }
+
+                await DisplayRoute(Origin.Location, location);
+            };
+
+            MainThread.InvokeOnMainThreadAsync(() =>
+                map.Pins.Add(temp));
+        });
 
         bool kam = false;
         bool kin = false;
