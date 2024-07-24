@@ -8,8 +8,7 @@
     Shell.FlyoutBehavior="Disabled"
     Title="KeroKero">
 
-    
-    
+
     <!-- Header -->
     <Shell.TitleView>
         <Grid
