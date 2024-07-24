@@ -9,15 +9,7 @@
         <VerticalStackLayout
         Padding="30,0"
         Spacing="10">
-            <Button x:Name="backBtn" 
-                    Text="Go Back to Map"
-                    FontSize="20"
-                TextColor="Black"
-                Padding="20"
-                Clicked="Back_Clicked"
-                    BackgroundColor="#6C9418"
-                    
-                    />
+            
             <Label x:Name="directions"
                 Text="See Route"
                 FontSize="20"
@@ -26,11 +18,11 @@
                    />
 
             <Button x:Name="saveBtn" 
-                Text="Save Route" 
+                Text="Go Back to Map" 
     
                 BackgroundColor="#6C9418"
                 VerticalOptions="Start"
-                Clicked="Save_Clicked"
+                Clicked="Back_Clicked"
     />
 
         </VerticalStackLayout>
