@@ -99,7 +99,7 @@ public partial class MapPage : ContentPage
             return;
         }
 
-        string apiKey = "AIzaSyB7YTUD-ANSh4fDAqNU00QNT7YbrD1KFYw";
+        string apiKey = "apiKey";
         string geocodeUrl = $"https://maps.googleapis.com/maps/api/geocode/json?address={Uri.EscapeDataString(oInput)}&key={apiKey}";
 
         var response = await _httpClient.GetAsync(geocodeUrl);
@@ -281,7 +281,7 @@ public partial class MapPage : ContentPage
 
         string originCoords = $"{originLocation.Latitude},{originLocation.Longitude}";
         string destinationCoords = $"{destinationLocation.Latitude},{destinationLocation.Longitude}";
-        string apiKey = "AIzaSyBY8pIiPG1tZkFeBU7EVjHTCGjZcaJRyLs";
+        string apiKey = "APIKEY";
         string url = $"https://maps.googleapis.com/maps/api/directions/json?origin={originCoords}&destination={destinationCoords}&key={apiKey}";
 
         try
